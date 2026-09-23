@@ -59,7 +59,7 @@ INTRO → HISTORY → PRESENT ↔ EXPLORE
 - Amber ticks: increased investment requirement.
 - Camera movement: authored change of narrative focus.
 
-No ambient particles. The energy scene has exactly 22 purposeful flow points (two per conceptual link). Graticules are deliberately faint. Typography uses native Georgia and Arial for immediate, offline rendering. The initial design is titled “Europe, unwritten”; the name is editable, not an external brand dependency.
+No ambient particles. The energy scene has exactly 22 purposeful flow points (two per conceptual link). Graticules are deliberately faint. Typography uses native Georgia and Arial for immediate, offline rendering. The current title is “Vision for the EU”; the name is editable, not an external brand dependency.
 
 ## Camera and performance
 

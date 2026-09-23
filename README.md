@@ -1,6 +1,6 @@
-# Europe, unwritten
+# Vision for the EU
 
-A cinematic, local-data-first exploration of the European project. Built for an Irish Transition Year competition. This repository contains the **first vertical slice, visual refinement and initial team-content integration**, not the whole planned experience.
+A local-data-first exploration of the European project by Darragh Ó Súilleabháin, Cillian Ó Ríordáin, Jake Varley and Thomas Myers at CBC Cork. Built for an Irish Transition Year competition. This repository contains the **first vertical slice, visual refinement and initial team-content integration**, not the whole planned experience.
 
 ## Run
 

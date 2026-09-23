@@ -11,6 +11,7 @@ import { initialState, reducer } from './state';
 import { history, currentMembers, membersAt } from '../data/history';
 import { countries, countryById } from '../data/countries';
 import { teamVision } from '../content/teamVision';
+import { school, teamMembers } from '../content/project';
 import { topics } from '../content/topics';
 import { dimensions, evaluateChoices } from '../domain/model';
 import { HISTORY_INTERVAL } from '../globe/config';
@@ -122,11 +123,11 @@ export default function App() {
               e.preventDefault();
               dispatch({ type: 'PRESENT' });
             }}
-            aria-label="Europe unwritten, return to present"
+            aria-label="Vision for the EU, return to present"
           >
             <Icon name="globe" />
             <span>
-              EUROPE<span className="brand-sub">UNWRITTEN</span>
+              VISION<span className="brand-sub">FOR THE EU</span>
             </span>
           </a>
           <div className="edition">
@@ -170,11 +171,11 @@ export default function App() {
                     <span className="tiny-star">✳</span> The EU, from 1957 to today
                   </p>
                   <h1 ref={heading} tabIndex={-1}>
-                    Europe is
+                    What does
                     <br />
-                    still being
+                    the EU
                     <br />
-                    <em>written.</em>
+                    <em>need?</em>
                   </h1>
                   <p className="story-copy">
                     Six countries signed the Treaties of Rome.
@@ -600,8 +601,8 @@ export default function App() {
           </div>
         )}
         <footer className="footer">
-          <span>
-            A TRANSITION YEAR EXPLORATION <span className="footer-divider">/</span> MADE IN IRELAND
+          <span className="footer-credits">
+            {school} <span className="footer-divider">/</span> {teamMembers.join(' · ')}
           </span>
           <div>
             <button

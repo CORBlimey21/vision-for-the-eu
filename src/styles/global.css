@@ -356,6 +356,10 @@ h3 {
   padding: 0 12px;
   color: #506661;
 }
+.footer-credits {
+  max-width: min(74%, 880px);
+  line-height: 1.6;
+}
 .footer > div {
   display: flex;
   gap: 28px;
@@ -759,6 +763,9 @@ h3 {
   line-height: 1.9;
   color: #aabbaf;
 }
+.sources-dialog .project-credit {
+  color: #d7e7da;
+}
 .sources-dialog ul {
   padding: 0;
   list-style: none;
@@ -1044,8 +1051,8 @@ h3 {
     font-size: 7px;
     line-height: 1.9;
   }
-  .footer > span {
-    max-width: 150px;
+  .footer-credits {
+    max-width: 200px;
   }
   .footer-divider {
     padding: 0 4px;

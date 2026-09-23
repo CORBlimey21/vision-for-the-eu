@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { sources } from '../data/sources';
+import { school, teamMembers } from '../content/project';
 import { Icon } from './Icon';
 export function SourcesDialog({ onClose }: { onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -22,7 +23,11 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
           <Icon name="close" />
         </button>
       </div>
-      <h2>What the map shows</h2>
+      <h2>Vision for the EU</h2>
+      <p className="project-credit">
+        {school} · {teamMembers.join(' · ')}
+      </p>
+      <h3>What the map shows</h3>
       <p>
         The dates and membership history have sources. The map uses current country boundaries.
         Policy scenarios explain ideas; they are not forecasts.
