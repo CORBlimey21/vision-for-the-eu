@@ -1,0 +1,17 @@
+{
+  "title": "Terrain Tiles / Mapzen elevation, Terrarium encoding",
+  "url": "https://registry.opendata.aws/terrain-tiles/",
+  "retrievedAt": "2026-09-11",
+  "bounds": [
+    -25,
+    32,
+    45,
+    73
+  ],
+  "maxZoom": 5,
+  "tiles": 92,
+  "bytes": 3265267,
+  "attribution": "Terrain Tiles \u00a9 Mapzen; underlying sources include USGS, NASA and other contributors",
+  "notes": "Low-resolution elevation used only for visual hillshade, not analysis. See source registry for underlying dataset attribution.",
+  "processing": "Negative elevations clamped to sea level; visual hillshade only."
+}
