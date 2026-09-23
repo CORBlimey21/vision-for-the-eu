@@ -130,7 +130,7 @@ export default function App() {
             </span>
           </a>
           <div className="edition">
-            A FUTURE WE SHARE<span>AN INTERACTIVE EXPLORATION</span>
+            1957–2050<span>AN INTERACTIVE EXPLORATION</span>
           </div>
           <button className="about-button" onClick={() => setSourcesOpen(true)}>
             About this project <span>↗</span>
@@ -167,7 +167,7 @@ export default function App() {
               {intro ? (
                 <>
                   <p className="eyebrow">
-                    <span className="tiny-star">✳</span> A continent. A continuing story.
+                    <span className="tiny-star">✳</span> The EU, from 1957 to today
                   </p>
                   <h1 ref={heading} tabIndex={-1}>
                     Europe is
@@ -177,9 +177,9 @@ export default function App() {
                     <em>written.</em>
                   </h1>
                   <p className="story-copy">
-                    It began with a shared idea.
+                    Six countries signed the Treaties of Rome.
                     <br />
-                    What happens next is a choice.
+                    Today the EU has twenty-seven members.
                   </p>
                   <button
                     className="primary-button"
@@ -220,8 +220,8 @@ export default function App() {
                       {moment.remove?.length
                         ? 'a departure from the Union'
                         : moment.add.length
-                          ? 'countries joining the story'
-                          : 'countries shaping what comes next'}
+                          ? 'countries joining'
+                          : 'current member countries'}
                     </p>
                   </div>
                   <div className="history-actions">
@@ -257,7 +257,7 @@ export default function App() {
                   >
                     ← All of Europe
                   </button>
-                  <p className="eyebrow">One country. Part of something larger.</p>
+                  <p className="eyebrow">An EU member country</p>
                   <h1 ref={heading} tabIndex={-1} className="country-title">
                     {country.name}
                     <span className="title-period">.</span>
@@ -265,8 +265,7 @@ export default function App() {
                   <p className="story-copy">
                     {country.founding
                       ? 'A founding member of the European Economic Community.'
-                      : `Part of the European project since ${country.joined}.`}{' '}
-                    A distinct voice in a shared future.
+                      : `Joined the European Communities or EU in ${country.joined}.`}
                   </p>
                   <div className="country-facts">
                     <div>
@@ -389,16 +388,16 @@ export default function App() {
                     <span className="accent-dot" /> Europe, 2026
                   </p>
                   <h1 ref={heading} tabIndex={-1} className="present-title">
-                    Many voices.
+                    Twenty-seven
                     <br />
-                    One <em>shared</em>
+                    countries.
                     <br />
-                    <em>future.</em>
+                    <em>What next?</em>
                   </h1>
                   <p className="story-copy">
-                    Twenty-seven countries, connected.
+                    Explore the countries in the EU today.
                     <br />
-                    Explore a place. Imagine what could change.
+                    Then try two ideas for what could change.
                   </p>
                   <button className="primary-button" onClick={() => dispatch({ type: 'BUILD' })}>
                     Change one thing
@@ -432,9 +431,9 @@ export default function App() {
             <>
               <span className="eyebrow">A working vision</span>
               <p>
-                Shared ambition.
+                Proposals from
                 <br />
-                Distinct voices.
+                our team’s writing.
               </p>
               <small>Team proposals · not a forecast</small>
             </>
@@ -451,8 +450,8 @@ export default function App() {
                 {baseline
                   ? 'This choice removed. Your other choices remain.'
                   : network
-                    ? 'Shared energy. Shared possibility.'
-                    : 'Different rules. Shared decisions.'}
+                    ? 'More ways to share electricity.'
+                    : 'See how the voting rule changes the result.'}
               </p>
               <span className="caption-rule" />
               <small>
@@ -474,7 +473,7 @@ export default function App() {
               </span>
               <div className="member-count">
                 {String(memberCount).padStart(2, '0')}
-                <span>{intro ? 'a shared beginning' : 'member states'}</span>
+                <span>{intro ? 'countries highlighted' : 'member states'}</span>
               </div>
               <span className="legend-dot" />
               <small>Illumination marks membership</small>
@@ -548,7 +547,7 @@ export default function App() {
         {countryList && !intro && !historical && !future && !team && (
           <div className="country-picker" id="country-picker">
             <div className="dialog-heading">
-              <span className="eyebrow">27 perspectives</span>
+              <span className="eyebrow">27 member countries</span>
               <button
                 className="icon-button"
                 aria-label="Close country index"
@@ -597,7 +596,7 @@ export default function App() {
             <span>1957</span>
             <span className="opening-line" />
             <span>2026</span>
-            <span className="opening-thought">The future is not a finished map.</span>
+            <span className="opening-thought">Explore what changed.</span>
           </div>
         )}
         <footer className="footer">

@@ -17,15 +17,15 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       }}
     >
       <div className="dialog-heading">
-        <span className="eyebrow">Behind the experience</span>
+        <span className="eyebrow">Sources and method</span>
         <button className="icon-button" onClick={onClose} aria-label="Close sources">
           <Icon name="close" />
         </button>
       </div>
-      <h2>A little transparency.</h2>
+      <h2>What the map shows</h2>
       <p>
-        History is sourced. Geography is real. The policy scenarios are illustrative explanations,
-        not a forecast.
+        The dates and membership history have sources. The map uses current country boundaries.
+        Policy scenarios explain ideas; they are not forecasts.
       </p>
       <h3>Geography & history</h3>
       <p>

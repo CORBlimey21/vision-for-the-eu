@@ -1,31 +1,31 @@
 export const teamVision = {
   status: 'draft',
-  headline: 'Together where it matters.',
+  headline: 'Ideas for Europe in 2050.',
   introduction:
-    'Europe should work together when it needs to, not simply because it can. This working draft brings our contributions into one vision for 2050.',
+    'These ideas come from our team’s writing. We still need to decide what we agree on.',
   pillars: [
     {
-      title: 'Keep the ambition.',
-      text: 'Keep setting clear goals for sustainability and quality of life. We want a climate-neutral Europe in 2050, with dependable public transport and products designed to last, be repaired and be reused.',
+      title: 'Climate, transport and waste',
+      text: 'Keep the goal of a climate-neutral Europe in 2050. Invest in reliable public transport and make it easier to repair and reuse products.',
     },
     {
-      title: 'Share power. Share responsibility.',
-      text: 'Invest in renewable generation and interconnection. Our proposed funding deal would seek fair, affordable access to shared electricity; the terms and costs still need work.',
+      title: 'Electricity across borders',
+      text: 'Invest in renewable power and stronger connections between national grids. We would want countries to share the benefits fairly, but we have not worked out the costs or terms.',
     },
     {
-      title: 'Act together. Keep a distinct voice.',
-      text: 'Seek wider majority voting in foreign policy and sanctions, while preserving national control over taxation. Speed must be balanced with safeguards and trust.',
+      title: 'Decisions on foreign policy',
+      text: 'Consider wider majority voting on foreign policy and sanctions, while keeping national control over taxation. We need to think through safeguards for countries that could be outvoted.',
     },
     {
-      title: 'Build capacity — and earn trust.',
-      text: 'Develop European chips, cloud infrastructure and AI research. The contributions also propose a shared digital identity and a European force alongside national armies. Privacy, democratic oversight, Irish neutrality and the relationship with NATO need further team discussion.',
+      title: 'Technology and defence',
+      text: 'Invest in European chips, cloud infrastructure and AI research. Some contributions also call for a shared digital identity and a European force alongside national armies. We still need to discuss privacy, democratic oversight, Irish neutrality and NATO.',
     },
   ],
   questions: [
-    'How should EU investment be funded and shared fairly between countries that contribute and countries that need support?',
+    'How should EU investment be funded, and who should benefit?',
     'What should happen when a member state breaches shared EU rules, and how should enforcement remain fair and independent?',
-    'How could Ireland make better use of EU research, education and energy opportunities?',
+    'How could Ireland make better use of EU research, education and energy programmes?',
   ],
   qualification:
-    'This is a working draft drawn from team contributions, not an agreed position or a prediction. Climate neutrality by 2050 is already an EU legal objective; it is not the same as eliminating every use of fuel. Figures and further proposals in the source document still need checking before publication.',
+    'This is a draft, not an agreed team position or a forecast. The EU already has a legal goal of climate neutrality by 2050; that does not mean eliminating every use of fuel.',
 };

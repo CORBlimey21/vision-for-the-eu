@@ -11,9 +11,7 @@ export function ChoiceSummary({
   return (
     <details className="choice-summary">
       <summary>Your choices beside our draft</summary>
-      <p className="policy-explanation">
-        Different choices are an invitation to discuss, not a score to beat.
-      </p>
+      <p className="policy-explanation">See where your choices differ from our draft.</p>
       {topics.map((topic) => {
         const visitor = topic.choices.find((c) => c.id === selections[topic.id]);
         const team = topic.choices.find((c) => c.id === topic.teamVision?.choiceId);

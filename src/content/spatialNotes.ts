@@ -6,7 +6,7 @@ export const spatialNotes = [
     label: 'Share across borders',
     center: [-8, 53.3] as [number, number],
     anchor: 'right' as const,
-    title: 'A connection creates options.',
+    title: 'Another way to share electricity',
     description:
       'In this scenario, the link represents another way for electricity to be shared. It does not represent the route, capacity or status of a real interconnector.',
   },
@@ -16,19 +16,19 @@ export const spatialNotes = [
     label: 'Balance differences',
     center: [16.5, 62] as [number, number],
     anchor: 'left' as const,
-    title: 'Different places. Different moments.',
+    title: 'Supply and demand change',
     description:
       'The model illustrates sharing between places when local supply and demand differ. Moving lights show the idea of exchange, not measured electricity or a forecast.',
   },
   {
     id: 'build',
     number: '03',
-    label: 'Build together',
+    label: 'Investment needed',
     center: [25, 45.8] as [number, number],
     anchor: 'left' as const,
     title: 'Connections have a cost.',
     description:
-      'Our scenario pairs potential benefits with greater investment. The amber investment indicator stays visible: infrastructure, coordination and delivery still matter.',
+      'These possible benefits would require investment in infrastructure and coordination between countries. The amber indicator shows that cost.',
   },
 ];
 export type SpatialNoteId = (typeof spatialNotes)[number]['id'];

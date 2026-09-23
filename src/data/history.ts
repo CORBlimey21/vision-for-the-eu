@@ -3,7 +3,7 @@ export const history: HistoryMoment[] = [
   {
     year: 1957,
     label: 'The beginning',
-    headline: 'Six countries. A shared beginning.',
+    headline: 'Six countries sign the Treaties of Rome.',
     description:
       'The Treaties of Rome are signed. Belgium, France, West Germany, Italy, Luxembourg and the Netherlands establish the EEC from 1958.',
     add: ['BE', 'FR', 'DE', 'IT', 'LU', 'NL'],
@@ -12,8 +12,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 1973,
-    label: 'An Atlantic horizon',
-    headline: 'The horizon moves west.',
+    label: 'Ireland, Denmark and the UK',
+    headline: 'The Communities grow to nine.',
     description:
       'Ireland, Denmark and the United Kingdom join the European Communities. Six becomes nine.',
     add: ['IE', 'DK', 'UK'],
@@ -22,8 +22,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 1981,
-    label: 'Looking south',
-    headline: 'A place for Greece.',
+    label: 'Greece joins',
+    headline: 'Greece becomes the tenth member.',
     description: 'Greece joins the European Communities, becoming the tenth member.',
     add: ['EL'],
     sourceId: 'accession',
@@ -31,8 +31,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 1986,
-    label: 'An Iberian chapter',
-    headline: 'A wider southern horizon.',
+    label: 'Spain and Portugal join',
+    headline: 'Membership reaches twelve.',
     description:
       'Spain and Portugal join. The European Communities now bring together twelve countries.',
     add: ['ES', 'PT'],
@@ -41,8 +41,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 1995,
-    label: 'Looking north',
-    headline: 'The north draws closer.',
+    label: 'Austria, Finland and Sweden join',
+    headline: 'Three more countries join.',
     description:
       'Austria, Finland and Sweden join the European Union, bringing membership to fifteen.',
     add: ['AT', 'FI', 'SE'],
@@ -51,8 +51,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 2004,
-    label: 'The great enlargement',
-    headline: 'Ten countries. One turning point.',
+    label: 'The largest enlargement',
+    headline: 'Ten countries join in one year.',
     description:
       'Cyprus, Czechia, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia and Slovenia join in the largest enlargement.',
     add: ['CY', 'CZ', 'EE', 'HU', 'LV', 'LT', 'MT', 'PL', 'SK', 'SI'],
@@ -61,8 +61,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 2007,
-    label: 'Further together',
-    headline: 'The east becomes closer.',
+    label: 'Bulgaria and Romania join',
+    headline: 'Membership reaches twenty-seven.',
     description: 'Bulgaria and Romania join, bringing the European Union to twenty-seven members.',
     add: ['BG', 'RO'],
     sourceId: 'accession',
@@ -70,8 +70,8 @@ export const history: HistoryMoment[] = [
   },
   {
     year: 2013,
-    label: 'A new neighbour within',
-    headline: 'Croatia joins the story.',
+    label: 'Croatia joins',
+    headline: 'Croatia becomes the 28th member.',
     description: 'Croatia becomes the twenty-eighth member of the European Union.',
     add: ['HR'],
     sourceId: 'accession',
@@ -80,7 +80,7 @@ export const history: HistoryMoment[] = [
   {
     year: 2020,
     label: 'A departure',
-    headline: 'Integration is not inevitable.',
+    headline: 'The United Kingdom leaves the EU.',
     description:
       'The United Kingdom leaves the European Union on 31 January 2020. Twenty-seven countries remain.',
     add: [],
@@ -91,9 +91,9 @@ export const history: HistoryMoment[] = [
   {
     year: 2026,
     label: 'The present',
-    headline: 'A union still being written.',
+    headline: 'Twenty-seven countries are in the EU.',
     description:
-      'Twenty-seven countries. Different histories. A future shaped by the choices we make together.',
+      'The Union has changed many times since 1957. What should it do next?',
     add: [],
     sourceId: 'eu-countries',
     center: [13, 51],

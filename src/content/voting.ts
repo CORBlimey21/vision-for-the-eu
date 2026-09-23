@@ -1,5 +1,5 @@
 export const votingExample = {
-  title: 'The same voices. A different rule.',
+  title: 'What changes if the voting rule changes?',
   premise: 'Imagine 26 governments support a proposal. One takes a different position.',
   scope: 'Fictional vote · all 27 participate · no country positions implied',
   rules: {

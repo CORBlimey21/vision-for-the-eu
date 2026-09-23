@@ -12,7 +12,7 @@ export function SpatialGuide({
   const note = spatialNotes.find((n) => n.id === active) ?? spatialNotes[0];
   return (
     <aside className="spatial-guide" aria-label="Explore what the connections mean">
-      <span className="eyebrow">Inside the idea</span>
+      <span className="eyebrow">How this example works</span>
       <div className="spatial-tabs" role="group" aria-label="Connection explanations">
         {spatialNotes.map((n) => (
           <button
