@@ -40,7 +40,7 @@ Two topics (energy and decision-making) and an editable draft team-vision ending
 
 ## GitHub Pages
 
-The Vite base is relative (`./`), so a repository subpath works. Once this directory is placed in a GitHub repository, enable **Settings → Pages → GitHub Actions** and manually run **Deploy to GitHub Pages**. No deployment or remote repository has been created by this implementation. CI validates pushes and pull requests; deployment is deliberately manual.
+The site is published at [corblimey21.github.io/vision-for-the-eu](https://corblimey21.github.io/vision-for-the-eu/). The Vite base is relative (`./`) so assets work under the repository path. CI validates pushes and pull requests. To publish later changes, manually run **Deploy to GitHub Pages** from the repository's Actions tab; deployment does not run on every push.
 
 ## Asset attribution
 
