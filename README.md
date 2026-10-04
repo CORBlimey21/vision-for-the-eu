@@ -40,7 +40,7 @@ npm run check
 
 Graphics and energy links are **authored illustrations**, not forecasts, infrastructure routes or verified policy findings. No economic/population figures have been invented. Historical views use modern country boundaries and explicitly say so. Terrain is visual hillshade, not an analytical elevation product.
 
-Subtitles are machine transcriptions with approximate segment timing, not listening-certified quotations. The twenty MP3/VTT pairs and their source ranges/hashes are under `public/audio/`; see `docs/VOICE_NOTES.md` for exclusions. Raw recordings are not shipped. Aggregate comparison and real topic statistics remain unimplemented. Original planning documents under `output/` and the existing Python blueprint remain untouched.
+Subtitles are machine transcriptions with approximate segment timing, not listening-certified quotations. The twenty AAC/MP3 recordings and VTT captions and their source ranges/hashes are under `public/audio/`; see `docs/VOICE_NOTES.md` for exclusions. Raw recordings are not shipped. Aggregate comparison and real topic statistics remain unimplemented. Original planning documents under `output/` and the existing Python blueprint remain untouched.
 
 ## GitHub Pages
 

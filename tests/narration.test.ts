@@ -65,6 +65,19 @@ test('every narrated point has sources, bounded cues and a matching exported aud
       const exported = provenance.recordings.find((item: { id: string }) => item.id === record.id);
       const bytes = readFileSync(new URL(`../public/audio/${record.file}`, import.meta.url));
       assert.equal(createHash('sha256').update(bytes).digest('hex'), exported.output_sha256);
+      const fallback = readFileSync(
+        new URL(`../public/audio/${record.fallbackFile}`, import.meta.url),
+      );
+      assert.equal(createHash('sha256').update(fallback).digest('hex'), exported.fallback_sha256);
+      assert.ok(record.file.endsWith('-v2.m4a') && record.fallbackFile.endsWith('-v2.mp3'));
+      // Guard the mobile-compatible export format, beyond checking filenames.
+      assert.ok(bytes.indexOf('moov') > 0 && bytes.indexOf('moov') < bytes.indexOf('mdat'));
+      const id3Size = fallback.subarray(6, 10).reduce((size, byte) => (size << 7) | byte, 0);
+      const frame = 10 + id3Size;
+      assert.equal(fallback[frame], 0xff);
+      assert.equal(fallback[frame + 1] & 0xfe, 0xfa); // MPEG-1, Layer III
+      assert.equal(fallback[frame + 2] & 0x0c, 0); // 44.1 kHz
+
       assert.ok(
         readFileSync(
           new URL(`../public/audio/${record.id}.vtt`, import.meta.url),
@@ -77,7 +90,9 @@ test('every narrated point has sources, bounded cues and a matching exported aud
   assert.equal(media.length, used.size);
   const files = readdirSync(new URL('../public/audio/', import.meta.url));
   assert.equal(files.filter((name) => name.endsWith('.mp3')).length, used.size);
-  assert.ok(!files.some((name) => name.endsWith('.m4a') || name.includes('decision-making3')));
+  assert.equal(files.filter((name) => name.endsWith('.m4a')).length, used.size);
+  assert.ok(!files.some((name) => name.includes('decision-making3')));
+  assert.equal(provenance.sample_rate, 44100);
 });
 
 test('flagged passages are outside the exported source ranges and captions', () => {

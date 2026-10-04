@@ -1,7 +1,8 @@
 [
   {
     "id": "what-needs-to-stay-the-same1",
-    "file": "what-needs-to-stay-the-same1.mp3",
+    "file": "what-needs-to-stay-the-same1-v2.m4a",
+    "fallbackFile": "what-needs-to-stay-the-same1-v2.mp3",
     "duration": 27.924,
     "cues": [
       {
@@ -28,7 +29,8 @@
   },
   {
     "id": "what-needs-to-stay-the-same2",
-    "file": "what-needs-to-stay-the-same2.mp3",
+    "file": "what-needs-to-stay-the-same2-v2.m4a",
+    "fallbackFile": "what-needs-to-stay-the-same2-v2.mp3",
     "duration": 22.7186875,
     "cues": [
       {
@@ -50,7 +52,8 @@
   },
   {
     "id": "what-needs-to-stay-the-same3",
-    "file": "what-needs-to-stay-the-same3.mp3",
+    "file": "what-needs-to-stay-the-same3-v2.m4a",
+    "fallbackFile": "what-needs-to-stay-the-same3-v2.mp3",
     "duration": 28.7773125,
     "cues": [
       {
@@ -72,7 +75,8 @@
   },
   {
     "id": "what-needs-to-stay-the-same4",
-    "file": "what-needs-to-stay-the-same4.mp3",
+    "file": "what-needs-to-stay-the-same4-v2.m4a",
+    "fallbackFile": "what-needs-to-stay-the-same4-v2.mp3",
     "duration": 25.66,
     "cues": [
       {
@@ -109,7 +113,8 @@
   },
   {
     "id": "what-needs-to-change1",
-    "file": "what-needs-to-change1.mp3",
+    "file": "what-needs-to-change1-v2.m4a",
+    "fallbackFile": "what-needs-to-change1-v2.mp3",
     "duration": 15.06,
     "cues": [
       {
@@ -131,7 +136,8 @@
   },
   {
     "id": "what-needs-to-change2",
-    "file": "what-needs-to-change2.mp3",
+    "file": "what-needs-to-change2-v2.m4a",
+    "fallbackFile": "what-needs-to-change2-v2.mp3",
     "duration": 13.56,
     "cues": [
       {
@@ -148,7 +154,8 @@
   },
   {
     "id": "what-needs-to-change3",
-    "file": "what-needs-to-change3.mp3",
+    "file": "what-needs-to-change3-v2.m4a",
+    "fallbackFile": "what-needs-to-change3-v2.mp3",
     "duration": 16.36,
     "cues": [
       {
@@ -170,7 +177,8 @@
   },
   {
     "id": "decision-making1",
-    "file": "decision-making1.mp3",
+    "file": "decision-making1-v2.m4a",
+    "fallbackFile": "decision-making1-v2.mp3",
     "duration": 12.0,
     "cues": [
       {
@@ -197,7 +205,8 @@
   },
   {
     "id": "decision-making2",
-    "file": "decision-making2.mp3",
+    "file": "decision-making2-v2.m4a",
+    "fallbackFile": "decision-making2-v2.mp3",
     "duration": 18.6226875,
     "cues": [
       {
@@ -224,7 +233,8 @@
   },
   {
     "id": "decision-making4",
-    "file": "decision-making4.mp3",
+    "file": "decision-making4-v2.m4a",
+    "fallbackFile": "decision-making4-v2.mp3",
     "duration": 20.22,
     "cues": [
       {
@@ -246,7 +256,8 @@
   },
   {
     "id": "decision-making5",
-    "file": "decision-making5.mp3",
+    "file": "decision-making5-v2.m4a",
+    "fallbackFile": "decision-making5-v2.mp3",
     "duration": 40.54,
     "cues": [
       {
@@ -303,7 +314,8 @@
   },
   {
     "id": "decision-making6",
-    "file": "decision-making6.mp3",
+    "file": "decision-making6-v2.m4a",
+    "fallbackFile": "decision-making6-v2.mp3",
     "duration": 18.84,
     "cues": [
       {
@@ -325,7 +337,8 @@
   },
   {
     "id": "decision-making7",
-    "file": "decision-making7.mp3",
+    "file": "decision-making7-v2.m4a",
+    "fallbackFile": "decision-making7-v2.mp3",
     "duration": 13.3,
     "cues": [
       {
@@ -347,7 +360,8 @@
   },
   {
     "id": "our-eu-20501",
-    "file": "our-eu-20501.mp3",
+    "file": "our-eu-20501-v2.m4a",
+    "fallbackFile": "our-eu-20501-v2.mp3",
     "duration": 32.19,
     "cues": [
       {
@@ -394,7 +408,8 @@
   },
   {
     "id": "our-eu-20502",
-    "file": "our-eu-20502.mp3",
+    "file": "our-eu-20502-v2.m4a",
+    "fallbackFile": "our-eu-20502-v2.mp3",
     "duration": 20.0,
     "cues": [
       {
@@ -426,7 +441,8 @@
   },
   {
     "id": "our-eu-20503",
-    "file": "our-eu-20503.mp3",
+    "file": "our-eu-20503-v2.m4a",
+    "fallbackFile": "our-eu-20503-v2.mp3",
     "duration": 30.86,
     "cues": [
       {
@@ -468,7 +484,8 @@
   },
   {
     "id": "our-eu-20504",
-    "file": "our-eu-20504.mp3",
+    "file": "our-eu-20504-v2.m4a",
+    "fallbackFile": "our-eu-20504-v2.mp3",
     "duration": 30.05,
     "cues": [
       {
@@ -500,7 +517,8 @@
   },
   {
     "id": "our-eu-20505",
-    "file": "our-eu-20505.mp3",
+    "file": "our-eu-20505-v2.m4a",
+    "fallbackFile": "our-eu-20505-v2.mp3",
     "duration": 36.116,
     "cues": [
       {
@@ -542,7 +560,8 @@
   },
   {
     "id": "our-eu-20506",
-    "file": "our-eu-20506.mp3",
+    "file": "our-eu-20506-v2.m4a",
+    "fallbackFile": "our-eu-20506-v2.mp3",
     "duration": 37.652,
     "cues": [
       {
@@ -594,7 +613,8 @@
   },
   {
     "id": "our-eu-20507",
-    "file": "our-eu-20507.mp3",
+    "file": "our-eu-20507-v2.m4a",
+    "fallbackFile": "our-eu-20507-v2.mp3",
     "duration": 36.628,
     "cues": [
       {

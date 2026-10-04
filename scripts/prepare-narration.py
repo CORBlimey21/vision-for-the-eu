@@ -1,9 +1,10 @@
-"""Create bounded MP3 excerpts and caption assets; original recordings stay untouched.
+"""Create bounded AAC/MP3 excerpts and caption assets; original recordings stay untouched.
 Run with the separate PyAV 16 / NumPy environment used for transcription.
 """
 import hashlib
 import json
 import re
+from fractions import Fraction
 from pathlib import Path
 import av
 import numpy as np
@@ -61,17 +62,27 @@ def main():
         ranges = [(start, min(end, source_duration)) for start, end in ranges]
         selected = np.concatenate([signal[:, round(a*16000):round(b*16000)] for a,b in ranges], axis=1)
         identity = re.sub(r'[^a-z0-9]+', '-', stem.lower()).strip('-')
-        target = OUTPUT / f'{identity}.mp3'
-        with av.open(str(target), 'w') as container:
-            stream = container.add_stream('libmp3lame', rate=16000)
-            stream.bit_rate = 64000
-            stream.layout = 'mono'
-            for start in range(0, selected.shape[1], 1152):
-                chunk = np.ascontiguousarray(selected[:, start:start+1152])
-                frame = av.AudioFrame.from_ndarray(chunk, format='s16p', layout='mono')
-                frame.sample_rate = 16000
-                for packet in stream.encode(frame): container.mux(packet)
-            for packet in stream.encode(None): container.mux(packet)
+        # Standard 44.1 kHz AAC-LC for iOS; MPEG-1 Layer III as a fallback.
+        # Versioned names prevent old mobile/CDN cache entries being reused.
+        targets = [OUTPUT / f'{identity}-v2.m4a', OUTPUT / f'{identity}-v2.mp3']
+        for target, codec, sample_format in zip(targets, ['aac', 'libmp3lame'], ['fltp', 's16p']):
+            options = {'movflags': '+faststart'} if target.suffix == '.m4a' else {}
+            with av.open(str(target), 'w', options=options) as container:
+                stream = container.add_stream(codec, rate=44100)
+                stream.bit_rate = 64000
+                stream.layout = 'mono'
+                resampler = av.AudioResampler(format=sample_format, layout='mono', rate=44100)
+                for start in range(0, selected.shape[1], 4096):
+                    chunk = np.ascontiguousarray(selected[:, start:start+4096])
+                    frame = av.AudioFrame.from_ndarray(chunk, format='s16', layout='mono')
+                    frame.sample_rate = 16000
+                    frame.pts = start
+                    frame.time_base = Fraction(1, 16000)
+                    for output in resampler.resample(frame):
+                        for packet in stream.encode(output): container.mux(packet)
+                for output in resampler.resample(None):
+                    for packet in stream.encode(output): container.mux(packet)
+                for packet in stream.encode(None): container.mux(packet)
         cues, offset = [], 0
         for start, end in ranges:
             for cue in transcript['segments']:
@@ -83,12 +94,12 @@ def main():
             offset += end-start
         duration = selected.shape[1] / 16000
         assert all(0 <= c['start'] < c['end'] <= duration + .001 for c in cues)
-        records.append({'id': identity, 'file': target.name, 'duration': duration, 'cues': cues})
+        records.append({'id': identity, 'file': targets[0].name, 'fallbackFile': targets[1].name, 'duration': duration, 'cues': cues})
         vtt = 'WEBVTT\n\n' + '\n\n'.join(f"{vtt_time(c['start'])} --> {vtt_time(c['end'])}\n{c['text']}" for c in cues) + '\n'
         (OUTPUT / f'{identity}.vtt').write_text(vtt)
-        provenance.append({'id': identity, 'source_file': source.name, 'source_sha256': transcript['sha256'], 'source_ranges_seconds': ranges, 'output_sha256': hashlib.sha256(target.read_bytes()).hexdigest(), 'caption_status': 'edited machine transcript; approximate segment timing'})
-        print(f'{target.name}: {duration:.2f}s', flush=True)
+        provenance.append({'id': identity, 'source_file': source.name, 'source_sha256': transcript['sha256'], 'source_ranges_seconds': ranges, 'output_sha256': hashlib.sha256(targets[0].read_bytes()).hexdigest(), 'fallback_sha256': hashlib.sha256(targets[1].read_bytes()).hexdigest(), 'caption_status': 'edited machine transcript; approximate segment timing'})
+        print(f'{targets[0].name}: {duration:.2f}s', flush=True)
     (ROOT / 'src/data/narration.json').write_text(json.dumps(records, indent=2, ensure_ascii=False) + '\n')
-    (OUTPUT / 'provenance.json').write_text(json.dumps({'sample_rate': 16000, 'codec': 'MP3 mono 64 kbps', 'recordings': provenance, 'held_recordings': ['Decision making3.m4a'], 'caption_edits': EDITS}, indent=2, ensure_ascii=False) + '\n')
+    (OUTPUT / 'provenance.json').write_text(json.dumps({'sample_rate': 44100, 'codec': 'AAC-LC mono 64 kbps; MPEG-1 Layer III mono 64 kbps fallback', 'recordings': provenance, 'held_recordings': ['Decision making3.m4a'], 'caption_edits': EDITS}, indent=2, ensure_ascii=False) + '\n')
 
 if __name__ == '__main__': main()

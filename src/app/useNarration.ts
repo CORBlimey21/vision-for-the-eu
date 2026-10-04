@@ -6,6 +6,9 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
   const audioRef = useRef<HTMLAudioElement>(null);
   const continueNext = useRef(false);
   const request = useRef(0);
+  const wantsPlayback = useRef(false);
+  const sources = useRef<string[]>([]);
+  const sourceIndex = useRef(0);
   const endCallback = useRef(onEnd);
   endCallback.current = onEnd;
   const [modes, setModes] = useState({ voice: true, subtitles: true });
@@ -18,6 +21,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
   const pause = useCallback(() => {
     request.current++;
     continueNext.current = false;
+    wantsPlayback.current = false;
     audioRef.current?.pause();
     setPlaying(false);
   }, []);
@@ -27,12 +31,16 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     const ticket = ++request.current;
     setError('');
     setEndedRecording(null);
+    wantsPlayback.current = true;
+    // Retry a failed request inside the fresh user gesture on iOS.
+    if (audio.error) audio.load();
     if (audio.ended) audio.currentTime = 0;
     try {
       await audio.play();
       if (ticket === request.current) setPlaying(!audio.paused);
     } catch (reason) {
       if (ticket !== request.current) return;
+      wantsPlayback.current = false;
       setPlaying(false);
       setLoading(false);
       setError(
@@ -49,21 +57,27 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     continueNext.current = false;
     request.current++;
     audio.pause();
+    wantsPlayback.current = false;
     setPlaying(false);
     setEndedRecording(null);
     setTime(0);
     setError('');
     setDuration(recording.duration);
     setLoading(false);
-    if (active) audio.src = `${import.meta.env.BASE_URL}audio/${recording.file}`;
+    sources.current = audio.canPlayType('audio/mp4; codecs="mp4a.40.2"')
+      ? [recording.file, recording.fallbackFile]
+      : [recording.fallbackFile];
+    sourceIndex.current = 0;
+    if (active) audio.src = `${import.meta.env.BASE_URL}audio/${sources.current[0]}`;
     else audio.removeAttribute('src');
     audio.load();
     if (shouldContinue) void play();
     return () => {
       request.current++;
+      wantsPlayback.current = false;
       audio.pause();
     };
-  }, [recording.id, recording.file, recording.duration, active, play]);
+  }, [recording.id, recording.file, recording.fallbackFile, recording.duration, active, play]);
   useEffect(() => {
     if (audioRef.current) audioRef.current.muted = !modes.voice;
   }, [modes.voice]);
@@ -114,17 +128,31 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
       onWaiting: () => setLoading(true),
       onCanPlay: () => setLoading(false),
       onEnded: () => {
+        wantsPlayback.current = false;
         setPlaying(false);
         setEndedRecording(recording.id);
         continueNext.current = endCallback.current();
       },
       onError: () => {
-        if (!audioRef.current?.getAttribute('src')) return;
+        const audio = audioRef.current;
+        if (!audio?.getAttribute('src') || !audio.error) return;
         request.current++;
+        const fallback = sources.current[sourceIndex.current + 1];
+        if (fallback) {
+          const resume = wantsPlayback.current && !document.hidden;
+          sourceIndex.current++;
+          audio.src = `${import.meta.env.BASE_URL}audio/${fallback}`;
+          setError('');
+          setLoading(resume);
+          audio.load();
+          if (resume) void play();
+          return;
+        }
+        wantsPlayback.current = false;
         setPlaying(false);
         setLoading(false);
         continueNext.current = false;
-        setError('Audio could not load. You can still read the transcript below.');
+        setError('Audio could not load. Press Play to retry, or read the transcript below.');
       },
     },
   };

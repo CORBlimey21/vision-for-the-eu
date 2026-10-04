@@ -1,3 +1,11 @@
+# iOS audio compatibility, 2026-10-04
+
+The user reported immediate load failure on Play in iOS Safari and Firefox, while desktop played successfully. The live MP3 returned HTTP 200, and byte-range requests returned 206. Existing exports were 16 kHz MPEG-2 Layer III; codec compatibility is a suspected cause, not a reproduced device diagnosis.
+
+Regenerated all twenty excerpts from the unchanged originals as 44.1 kHz AAC-LC M4A (fast-start), plus standard MPEG-1 MP3 fallbacks. Versioned filenames bypass prior asset caches. Source cuts, durations and captions are unchanged. The player selects AAC when supported, switches once on native load failure, and reloads failed media when Play is pressed again. Pause/navigation/hidden-page handling invalidates pending requests. No dependencies or collection were added.
+
+Validation: all forty audio assets decode, match expected durations within 60 ms, and use 44.1 kHz; every AAC stream is LC and places its metadata before media bytes. Original source hashes were checked by the exporter; existing cue arrays and declared durations remain identical. All 16 tests, data validation, TypeScript and the production build passed. Browser checks at desktop and 390px width verified AAC playback and subtitle progression; deliberately unavailable AAC switched to MP3, and a deliberately failed MP3 recovered on Play after restoring the file. Physical-iPhone confirmation remains required.
+
 # Latest increment — desktop globe composition, 2026-10-04
 
 Desktop narration (1100px+) expands the globe canvas and moves it right to balance the story. Broad EU and closer electricity presets live in visual configuration; the existing electricity selection changes the framing. No fabricated routes or country positions were added. A quiet lower-right chapter/point marker shows actual navigation progress. Smaller screens retain existing framing, with the marker hidden. Media-query and camera visibility listeners are cleaned up; reduced/hidden states skip flights and visibility loss stops an active flight.

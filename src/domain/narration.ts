@@ -6,6 +6,7 @@ export interface CaptionCue {
 export interface Recording {
   id: string;
   file: string;
+  fallbackFile: string;
   duration: number;
   cues: CaptionCue[];
 }
