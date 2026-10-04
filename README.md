@@ -23,6 +23,7 @@ npm run check
 - Playback, pause, restart and seeking, with subtitles following the audio clock. Voice and subtitles default on; at least one remains enabled. Click Play to continue automatically through the current chapter, with a toggle for manual advancement.
 - Large Next point/chapter controls directly beneath subtitles, with a brief completion lift and scroll into view when necessary. Reduced motion shows the completed control immediately.
 - Conceptual electricity links on the globe. The floating graphic panels, policy choices, numerical readouts and visitor comparisons are removed from the current experience.
+- Desktop narration gives the globe more space on the right, with a closer western-Europe framing for electricity and a quiet chapter/point progress marker. Mobile retains its existing framing.
 - A closing thank-you from the four named team members, with a brief twelve-star entrance, replay and exploration controls. Automatic continuation reaches it after the final 2050 recording; manual readers can use “Thank you”.
 - Flagged passages are physically omitted from the exported audio. Original M4A recordings and full transcripts remain preserved in the ignored input folder.
 - Responsive layouts, reduced motion, no-WebGL content fallback, a source/method dialog, and a transparent statement that no responses are collected.

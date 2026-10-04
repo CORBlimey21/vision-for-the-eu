@@ -9,6 +9,10 @@ export const palette = {
 export const camera = {
   overview: { center: [13, 51] as [number, number], zoom: 1.85, bearing: 0, pitch: 0 },
   energy: { center: [12, 52] as [number, number], zoom: 2.2, bearing: 0, pitch: 0 },
+  narration: {
+    union: { center: [13, 51] as [number, number], zoom: 2.15, bearing: 0, pitch: 0 },
+    electricity: { center: [8, 52] as [number, number], zoom: 2.3, bearing: 0, pitch: 0 },
+  },
   duration: 1900,
   minZoom: 1.85,
   maxZoom: 5.4,

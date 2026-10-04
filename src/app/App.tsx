@@ -396,6 +396,20 @@ export default function App() {
             label="English"
           />
         </audio>
+        {future && (
+          <aside className="scene-progress" aria-label="Chapter progress">
+            <span>{topic.title}</span>
+            <strong>
+              {String(currentIndex + 1).padStart(2, '0')} /{' '}
+              {String(topic.points.length).padStart(2, '0')}
+            </strong>
+            <div aria-hidden="true">
+              {topic.points.map((item, index) => (
+                <i key={item.id} className={index <= currentIndex ? 'reached' : ''} />
+              ))}
+            </div>
+          </aside>
+        )}
         {!future && !closing && (
           <aside className="globe-caption" aria-label="Globe key">
             <span className="eyebrow">

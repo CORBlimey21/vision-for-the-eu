@@ -430,6 +430,47 @@
   border-color: #e0efdc;
   color: #0b201b;
 }
+
+.scene-progress {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .is-narrated .globe-stage {
+    inset: -2% -12% -6% 32%;
+  }
+  .scene-progress {
+    position: absolute;
+    right: 44px;
+    bottom: 118px;
+    width: 210px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    color: #c4d3ca;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  .scene-progress strong {
+    color: var(--mint);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+  .scene-progress > div {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 5px;
+  }
+  .scene-progress i {
+    flex: 1;
+    height: 2px;
+    background: #bddcca30;
+  }
+  .scene-progress .reached {
+    background: var(--mint);
+  }
+}
 .narration-next.is-complete {
   box-shadow: 0 0 0 3px #bddcca20;
 }

@@ -1,4 +1,12 @@
-# Latest increment — Europe camera and prominent continuation, 2026-10-04
+# Latest increment — desktop globe composition, 2026-10-04
+
+Desktop narration (1100px+) expands the globe canvas and moves it right to balance the story. Broad EU and closer electricity presets live in visual configuration; the existing electricity selection changes the framing. No fabricated routes or country positions were added. A quiet lower-right chapter/point marker shows actual navigation progress. Smaller screens retain existing framing, with the marker hidden. Media-query and camera visibility listeners are cleaned up; reduced/hidden states skip flights and visibility loss stops an active flight.
+
+Validation: `npm run check` passes all 16 tests, asset validation, strict TypeScript and production build. The camera invariant test now includes both new presets. Browser inspection covered 1440×900, 1280×720 and 390×844, broad/electricity views, the 2050 energy-to-transport transition, progress updates and reduced-motion navigation. Both narrated stages retain the globe without floating graphic panels. Mobile globe geometry remains 540px tall and document width is 390px; the desktop marker is hidden there.
+
+---
+
+# Europe camera and prominent continuation, 2026-10-04
 
 Camera centres are continuously constrained to Europe (−12…36 longitude, 35…66 latitude) through MapLibre's transform constraint. Zoom is 1.85–5.4, rotation stays disabled, and all existing country/history anchors are preserved. The old delayed moveend correction is removed. Bounded navigation now works in the 2050 vision as well as the other interactive stages.
 

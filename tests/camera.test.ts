@@ -23,6 +23,7 @@ test('camera prevents world travel and excessive zoom without moving EU anchors'
     ...history.map((entry) => ({ ...entry, zoom: camera.overview.zoom })),
     camera.overview,
     camera.energy,
+    ...Object.values(camera.narration),
   ]) {
     const [lng, lat] = target.center;
     assert.deepEqual(constrainEuropeCamera({ lng, lat }, target.zoom), {

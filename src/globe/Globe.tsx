@@ -52,6 +52,13 @@ export function Globe({
   const [ready, setReady] = useState(false),
     [failure, setFailure] = useState(false),
     [hover, setHover] = useState<{ name: string; x: number; y: number } | null>(null);
+  const [desktop, setDesktop] = useState(() => window.matchMedia('(min-width: 1100px)').matches);
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 1100px)');
+    const update = () => setDesktop(query.matches);
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
   useEffect(() => {
     if (!container.current) return;
     setReady(false);
@@ -137,6 +144,10 @@ export function Globe({
     instance.getCanvas().addEventListener('webglcontextlost', onContextLost);
     instance.getCanvas().addEventListener('webglcontextrestored', onContextRestored);
     const observer = new ResizeObserver(() => instance.resize());
+    const stopHiddenCamera = () => {
+      if (document.hidden) instance.stop();
+    };
+    document.addEventListener('visibilitychange', stopHiddenCamera);
     observer.observe(container.current);
     const timeout = window.setTimeout(() => {
       if (!didLoad) {
@@ -147,6 +158,7 @@ export function Globe({
     return () => {
       clearTimeout(timeout);
       observer.disconnect();
+      document.removeEventListener('visibilitychange', stopHiddenCamera);
       // MapLibre deliberately loses its WebGL context on remove (including StrictMode).
       instance.getCanvas().removeEventListener('webglcontextlost', onContextLost);
       instance.getCanvas().removeEventListener('webglcontextrestored', onContextRestored);
@@ -228,9 +240,17 @@ export function Globe({
             center: history[state.historyIndex]?.center ?? camera.overview.center,
           }
         : ['BUILD_FUTURE', 'RESULTS', 'TEAM_VISION'].includes(state.stage)
-          ? camera.energy
+          ? desktop
+            ? network
+              ? camera.narration.electricity
+              : camera.narration.union
+            : camera.energy
           : camera.overview;
-    m.flyTo({ ...target, duration: reduced ? 0 : camera.duration, essential: false });
+    m.flyTo({
+      ...target,
+      duration: reduced || document.hidden ? 0 : camera.duration,
+      essential: false,
+    });
   }, [
     ready,
     state.selectedCountry,
@@ -238,6 +258,8 @@ export function Globe({
     state.historyIndex,
     state.cameraRevision,
     reduced,
+    desktop,
+    network,
   ]);
   useEffect(() => {
     const m = map.current;
