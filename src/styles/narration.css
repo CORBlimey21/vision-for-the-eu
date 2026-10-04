@@ -394,9 +394,42 @@
     font-size: 15px;
     line-height: 1.5;
   }
+  .is-narrated .narration-subtitles {
+    min-height: clamp(70px, 9vh, 80px);
+  }
 }
 
 .narration-play:hover:not(:disabled) {
   color: #0b201b;
   background: #d3e7d8;
+}
+
+.narration-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 14px;
+  padding: 14px 18px;
+  border: 1px solid #bddcca;
+  border-radius: 7px;
+  background: #bddcca;
+  color: #0b201b;
+  font-size: 14px;
+  font-weight: 600;
+  scroll-margin-block: 12px;
+}
+.narration-next svg {
+  width: 20px;
+  height: 20px;
+}
+.narration-next:hover:not(:disabled),
+.narration-next.is-complete {
+  background: #e0efdc;
+  border-color: #e0efdc;
+  color: #0b201b;
+}
+.narration-next.is-complete {
+  box-shadow: 0 0 0 3px #bddcca20;
 }

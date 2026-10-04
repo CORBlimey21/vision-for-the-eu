@@ -1,4 +1,14 @@
-# Latest increment — uncluttered narration and team ending, 2026-10-04
+# Latest increment — Europe camera and prominent continuation, 2026-10-04
+
+Camera centres are continuously constrained to Europe (−12…36 longitude, 35…66 latitude) through MapLibre's transform constraint. Zoom is 1.85–5.4, rotation stays disabled, and all existing country/history anchors are preserved. The old delayed moveend correction is removed. Bounded navigation now works in the 2050 vision as well as the other interactive stages.
+
+The Next point/chapter/Thank you button is full-width inside the player below subtitles. Completion brightens it, lifts it once and brings it into view if needed. Reduced motion skips the lift and uses an immediate scroll; hidden pages skip both. Completion is keyed to recording ID to avoid a stale completion flash during automatic advancement. Existing auto-continuation remains enabled by default.
+
+Validation: `npm run check` passes 16 tests, data validation, strict TypeScript and a production build. The new camera test covers far-away centres/excessive zoom and confirms every country/history/preset anchor is unchanged. Browser inspection at 1440×900, 1280×720 and 390×844 covered large drag/zoom gestures in present and vision, voice-only and subtitles-only completion, chapter completion, manual next-point/chapter transitions, automatic continuation without a stale completed-button flash, reduced-motion behavior and the ending. Completed controls fit inside the compact story boundary; mobile document width remains 390px. No physical-device gesture claim.
+
+---
+
+# Uncluttered narration and team ending, 2026-10-04
 
 Removed the floating graphic panel from both “03 Our decisions” and “04 Our vision”, preserving the globe, its conceptual energy links, audio and subtitles. `NarrationGraphic` remains isolated reference code. The voting qualification no longer refers to a visible fictional diagram.
 

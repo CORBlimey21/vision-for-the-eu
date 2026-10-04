@@ -345,6 +345,8 @@ export default function App() {
                     headingRef={heading}
                     onPoint={openPoint}
                     lastTopic={topic === narratedTopics.at(-1)}
+                    reduced={reduced}
+                    visible={visible}
                     onNextTopic={() =>
                       topic === narratedTopics.at(-1)
                         ? finish()
@@ -423,7 +425,7 @@ export default function App() {
             >
               <Icon name="reset" />
             </button>
-            <span>Drag to explore · Scroll to approach</span>
+            <span>Drag within Europe · Scroll to zoom</span>
             <button
               className="text-button"
               onClick={() => setCountryList(!countryList)}

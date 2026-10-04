@@ -16,11 +16,12 @@ npm run check
 
 ## Implemented
 
-- Persistent MapLibre globe with native atmosphere, dark physical geography, restrained land hillshade, and a limited Europe-focused camera.
+- Persistent MapLibre globe with native atmosphere, dark physical geography, restrained land hillshade, continuous Europe-only camera-centre limits and bounded zoom.
 - Data-driven integration sequence, 1957–2026, including Brexit, play/pause, timeline seeking, and reduced-motion stepping.
 - Selection of all 27 members, with camera transitions, hover, contextual membership information, and a keyboard-accessible country index (including tiny states).
 - Four narrated chapters: ambition, electricity, decision-making and our 2050 vision. Twenty edited recording excerpts share one point → team decision renderer alongside the globe.
 - Playback, pause, restart and seeking, with subtitles following the audio clock. Voice and subtitles default on; at least one remains enabled. Click Play to continue automatically through the current chapter, with a toggle for manual advancement.
+- Large Next point/chapter controls directly beneath subtitles, with a brief completion lift and scroll into view when necessary. Reduced motion shows the completed control immediately.
 - Conceptual electricity links on the globe. The floating graphic panels, policy choices, numerical readouts and visitor comparisons are removed from the current experience.
 - A closing thank-you from the four named team members, with a brief twelve-star entrance, replay and exploration controls. Automatic continuation reaches it after the final 2050 recording; manual readers can use “Thank you”.
 - Flagged passages are physically omitted from the exported audio. Original M4A recordings and full transcripts remain preserved in the ignored input folder.

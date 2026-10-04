@@ -4,11 +4,12 @@ import {
   Map as MapLibreMap,
   setWorkerUrl,
   Marker,
+  LngLat,
   type GeoJSONSource,
   type Map as MapInstance,
 } from 'maplibre-gl';
 import type { ExperienceState } from '../app/state';
-import { camera } from './config';
+import { camera, constrainEuropeCamera } from './config';
 import { animateWhileVisible } from './animation';
 import { flowParticles } from './flow';
 import { grid } from './networks';
@@ -63,6 +64,10 @@ export function Globe({
         ...camera.overview,
         minZoom: camera.minZoom,
         maxZoom: camera.maxZoom,
+        transformConstrain: (center, zoom) => {
+          const constrained = constrainEuropeCamera(center, zoom);
+          return { center: new LngLat(...constrained.center), zoom: constrained.zoom };
+        },
         maxPitch: 0,
         attributionControl: false,
         renderWorldCopies: false,
@@ -127,14 +132,6 @@ export function Globe({
         latest.current.onSelect(id);
       }
     });
-    // Constrain the focus without maxBounds forcing the globe to zoom into a flat map.
-    instance.on('moveend', () => {
-      const p = instance.getCenter(),
-        lng = Math.max(-22, Math.min(42, p.lng)),
-        lat = Math.max(33, Math.min(68, p.lat));
-      if (lng !== p.lng || lat !== p.lat)
-        instance.easeTo({ center: [lng, lat], duration: latest.current.reduced ? 0 : 400 });
-    });
     const onContextLost = () => setFailure(true);
     const onContextRestored = () => setFailure(false);
     instance.getCanvas().addEventListener('webglcontextlost', onContextLost);
@@ -176,7 +173,9 @@ export function Globe({
       ['coalesce', ['feature-state', 'illumination'], 0],
       state.selectedCountry ? 0.16 : 0.55,
     ]);
-    const free = ['PRESENT', 'EXPLORE', 'BUILD_FUTURE', 'RESULTS'].includes(state.stage);
+    const free = ['PRESENT', 'EXPLORE', 'BUILD_FUTURE', 'RESULTS', 'TEAM_VISION'].includes(
+      state.stage,
+    );
     if (free) {
       m.dragPan.enable();
       m.scrollZoom.enable();

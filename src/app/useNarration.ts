@@ -11,7 +11,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
   const [modes, setModes] = useState({ voice: true, subtitles: true });
   const [time, setTime] = useState(0);
   const [playing, setPlaying] = useState(false);
-  const [ended, setEnded] = useState(false);
+  const [endedRecording, setEndedRecording] = useState<string | null>(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [duration, setDuration] = useState(recording.duration);
@@ -26,7 +26,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     if (!audio?.getAttribute('src')) return;
     const ticket = ++request.current;
     setError('');
-    setEnded(false);
+    setEndedRecording(null);
     if (audio.ended) audio.currentTime = 0;
     try {
       await audio.play();
@@ -50,7 +50,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     request.current++;
     audio.pause();
     setPlaying(false);
-    setEnded(false);
+    setEndedRecording(null);
     setTime(0);
     setError('');
     setDuration(recording.duration);
@@ -79,7 +79,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     if (!audio || !Number.isFinite(audio.duration)) return;
     audio.currentTime = Math.max(0, Math.min(audio.duration, seconds));
     setTime(audio.currentTime);
-    setEnded(false);
+    setEndedRecording(null);
   }, []);
   return {
     audioRef,
@@ -87,7 +87,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     time,
     duration,
     playing,
-    ended,
+    ended: endedRecording === recording.id,
     error,
     loading,
     pause,
@@ -115,7 +115,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
       onCanPlay: () => setLoading(false),
       onEnded: () => {
         setPlaying(false);
-        setEnded(true);
+        setEndedRecording(recording.id);
         continueNext.current = endCallback.current();
       },
       onError: () => {

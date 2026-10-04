@@ -1,8 +1,9 @@
 import { sources } from '../data/sources';
-import type { Ref } from 'react';
+import { useEffect, useRef, type Ref } from 'react';
 import { cueAt, formatMediaTime, type NarratedTopic, type Recording } from '../domain/narration';
 import type { useNarration } from '../app/useNarration';
 import { Icon } from './Icon';
+import { motion } from 'motion/react';
 
 interface Props {
   topic: NarratedTopic;
@@ -15,6 +16,8 @@ interface Props {
   onPoint: (index: number) => void;
   onNextTopic: () => void;
   lastTopic: boolean;
+  reduced: boolean;
+  visible: boolean;
 }
 /** The same scene presents every narrated point, player, subtitles and evidence. */
 export function TopicScene({
@@ -28,9 +31,19 @@ export function TopicScene({
   onPoint,
   onNextTopic,
   lastTopic,
+  reduced,
+  visible,
 }: Props) {
   const point = topic.points[pointIndex];
   const cue = cueAt(recording.cues, player.time);
+  const nextButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (player.ended && visible)
+      nextButton.current?.scrollIntoView({
+        block: 'nearest',
+        behavior: reduced ? 'instant' : 'smooth',
+      });
+  }, [player.ended, visible, reduced]);
   return (
     <>
       <p className="eyebrow">
@@ -127,6 +140,25 @@ export function TopicScene({
             Chapter complete. Continue when you are ready.
           </p>
         )}
+        <motion.button
+          ref={nextButton}
+          className={`narration-next ${player.ended ? 'is-complete' : ''}`}
+          initial={false}
+          animate={{ y: player.ended && !reduced && visible ? [10, -3, 0] : 0 }}
+          transition={{ duration: reduced || !visible ? 0 : 0.55, ease: 'easeOut' }}
+          onClick={
+            pointIndex < topic.points.length - 1 ? () => onPoint(pointIndex + 1) : onNextTopic
+          }
+        >
+          <span>
+            {pointIndex < topic.points.length - 1
+              ? 'Next point'
+              : lastTopic
+                ? 'Thank you'
+                : 'Next chapter'}
+          </span>
+          <Icon name="arrow" />
+        </motion.button>
         <button className="autoplay-toggle" aria-pressed={autoAdvance} onClick={onAutoAdvance}>
           Continue through this chapter <span>{autoAdvance ? 'On' : 'Off'}</span>
         </button>
@@ -138,11 +170,6 @@ export function TopicScene({
         <span>
           {String(pointIndex + 1).padStart(2, '0')} / {String(topic.points.length).padStart(2, '0')}
         </span>
-        {pointIndex < topic.points.length - 1 ? (
-          <button onClick={() => onPoint(pointIndex + 1)}>Next point →</button>
-        ) : (
-          <button onClick={onNextTopic}>{lastTopic ? 'Thank you →' : 'Next chapter →'}</button>
-        )}
       </nav>
       {point.qualification && <p className="narration-context">{point.qualification}</p>}
       <details className="topic-evidence">
