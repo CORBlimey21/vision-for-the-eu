@@ -1,16 +1,16 @@
 # Content and data guide
 
-## Add researched material
+## Edit narrated points
 
-1. Register an actual source in `src/data/sources.ts`, including its URL and the date someone checked it.
-2. Add or revise a `Topic` in `src/content/topics.ts`. Use plain text: content is rendered as React text, never HTML.
-3. Keep measured statistics in the `present.statistics` or country `statistics` slots. Every statistic needs a year, unit, source ID and `verified`/`illustrative` status. Empty is preferable to invented.
-4. Put policy deltas in `src/data/scenarios.ts`. A value is an authored ordinal point, not a claim about GDP, temperature, emissions or costs. Explain benefits and trade-offs in `consequences`.
-5. Reuse a named visual effect. New links belong in `src/globe/networks.ts`, not in the topic's prose. A new visual effect must have an explicit conceptual meaning.
-6. Only add `teamVision` after the four-person team agrees its position. Mark working content `draft`; do not silently promote it to approved.
-7. Run `npm run check` and view the changed scene.
+1. Register factual background in `src/data/sources.ts`, with the source URL and actual retrieval date.
+2. Edit positions, titles, qualifications, graphic labels and chapter structure in `src/content/narration.ts`. Approval describes team direction; extra safeguards remain questions unless agreed.
+3. Reuse `TopicScene` and `NarrationGraphic`. A voting point supplies `votingRule` and optional `remainingVote`; the diagram stays a fictional 26-support example.
+4. Audio excerpts and cues are generated in `src/data/narration.json` and `public/audio/`. Source ranges live in `scripts/prepare-narration.py`, with provenance under `public/audio/`. See `VOICE_NOTES.md` for exclusions. Keep original inputs untouched.
+5. Use a separate local Python environment with PyAV 16 and NumPy to regenerate media. Do not install system-wide packages or add transcription dependencies to the web app.
+6. Keep measured statistics in their existing factual slots; every statistic needs a year, unit, source and verification status. Empty is preferable to invented.
+7. Run `npm run check`, inspect desktop/mobile, and verify production asset URLs after media changes.
 
-The energy topic keeps an illustrative effect model while linking factual background to sources. No topic statistics have been added. Four topics share the same choice schema and navigation; transport and repair explain trade-offs without numeric effects. Check factual copy and source scope before competition use.
+The original choice content, scenario deltas and evaluator remain isolated reference modules. They are not used by the current narrated presentation.
 
 ## Historical data
 
@@ -36,16 +36,6 @@ The relief script downloads only 92 tiles intersecting Europe at z0–5 and reus
 
 Geography: © EuroGeographics for the administrative boundaries, distributed by Eurostat GISCO. Terrain: [Mapzen Terrain Tiles](https://registry.opendata.aws/terrain-tiles/); retain [underlying source attribution](https://github.com/tilezen/joerd/blob/master/docs/attribution.md). Preserve the visible credits and the source dialog when restyling.
 
-## Updating effect semantics
+## Evidence limits
 
-`investment: +2` means greater spending is required. It is intentionally shown in amber. Do not change all positive scores to green “benefits”. Any new dimension needs a label, explanation, visual treatment and test. Baseline choices return zero additional effects; the absence of conceptual lines does not mean real Europe has no electricity connections.
-
-## Optional voting explanation
-
-Set `illustration: 'council-vote'` on a topic and supply `visual.votingRule` (`unanimity` or `qualified-majority`) for its choices. This selects a bounded visual explanation, not a topic-specific page. Never reuse it for arbitrary coalitions: its logic only covers 26 supporters and one other participating government. Edit its copy in `content/voting.ts`; source and scope must remain visible.
-
-The team ending automatically compares each visitor choice with `teamVision.choiceId`. Missing choices display as unanswered, not as agreement or disagreement.
-
-## Qualitative topics
-
-Set `evaluation: 'qualitative'` for a choice supported by narrative trade-offs without a numerical model. Keep effect entries empty in `data/scenarios.ts`; the app omits numerical controls/readouts for that topic. Add optional `backgroundNotes` for context, with the supporting source IDs registered on the topic. Team approval does not verify statistics or convert aspirations into forecasts. See `VOICE_NOTES.md` for the October 2026 integration.
+Globe links are conceptual, not actual grid infrastructure. Caption timing is approximate and machine transcription remains fallible. Transcripts, sources and qualifications stay available beneath each point. Never turn team approval into a prediction or imply that unresolved neutrality, command, privacy or access safeguards were agreed.

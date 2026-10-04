@@ -1,3 +1,21 @@
+# Latest increment — narrated presentation, 2026-10-04
+
+The user chose a point → recorded team decision → graphic presentation, with click Play to start and automatic continuation within the current chapter. They asked to skip flagged/unsupported passages. The current app replaces policy choices, visitor comparisons and numerical readouts with four narrated chapters and twenty physically edited MP3 excerpts. Original inputs/transcripts and all planning artifacts remain preserved.
+
+One persistent native audio element drives playback and subtitle timing. Voice/subtitles start on; turning the last active channel off enables the other. Voice-off keeps silent playback moving. Seeking, restart, point/chapter navigation and a continuation toggle are available. Manual navigation resets and pauses; the last point stops. Sources/hidden-page handling pauses playback. No storage, collection, backend or web dependencies were added.
+
+`content/narration.ts` contains editorial positions/graphic references; `data/narration.json` contains media/cues. `useNarration` owns playback; `TopicScene` and `NarrationGraphic` serve every point. The existing bounded voting component supports fixed opposition/abstention without choice controls. Electricity points show conceptual globe links; playback pause/reduced motion stops travelling points. Older choice modules remain isolated reference code.
+
+Exports live in `public/audio/`, with VTT captions and source-range/hash provenance. `scripts/prepare-narration.py` regenerates them in a separate PyAV 16/NumPy environment. Selected audio totals about 4 MB; only the current clip loads. Decision making3 is held entirely; other flagged sections are excluded from the files themselves. See `VOICE_NOTES.md`. Caption timing and transcription remain approximate and have no listening-based certification.
+
+Validation: `npm run check` passes 15 tests, static data validation, strict TypeScript and production build. Every exported MP3 was decoded and checked against its duration; original-recording hashes still match. Browser inspection covered 1440×900, 1280×720 and 390×844: native playback/caption progression, channel switching, automatic advancement, manual reset/pause, seeking, chapter-end stop, source-dialog pause, correct 2050 media mapping and fixed abstention/QMV illustrations. The globe rendered; no policy-choice/readout controls remained; mobile document width equalled 390px. The production build played audio and used VTT URLs under `/vision-for-the-eu/`, with no captured browser console errors.
+
+The previous choice-based release was published as `bb7223c`. Publishing still uses the manually triggered GitHub Pages workflow. No physical-device audio quality, exhaustive browser compatibility, performance or word-level caption accuracy claim is made. A listening review of edits/captions and a rehearsal on the exhibition laptop remain useful.
+
+Earlier increments below are historical and superseded where they describe policy choices or raw audio exclusion.
+
+---
+
 # Latest increment — 2026-10-04
 
 Transcribed all 21 voice recordings locally (about 13 minutes), preserving their SHA-256 hashes and saving timestamped Markdown/JSON plus a complete inventory in `EU Voice Notes/transcripts/`. These are machine transcripts; exact quotations still need audio review. Raw inputs/transcripts are Git-ignored and are not bundled in the app. See [VOICE_NOTES.md](VOICE_NOTES.md) for the per-recording integration map, probable recognition errors and factual exclusions.

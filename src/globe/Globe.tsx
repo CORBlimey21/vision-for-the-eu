@@ -26,6 +26,7 @@ interface Props {
   network: boolean;
   flowPaused: boolean;
   activeNote: string;
+  showNotes?: boolean;
   onNote: (id: string) => void;
   onSelect: (id: string) => void;
   onReady: () => void;
@@ -36,6 +37,7 @@ export function Globe({
   network,
   flowPaused,
   activeNote,
+  showNotes = true,
   onNote,
   onSelect,
   onReady,
@@ -291,7 +293,7 @@ export function Globe({
   }, [ready, state.stage, state.historyIndex, reduced]);
   useEffect(() => {
     const m = map.current;
-    if (!ready || !m || !network || state.stage === 'TEAM_VISION') return;
+    if (!ready || !m || !network || !showNotes || state.stage === 'TEAM_VISION') return;
     const markers = spatialNotes.map((note) => {
       const element = document.createElement('button');
       element.type = 'button';
@@ -317,7 +319,7 @@ export function Globe({
         .addTo(m);
     });
     return () => markers.forEach((marker) => marker.remove());
-  }, [ready, network, state.stage]);
+  }, [ready, network, state.stage, showNotes]);
   useEffect(() => {
     container.current
       ?.querySelectorAll<HTMLButtonElement>('.spatial-pin')

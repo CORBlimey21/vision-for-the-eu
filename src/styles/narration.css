@@ -1,0 +1,372 @@
+/* Narration uses a native media clock. The globe remains mounted across points. */
+.is-narrated .story {
+  width: 440px;
+  max-width: 37%;
+  top: 22%;
+  bottom: 105px;
+}
+.is-narrated .future-title {
+  font-size: clamp(36px, 3.6vw, 53px);
+  margin-bottom: 16px;
+}
+.is-narrated .policy-explanation {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.point-counter {
+  color: #a7bdb2;
+  font-size: 10px;
+  margin: 10px 0 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.narration-player {
+  border: 1px solid #a9cbbd45;
+  border-radius: 12px;
+  background: #0a171de6;
+  padding: 16px;
+  margin-top: 22px;
+}
+.narration-play-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+.narration-play {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 11px 15px;
+  min-height: 44px;
+  border-radius: 7px;
+  background: #bddcca;
+  color: #0b201b;
+  font-size: 13px;
+}
+.narration-play svg {
+  width: 14px;
+  height: 14px;
+}
+.narration-play-row .text-button {
+  font-size: 11px;
+  margin: 0;
+  min-height: 44px;
+}
+.media-time {
+  color: #adc2b8;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.narration-seek {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  accent-color: #bddcca;
+  min-height: 24px;
+  cursor: pointer;
+}
+.presentation-modes {
+  display: flex;
+  gap: 8px;
+}
+.presentation-modes button {
+  flex: 1;
+  padding: 11px 12px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #91aea544;
+  border-radius: 6px;
+  min-height: 44px;
+  font-size: 12px;
+  color: #acbdb5;
+}
+.presentation-modes button[aria-pressed='true'] {
+  color: #e1efe3;
+  background: #bddcca12;
+  border-color: #bddcca80;
+}
+.presentation-modes button span {
+  color: #bddcca;
+}
+.mode-help {
+  color: #9fb6ab;
+  font-size: 10px;
+  margin: 9px 0 16px;
+}
+.narration-subtitles {
+  min-height: 103px;
+  border-top: 1px solid #91aea52b;
+  padding-top: 14px;
+}
+.narration-subtitles .eyebrow {
+  font-size: 8px;
+  margin: 0 0 9px;
+}
+.narration-subtitles p {
+  margin: 0;
+  color: #eef3e9;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.autoplay-toggle {
+  margin-top: 16px;
+  padding: 12px 0 0;
+  border-top: 1px solid #91aea52b;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: #bdcfc4;
+  min-height: 40px;
+}
+.autoplay-toggle span {
+  color: var(--mint);
+}
+.playback-message {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #edcca0;
+}
+.point-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.point-navigation button {
+  font-size: 11px;
+  color: var(--mint);
+  padding: 10px 0;
+  min-height: 44px;
+}
+.point-navigation button:disabled {
+  opacity: 0.35;
+}
+.point-navigation > span {
+  font-size: 10px;
+  color: #9db3a9;
+  white-space: nowrap;
+}
+.narration-context {
+  color: #afc0b7;
+  font-size: 11px;
+  line-height: 1.7;
+  border-left: 1px solid #cbb38170;
+  padding-left: 12px;
+}
+.recording-transcript {
+  list-style: none;
+  padding: 0;
+}
+.recording-transcript li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 10px 0;
+}
+.recording-transcript button {
+  flex-shrink: 0;
+  min-width: 40px;
+  min-height: 35px;
+  color: var(--mint);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.point-index button {
+  display: block;
+  min-height: 44px;
+  text-align: left;
+  color: #b7c8bf;
+  font-size: 12px;
+}
+.point-index button[aria-current] {
+  color: var(--mint);
+}
+.narration-graphic {
+  position: absolute;
+  right: 5.5%;
+  top: 23%;
+  width: 280px;
+  z-index: 2;
+  padding: 20px;
+  border: 1px solid #9fb8ae30;
+  border-radius: 14px;
+  background: #09131ae3;
+  color: #d4e3d8;
+  max-height: calc(77% - 110px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.narration-graphic > svg {
+  width: 100%;
+  display: block;
+}
+.narration-graphic h2 {
+  font:
+    26px/1.25 Georgia,
+    serif;
+  margin: 6px 0 14px;
+}
+.narration-graphic .eyebrow {
+  font-size: 8px;
+}
+.narration-graphic .model-note {
+  font-size: 10px;
+  line-height: 1.65;
+}
+.narration-graphic .diagram-path {
+  fill: none;
+  stroke: #bfdbc6;
+  stroke-width: 2;
+}
+.narration-graphic .diagram-ring {
+  fill: #aaccb719;
+  stroke: #bfdcc9;
+  stroke-width: 1.5;
+}
+.narration-graphic .diagram-node {
+  fill: #d8bd8a;
+}
+.narration-graphic svg text {
+  fill: #d6e7da;
+  font:
+    10px Arial,
+    sans-serif;
+}
+.narration-graphic .diagram-path {
+  stroke-dasharray: 4 5;
+}
+.graphic-circular .diagram-path {
+  stroke-dasharray: none;
+}
+.narration-graphic .voting-illustration {
+  position: static;
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.narration-graphic .vote-orbit svg .vote-number {
+  font:
+    36px Georgia,
+    serif;
+}
+.narration-graphic .vote-orbit svg .vote-rule {
+  font:
+    10px Arial,
+    sans-serif;
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .is-narrated .story {
+    max-width: 45%;
+    width: 440px;
+  }
+  .narration-graphic {
+    right: 4%;
+    width: 230px;
+  }
+}
+@media (max-width: 760px) {
+  .is-narrated .story {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: none;
+    margin: 330px 24px 24px;
+    padding: 0;
+  }
+  .is-narrated .future-title {
+    font-size: 41px;
+  }
+  .is-narrated .topic-nav {
+    gap: 5px 16px;
+  }
+  .is-narrated .topic-nav button {
+    min-height: 40px;
+    font-size: 12px;
+  }
+  .narration-player {
+    padding: 14px;
+  }
+  .narration-play-row {
+    gap: 10px;
+  }
+  .narration-graphic {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-height: none;
+    margin: 24px;
+    padding: 20px;
+    overflow: visible;
+  }
+  .narration-graphic > svg {
+    max-width: 340px;
+    margin: auto;
+  }
+  .point-navigation button {
+    font-size: 12px;
+  }
+  .mode-help {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 761px) and (max-height: 800px) {
+  .is-narrated .story {
+    top: 145px;
+    bottom: 100px;
+  }
+  .is-narrated .topic-nav {
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+  .is-narrated .eyebrow {
+    margin-bottom: 8px;
+  }
+  .is-narrated .point-counter {
+    margin: 6px 0;
+  }
+  .is-narrated .future-title {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  .is-narrated .policy-explanation {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+  .narration-player {
+    margin-top: 12px;
+    padding: 12px;
+  }
+  .narration-seek {
+    margin: 5px 0;
+  }
+  .mode-help {
+    margin: 5px 0;
+    font-size: 9px;
+  }
+  .narration-subtitles {
+    padding-top: 9px;
+    min-height: 70px;
+  }
+  .narration-subtitles p {
+    font-size: 14px;
+  }
+  .autoplay-toggle {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
+
+.vote-stance {
+  color: var(--mint);
+  font-size: 12px;
+  line-height: 1.6;
+}

@@ -1,0 +1,290 @@
+{
+  "sample_rate": 16000,
+  "codec": "MP3 mono 64 kbps",
+  "recordings": [
+    {
+      "id": "what-needs-to-stay-the-same1",
+      "source_file": "What needs to stay the same1.m4a",
+      "source_sha256": "8bd7bb920d52bcdbd6af95569f70e415b5345a05df2d2feb37fabdef70b1cc17",
+      "source_ranges_seconds": [
+        [
+          0,
+          27.924
+        ]
+      ],
+      "output_sha256": "5e83739451a0b030b18a418532ae5667ffc34541ba048cf1c24c72ed9a0f2ed2",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-stay-the-same2",
+      "source_file": "What needs to stay the same2.m4a",
+      "source_sha256": "8cff80cf021984757a60a893556dd26cb8cff1c272cddc75dd183c6e4e713245",
+      "source_ranges_seconds": [
+        [
+          0,
+          22.7186875
+        ]
+      ],
+      "output_sha256": "8982911d41f245cd93fbda7e85345e36c0526c59303e33dde86dad2bb97d3c37",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-stay-the-same3",
+      "source_file": "What needs to stay the same3.m4a",
+      "source_sha256": "f6b2f7d3654e03b2a32044441d15dd05cc72f1a2855ac1a06174b58eb704f57c",
+      "source_ranges_seconds": [
+        [
+          0,
+          28.7773125
+        ]
+      ],
+      "output_sha256": "9f4c3460e88d85c56380dc6612b3e160938c03932ff652072a8be432c82f62f8",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-stay-the-same4",
+      "source_file": "What needs to stay the same4.m4a",
+      "source_sha256": "2e87dd691f3ac270fed73899a8f8c49edbcb8be46995bded5fa0f50aeb600d82",
+      "source_ranges_seconds": [
+        [
+          0,
+          25.66
+        ]
+      ],
+      "output_sha256": "f6e7c2021c36b77c6ce19cb2e5a75bc22fbcce0ccabd83efe9281824e09ea8be",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-change1",
+      "source_file": "What needs to change1.m4a",
+      "source_sha256": "8b7640a051b3aafc504a86fe52fe1a42449a1e3811f81511cbf5f6e11cebba45",
+      "source_ranges_seconds": [
+        [
+          18.12,
+          33.18
+        ]
+      ],
+      "output_sha256": "f7d3d837301003e89e03b48e72abe769fc4fa808e73079a505dc416825a35878",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-change2",
+      "source_file": "What needs to change2.m4a",
+      "source_sha256": "c2c1980f081a98475441e937719b41374ef5355e66dad7c7b4f5d2b1dfbf4f99",
+      "source_ranges_seconds": [
+        [
+          1.33,
+          7.33
+        ],
+        [
+          28.33,
+          35.89
+        ]
+      ],
+      "output_sha256": "9e1afae5da616c5f903658ee72d50cec76ad722c22d8d03379f03357bea31aac",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-needs-to-change3",
+      "source_file": "What needs to change3.m4a",
+      "source_sha256": "b6392855a38eb72265f394b346c96c09fda16a86159820b86b5b969b32f3eac4",
+      "source_ranges_seconds": [
+        [
+          16.74,
+          33.1
+        ]
+      ],
+      "output_sha256": "dfdc2fd42248512380a90b88aea2f7d59bd4681a648beb9165d1cb6e7eaf2fce",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making1",
+      "source_file": "Decision making1.m4a",
+      "source_sha256": "0ec1efa82b58297225bba6fe6da8337173640ef2d002183bbab814c5a31cc29e",
+      "source_ranges_seconds": [
+        [
+          31.3,
+          43.3
+        ]
+      ],
+      "output_sha256": "aac7f7e51a21d0271615760860e55e3f0ae3304cd5df8b445aa6827ff3dcf766",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making2",
+      "source_file": "Decision making2.m4a",
+      "source_sha256": "1ba71a2bf3b90d9dc32fc4fd990726b0b9c200470c2ad60c872e1ee84d1c4cae",
+      "source_ranges_seconds": [
+        [
+          0,
+          18.6226875
+        ]
+      ],
+      "output_sha256": "cd07e52d97833a5dfdb57238486b69f3e50aea30ea7fcdfd9a16724fbbfc7aeb",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making4",
+      "source_file": "Decision making4.m4a",
+      "source_sha256": "bc0f54f64253b8bc4ae9b84f0e15d6d7b46c96b6ed2b0a3c97896636d9ea32f5",
+      "source_ranges_seconds": [
+        [
+          0,
+          20.22
+        ]
+      ],
+      "output_sha256": "2a8963113ec65674c092089c066b4208c5dc40e6a89727846fe21650ad2d77a5",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making5",
+      "source_file": "Decision making5.m4a",
+      "source_sha256": "a249402a4719f1506b5bc2049abc44a4b4d72cbf7dba85b36e24a8c9591a6af8",
+      "source_ranges_seconds": [
+        [
+          4.32,
+          44.86
+        ]
+      ],
+      "output_sha256": "dac9b408e8fefde032e9f513c54922eb7df6192397f41bceb10ce771a719f873",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making6",
+      "source_file": "Decision making6.m4a",
+      "source_sha256": "f283730b5c5265ca7c9dde892a37f93d4641540cfb6ea85f1dcd1808b5121ac5",
+      "source_ranges_seconds": [
+        [
+          1.14,
+          19.98
+        ]
+      ],
+      "output_sha256": "1bcaf75809d6512d7d7fd7702fedd6b59a88b6d7f4cb5295dc070bc0c1ef57db",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "decision-making7",
+      "source_file": "Decision making7.m4a",
+      "source_sha256": "1fb897714df03ce42fda5a0c2fc92bcb696dd63e49c11c1c97f71a250170ad97",
+      "source_ranges_seconds": [
+        [
+          0,
+          8.78
+        ],
+        [
+          17.22,
+          21.74
+        ]
+      ],
+      "output_sha256": "191667b43fceaa0a90c2e906e012396b46ed093b58893195d13cc478c85d0ea7",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20501",
+      "source_file": "Our EU 20501.m4a",
+      "source_sha256": "4e2540680993811a2ba824f508cc2e2c810589649b66dbf3f70fe0c581f487f6",
+      "source_ranges_seconds": [
+        [
+          0,
+          10.35
+        ],
+        [
+          14.11,
+          35.95
+        ]
+      ],
+      "output_sha256": "1c3cfce20931dfcf720fe364239ecc613e543dc0443f53b46adba10610e97fe8",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20502",
+      "source_file": "Our EU 20502.m4a",
+      "source_sha256": "2695950a69ddbc2e283488bc35368aee100c0c1e87386f9b366fa58e42cf6462",
+      "source_ranges_seconds": [
+        [
+          5.59,
+          25.59
+        ]
+      ],
+      "output_sha256": "f50e1b3d26997f540279aed849258f766f2822f8e6b31a76f1c87381af87da4a",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20503",
+      "source_file": "Our EU 20503.m4a",
+      "source_sha256": "e75baebc1ce88850efc5bedf503d4699780aeab1dde27af51e160120cadc4cd3",
+      "source_ranges_seconds": [
+        [
+          6.16,
+          8.9
+        ],
+        [
+          19.04,
+          47.16
+        ]
+      ],
+      "output_sha256": "5f931a683bee852647ff454d7c5f1019ffbb97c57c2f8afb21b3cc56f75c218f",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20504",
+      "source_file": "Our Eu 20504.m4a",
+      "source_sha256": "f9406d4647a0bbbfa79eb55807b5536be9ecb84761a6a551d9730cb8b0124078",
+      "source_ranges_seconds": [
+        [
+          0,
+          8.85
+        ],
+        [
+          17.85,
+          39.05
+        ]
+      ],
+      "output_sha256": "5111843b82c76ac26b1dae2ea8c0e6aba6a80b8962855c8f83c96f67575a78cb",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20505",
+      "source_file": "Our EU 20505.m4a",
+      "source_sha256": "3c1159b91e2f478102bf6741c1d6e9c49cd33d1f1bfb1faead1ad08f1b419126",
+      "source_ranges_seconds": [
+        [
+          0,
+          36.116
+        ]
+      ],
+      "output_sha256": "1a4e97a2b163eadbd8550eaac2d16a6fbfb3d7e363d593c4704a1b46583846ce",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20506",
+      "source_file": "Our EU 20506.m4a",
+      "source_sha256": "f9866d63c68fe4a66b3bcaf4ef23f304e8c8dabe6cf2662945a18145f770b224",
+      "source_ranges_seconds": [
+        [
+          0,
+          37.652
+        ]
+      ],
+      "output_sha256": "204371b5aa8a920a73352964a549c4b95b8571e33e839932516b02b913cc3fc9",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "our-eu-20507",
+      "source_file": "Our EU 20507.m4a",
+      "source_sha256": "2f3d626eda66782457d7c4cdb4e7fe88d19a8cbc0f69da8e431a046ffe4bd1c2",
+      "source_ranges_seconds": [
+        [
+          0,
+          36.628
+        ]
+      ],
+      "output_sha256": "eb3a11923a50205169a47322e1da8707d294b4237e00fee67221c2f26e10a7a7",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    }
+  ],
+  "held_recordings": [
+    "Decision making3.m4a"
+  ],
+  "caption_edits": {}
+}

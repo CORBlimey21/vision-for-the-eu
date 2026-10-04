@@ -48,19 +48,22 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
           </li>
         ))}
       </ul>
-      <h3>About the policy scenarios</h3>
+      <h3>About the recordings and graphics</h3>
       <p>
-        The scores and routes are authored illustrations. Transport and repair choices use
-        qualitative trade-offs without scores. Lines express potential cooperation, not actual or
-        proposed electricity infrastructure. Existing grid connections are not represented. No
-        numerical forecast is made.
+        The team positions were confirmed as agreed on 4 October 2026. Recordings are edited
+        excerpts; flagged wording and unsupported passages are omitted. Subtitles use machine
+        transcription with approximate timing. The original recordings remain preserved.
       </p>
-      <h3>Your choices stay here</h3>
       <p>
-        This version sends no responses, sets no tracking cookies, and stores no choices. Choices
-        reset when you reload. Anonymous comparison is not implemented. The team positions were
-        confirmed as agreed on 4 October 2026. They describe ambitions; the implementation details
-        and future outcomes remain open.
+        Graphics illustrate our proposals, not measured outcomes. Globe lines express potential
+        cooperation, not infrastructure routes. Voting uses a fictional 26-to-1 example and assigns
+        no positions to actual countries. Implementation details and future outcomes remain open.
+      </p>
+      <h3>Playback stays in this session</h3>
+      <p>
+        This version collects no responses, sets no tracking cookies and saves no playback
+        preferences. Voice and subtitles start on. At least one stays enabled, and narration pauses
+        when the page is hidden.
       </p>
     </dialog>
   );

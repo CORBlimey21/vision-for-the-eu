@@ -19,11 +19,10 @@ npm run check
 - Persistent MapLibre globe with native atmosphere, dark physical geography, restrained land hillshade, and a limited Europe-focused camera.
 - Data-driven integration sequence, 1957–2026, including Brexit, play/pause, timeline seeking, and reduced-motion stepping.
 - Selection of all 27 members, with camera transitions, hover, contextual membership information, and a keyboard-accessible country index (including tiny states).
-- One end-to-end illustrative energy decision: choose → curved globe connections and travelling exchange points → qualitative effects → trade-offs → revise.
-- Geographic explanation pins, a before/after comparison that preserves the policy choice, flow pause/resume, and accession/departure pulses.
-- Decision-making chapter with an interactive, fictional 26-to-1 voting explanation and source links.
-- Public-transport and repair/reuse topics with qualitative choices and trade-offs.
-- Agreed 2050 team-vision ending, adapted from 21 recordings, with a comparison to the visitor’s own choices.
+- Four narrated chapters: ambition, electricity, decision-making and our 2050 vision. Twenty edited recording excerpts share one point → team decision → graphic renderer.
+- Playback, pause, restart and seeking, with subtitles following the audio clock. Voice and subtitles default on; at least one remains enabled. Click Play to continue automatically through the current chapter, with a toggle for manual advancement.
+- Conceptual electricity links and a fictional 26-to-1 voting explanation alongside the globe. Policy choices, numerical readouts and visitor comparisons are removed from the current experience.
+- Flagged passages are physically omitted from the exported audio. Original M4A recordings and full transcripts remain preserved in the ignored input folder.
 - Responsive layouts, reduced motion, no-WebGL content fallback, a source/method dialog, and a transparent statement that no responses are collected.
 - Static GISCO geometry and 92 bounded elevation tiles, preprocessing scripts, provenance, domain tests, asset validation, CI and a manually triggered GitHub Pages workflow.
 
@@ -36,9 +35,9 @@ npm run check
 
 ## Boundaries
 
-Energy deltas and links are **authored illustrations**, not forecasts, infrastructure routes or verified policy findings. No economic/population figures have been invented. Historical views use modern country boundaries and explicitly say so. Terrain is visual hillshade, not an analytical elevation product.
+Graphics and energy links are **authored illustrations**, not forecasts, infrastructure routes or verified policy findings. No economic/population figures have been invented. Historical views use modern country boundaries and explicitly say so. Terrain is visual hillshade, not an analytical elevation product.
 
-Four topics (energy, decision-making, public transport and repair/reuse) and an agreed team-vision ending are implemented. Transport and repair have no numerical effect model. Aggregate comparison and real topic statistics are not built. Their schema/service boundaries are established. The original planning documents under `output/` and the existing Python script remain untouched.
+Subtitles are machine transcriptions with approximate segment timing, not listening-certified quotations. The twenty MP3/VTT pairs and their source ranges/hashes are under `public/audio/`; see `docs/VOICE_NOTES.md` for exclusions. Raw recordings are not shipped. Aggregate comparison and real topic statistics remain unimplemented. Original planning documents under `output/` and the existing Python blueprint remain untouched.
 
 ## GitHub Pages
 

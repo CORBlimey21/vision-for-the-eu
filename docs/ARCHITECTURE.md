@@ -2,13 +2,13 @@
 
 ## Decisions made
 
-1. **One environment, no router.** The reducer owns the narrative stage, timeline position, selected country and policy selections. The globe stays mounted across stages. No URL state or persistence yet.
+1. **One environment, no router.** The reducer owns the narrative stage, timeline position, selected country. Narration point, playback and presentation modes are local React state. The globe stays mounted across stages. No URL state or persistence yet.
 2. **MapLibre owns all geography.** Globe projection, country polygons, hit testing, hillshade and camera movement are native MapLibre. Three.js adds no material benefit to this slice, so it is absent. No Cesium, deck.gl, custom projection, satellite layer, roads, external fonts or live map service.
-3. **Small, explicit state.** React `useReducer` is sufficient. Hover is local to the globe; the MapLibre instance stays in a ref. Policy scores are derived from selections, never incrementally mutated. A user can switch choices indefinitely without accumulating effects.
+3. **Small, explicit state.** React `useReducer` is sufficient. Hover is local to the globe; the MapLibre instance stays in a ref. One persistent native audio element owns both playback and subtitle time. No visitor policy selections or effect scores are shown.
 4. **Local validated inputs.** Official GISCO geometry is a static snapshot. Low-resolution elevation tiles are vendored only for the Europe bounds and zooms 0–5. Negative elevation is clamped to zero for visually quiet oceans. No API is called at runtime.
 5. **CSS rather than a utility framework.** This bespoke editorial layout benefits from named, reusable visual classes. Tailwind would add configuration without improving this slice.
-6. **Motion owns editorial transitions; MapLibre owns the camera.** Reduced motion skips camera flights and membership fades, stops animated connections and automatic history. The timeline remains manually operable. History pauses when the document is hidden.
-7. **An honest consequence model.** Ordinal deltas are explanatory, not probabilities, percentages or projected real-world quantities. Positive investment denotes a requirement/cost. Narrative and map effects come from the same selected choice.
+6. **Motion owns editorial transitions; MapLibre owns the camera.** Reduced motion skips camera flights and membership fades, stops animated connections and automatic history. The timeline remains manually operable. History and audio pause when the document is hidden; audio requires a new Play action on return.
+7. **Bounded illustrations.** Narrated points select conceptual graphics and the existing energy network. The fictional voting example fixes a rule and opposition/abstention stance per point; it assigns no real country positions. There are no measured effects, scores or visitor policy choices in this presentation.
 
 ## File boundaries
 
@@ -31,35 +31,36 @@
 | `src/services/participation.ts` | Future anonymous aggregation interface; no implementation       |
 | `public/data/`                  | Static runtime geography/elevation and provenance               |
 
-`App.tsx` intentionally contains the few authored scenes in this slice. The generic `TopicScene` already accepts a `Topic`, selections and callbacks. `activeTopicId` and the topic selector now support four topics, preserving independent selections. Do not create an EnergyPage or one component per policy. The existing loop, statistics renderer and evaluator accept content objects. Results explain the active topic; the readout sums all choices. Before/after removes only the active topic contribution.
+`TopicScene` accepts a `NarratedTopic`, point index and the shared player. `src/content/narration.ts` holds editorial positions and graphic selections; `src/data/narration.json` holds generated media metadata and caption cues. `src/domain/narration.ts` defines their contracts and pure caption/mode logic. `src/app/useNarration.ts` owns the native media lifecycle; `NarrationGraphic` renders the bounded graphic types. Reuse these modules rather than adding one component per policy.
 
-## Narrative
+## Narrative and media
 
 ```text
 INTRO → HISTORY → PRESENT ↔ EXPLORE
                        ↓
-                 BUILD_FUTURE ↔ RESULTS
-                                  ↓
-                              TEAM_VISION
-                         COMPARE (reserved)
+          narrated chapters / BUILD_FUTURE
+                       ↔
+            Our Europe 2050 / TEAM_VISION
 ```
 
-`COMPARE` remains reserved. `TEAM_VISION` renders the agreed policy direction confirmed on 4 October 2026 from `content/teamVision.ts`, evaluating the topics’ approved choice references separately from visitor selections. `Topic.teamVision` provides a choice reference and approval state, so the eventual reveal can run through the same evaluator and network effects.
+The four narrated chapters are ambition, electricity, decision-making and the 2050 vision. A click starts playback; ending an excerpt advances within its chapter when enabled, stopping at the last point. Manual point/chapter changes pause and reset playback. Opening sources pauses playback. Voice-off mutes the same media element so subtitles continue against its currentTime. Turning off the last enabled channel enables the other. Playback preferences are session-only.
+
+Only the current edited MP3 is loaded (`preload="metadata"`). MP3/VTT URLs use Vite's base. Rejected play promises and missing media expose a readable transcript fallback; cues come from local data and remain available independently of successful loading. No Web Speech voice substitution or backend is used. Event handlers, visibility listeners and pending media promises are cleaned up or invalidated on selection/unmount.
+
+`public/audio/provenance.json` records original hashes, selected source ranges and exported hashes. The original recordings/full transcripts remain ignored; flagged sections are cut out of exported files, not merely skipped by JavaScript. `scripts/prepare-narration.py` regenerates assets with a separate local PyAV/NumPy environment; ordinary app builds need neither Python nor transcription tooling. Timings are approximate machine segments.
+
+The older choice/effect modules and tests remain as isolated reference code, with no current app controls or participation flow. Their prior schema is not an instruction to reintroduce choices.
 
 ## Visual grammar
 
 - Mint country illumination: historical/current membership.
-- Brighter country edge and fill: hover or selection.
-- Warm ivory/gold connections: a selected energy cooperation scenario.
-- Travelling points on curved links: conceptual exchange, not measured power flow.
-- A brief expanding ring: an accession or departure event.
-- Numbered geographic annotations: inspect the idea at that location.
-- Before/after switch: view-only comparison; never a change to the visitor's selected policy.
-- Green ticks: increasing cooperation, sharing potential or resilience.
-- Amber ticks: increased investment requirement.
-- Camera movement: authored change of narrative focus.
+- Brighter edge and fill: hover/selection.
+- Gold electricity links and travelling points: potential cooperation, not infrastructure or measured power.
+- Accession/departure rings: membership events.
+- Point diagrams and the fixed 26-to-1 voting example: illustrations, not measured outcomes.
+- Playback pause also pauses travelling electricity points; reduced motion keeps them static.
 
-No ambient particles. The energy scene has exactly 22 purposeful flow points (two per conceptual link). Graticules are deliberately faint. Typography uses native Georgia and Arial for immediate, offline rendering. The current title is “Vision for the EU”; the name is editable, not an external brand dependency.
+Typography uses native Georgia and Arial. The MapLibre globe stays mounted while narration changes. No per-point editorial animation delays subtitle updates.
 
 ## Camera and performance
 
@@ -71,16 +72,6 @@ The map engine remains a large separate chunk (~274 kB gzip). Do not add more re
 
 `ParticipationService` has `submit` and `aggregate`; the DTO contains only schema/model version and fixed topic/choice IDs. There is no Supabase client, anonymous login, network submission, local-storage persistence, fingerprinting or analytics. Before implementation, define server-side validation, abuse controls, aggregation thresholds and deletion/retention. Describe hosting/service request metadata honestly: “no names requested” is not the same as “no personal data ever processed”.
 
-## Visual refinement pass
+## Historical modules
 
-`SceneControls` compares the additional scenario effects with a zero-delta baseline without modifying selections. `SpatialGuide` and MapLibre DOM markers share `src/content/spatialNotes.ts`; mobile hides geographic labels and retains the same explanations below the controls. `flow.ts` produces curved conceptual link coordinates and samples their paths; MapLibre continues to own projection. `animation.ts` owns the small visibility-aware animation clock. No dependencies were added.
-
-## Voting explanation and personal comparison
-
-`Topic.illustration` and `Choice.visual.votingRule` configure the Council example independently of topic rendering. Its scope is deliberately fixed: all 27 participate, 26 support, and one opposes or abstains. It does not accept arbitrary coalitions or infer population weights. Source links and qualifications stay beside the diagram. The before/after switch changes its rule, not its fictional votes.
-
-`ChoiceSummary` compares visitor choices with the team's approved references, without a score, persistence or submission. Unanswered topics remain explicit. It lives in the existing team ending and reuses the topic navigation action.
-
-## Voice-note expansion
-
-`Topic.evaluation` can select qualitative trade-offs: transport and repair use the shared choices/consequences renderer, with no numerical readout, baseline-effect switch or network. `backgroundNotes` supports optional contextual explanations without policy-specific components. Energy and voting keep their original illustration bounds. Full machine transcripts remain in the ignored input folder; `docs/VOICE_NOTES.md` maps every recording to the integration and records open research/design issues. Team approval is separate from factual evidence and future-outcome certainty.
+Earlier choice-based components (`SceneControls`, `ChoiceSummary`, `SpatialGuide`) are preserved but are not rendered in the current narration experience. The source registry and static factual data remain separate from agreed team views. Approval does not establish factual claims or future outcomes.

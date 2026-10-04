@@ -3,8 +3,17 @@ import { explainVote, type RemainingVote, type VotingRule } from '../domain/voti
 import { votingExample as copy } from '../content/voting';
 
 /** A reusable visual explanation, selected by content schema, not a policy page. */
-export function VotingIllustration({ rule }: { rule: VotingRule }) {
-  const [remainingVote, setRemainingVote] = useState<RemainingVote>('oppose');
+export function VotingIllustration({
+  rule,
+  interactive = true,
+  stance = 'oppose',
+}: {
+  rule: VotingRule;
+  interactive?: boolean;
+  stance?: RemainingVote;
+}) {
+  const [choice, setRemainingVote] = useState<RemainingVote>('oppose');
+  const remainingVote = interactive ? choice : stance;
   const result = explainVote(rule, remainingVote);
   return (
     <section
@@ -13,6 +22,11 @@ export function VotingIllustration({ rule }: { rule: VotingRule }) {
     >
       <p className="eyebrow">{copy.title}</p>
       <p className="vote-premise">{copy.premise}</p>
+      {!interactive && (
+        <p className="vote-stance">
+          {copy.rules[rule].label} · One {remainingVote === 'oppose' ? 'opposes' : 'abstains'}
+        </p>
+      )}
       <div className="vote-orbit">
         <svg viewBox="0 0 280 200" aria-hidden="true">
           <ellipse cx="140" cy="105" rx="110" ry="78" className="vote-orbit-track" />
@@ -39,20 +53,22 @@ export function VotingIllustration({ rule }: { rule: VotingRule }) {
           </text>
         </svg>
       </div>
-      <div className="vote-switch" role="group" aria-label="Position of the remaining government">
-        <button
-          aria-pressed={remainingVote === 'oppose'}
-          onClick={() => setRemainingVote('oppose')}
-        >
-          One opposes
-        </button>
-        <button
-          aria-pressed={remainingVote === 'abstain'}
-          onClick={() => setRemainingVote('abstain')}
-        >
-          One abstains
-        </button>
-      </div>
+      {interactive && (
+        <div className="vote-switch" role="group" aria-label="Position of the remaining government">
+          <button
+            aria-pressed={remainingVote === 'oppose'}
+            onClick={() => setRemainingVote('oppose')}
+          >
+            One opposes
+          </button>
+          <button
+            aria-pressed={remainingVote === 'abstain'}
+            onClick={() => setRemainingVote('abstain')}
+          >
+            One abstains
+          </button>
+        </div>
+      )}
       <div className="vote-outcome" role="status">
         <strong>{result.passes ? 'Decision passes' : 'Decision blocked'}</strong>
         <p>{result.passes ? copy.rules[rule].pass : copy.rules[rule].block}</p>

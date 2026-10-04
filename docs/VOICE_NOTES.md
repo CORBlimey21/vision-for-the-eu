@@ -1,3 +1,24 @@
+# Narrated presentation — 4 October 2026
+
+The user requested point → team decision as recorded audio → graphic, replacing visitor policy choices. They chose click Play to start and automatic continuation within the current chapter, and asked to **skip flagged wording/unsupported passages for now**.
+
+Twenty edited excerpts now appear in four chapters. Original M4A files and full machine transcripts remain untouched. Exported mono MP3s, matching VTT captions and a hash/range manifest are under `public/audio/`; app cue metadata is in `src/data/narration.json`. No complete raw recording is exposed where it contains a held passage. Decision making3 is held entirely. Captions retain machine wording for included passages and approximate timing; no listening-based certification is implied.
+
+Selected ranges are reproducible in `scripts/prepare-narration.py`. Notable omissions:
+
+- Drinking-water figure and claimed improvement; unsupported Irish hydro and claims that smaller/landlocked states cannot produce renewables.
+- The Celtic recognition-error sentence; clipped arguments-against heading; passerelle/multi-speed recognition-error passages; gridlock and force-through wording errors.
+- Claims that no fossil fuel or waste will remain, and the unsupported external-technology majority claim.
+- The circular-economy sentence with a probable missing word. Repair, durability and reuse remain in the excerpt and approved editorial position.
+
+Discounted surplus power remains explicitly a proposed investment deal, not an existing entitlement. Future-tense vision recordings are presented as agreed aspirations. Current-rule and legal qualifications remain in the editorial/source layer. Defence keeps the user's confirmed independent-EU direction; Irish neutrality and command/parliamentary oversight remain unresolved.
+
+Voice and subtitles start on. Muting voice retains the media clock so subtitles continue silently. Turning the last channel off enables the other. Manual navigation resets/pauses; hidden pages and the source dialog pause; chapter endings wait for the visitor. Missing/rejected media leaves the full selected transcript readable. No preferences or responses are stored.
+
+Earlier integration notes below describe the preceding choice-based version and its full transcript inventory.
+
+---
+
 # Voice notes — integration, 4 October 2026
 
 All **21 M4A recordings (about 13 minutes)** were transcribed locally with faster-whisper 1.2.1 / `small.en` in English. Inputs were preserved. Each recording has timestamped Markdown and JSON segments, with its filename, duration, byte count and SHA-256 in the inventory. These are machine transcripts, without speaker identification or listening-based certification. Review the audio before quoting wording verbatim.
