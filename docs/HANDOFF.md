@@ -1,4 +1,14 @@
-# Latest increment — narrated presentation, 2026-10-04
+# Latest increment — uncluttered narration and team ending, 2026-10-04
+
+Removed the floating graphic panel from both “03 Our decisions” and “04 Our vision”, preserving the globe, its conceptual energy links, audio and subtitles. `NarrationGraphic` remains isolated reference code. The voting qualification no longer refers to a visible fictional diagram.
+
+Added `ENDING` and a shared closing screen with the existing full team names/fadas from `content/project.ts`, a thank-you, and a one-time twelve-star entrance. Reduced motion/hidden documents skip that entrance. The last 2050 recording moves to the ending with continuation on; otherwise the last point stops for review. A “Thank you” button also reaches the ending. Replay and Europe exploration remain available; audio deactivates on exit.
+
+Validation: `npm run check` passes all 15 tests, static-data validation, strict TypeScript and the production build. Browser inspection at 1440×900, 1280×720 and 390×844 confirmed that neither narrated tab renders the floating panel; mobile document width remains 390px. Checked manual ending, automatic transition after actual final-clip completion, continuation-off stopping on the last point, audio unloading, heading focus, replay resetting to paused point one, and return to Europe. The compact ending's controls fit inside the story boundary. Reduced motion renders the star ring at its final position immediately.
+
+---
+
+# Narrated presentation, 2026-10-04
 
 The user chose a point → recorded team decision → graphic presentation, with click Play to start and automatic continuation within the current chapter. They asked to skip flagged/unsupported passages. The current app replaces policy choices, visitor comparisons and numerical readouts with four narrated chapters and twenty physically edited MP3 excerpts. Original inputs/transcripts and all planning artifacts remain preserved.
 

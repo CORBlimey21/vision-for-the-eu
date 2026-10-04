@@ -8,7 +8,7 @@
 4. **Local validated inputs.** Official GISCO geometry is a static snapshot. Low-resolution elevation tiles are vendored only for the Europe bounds and zooms 0–5. Negative elevation is clamped to zero for visually quiet oceans. No API is called at runtime.
 5. **CSS rather than a utility framework.** This bespoke editorial layout benefits from named, reusable visual classes. Tailwind would add configuration without improving this slice.
 6. **Motion owns editorial transitions; MapLibre owns the camera.** Reduced motion skips camera flights and membership fades, stops animated connections and automatic history. The timeline remains manually operable. History and audio pause when the document is hidden; audio requires a new Play action on return.
-7. **Bounded illustrations.** Narrated points select conceptual graphics and the existing energy network. The fictional voting example fixes a rule and opposition/abstention stance per point; it assigns no real country positions. There are no measured effects, scores or visitor policy choices in this presentation.
+7. **Bounded illustrations.** Electricity points select the existing conceptual energy network. Floating point graphics are no longer rendered; their component and fictional voting example remain reference code. There are no measured effects, scores or visitor policy choices in this presentation.
 
 ## File boundaries
 
@@ -31,7 +31,7 @@
 | `src/services/participation.ts` | Future anonymous aggregation interface; no implementation       |
 | `public/data/`                  | Static runtime geography/elevation and provenance               |
 
-`TopicScene` accepts a `NarratedTopic`, point index and the shared player. `src/content/narration.ts` holds editorial positions and graphic selections; `src/data/narration.json` holds generated media metadata and caption cues. `src/domain/narration.ts` defines their contracts and pure caption/mode logic. `src/app/useNarration.ts` owns the native media lifecycle; `NarrationGraphic` renders the bounded graphic types. Reuse these modules rather than adding one component per policy.
+`TopicScene` accepts a `NarratedTopic`, point index and the shared player. `src/content/narration.ts` holds editorial positions and graphic selections (used to choose globe energy links); `src/data/narration.json` holds generated media metadata and caption cues. `src/domain/narration.ts` defines their contracts and pure caption/mode logic. `src/app/useNarration.ts` owns the native media lifecycle. `ClosingScene` renders the team sign-off using names and copy from `src/content/project.ts`. Reuse these modules rather than adding one component per policy.
 
 ## Narrative and media
 
@@ -41,7 +41,11 @@ INTRO → HISTORY → PRESENT ↔ EXPLORE
           narrated chapters / BUILD_FUTURE
                        ↔
             Our Europe 2050 / TEAM_VISION
+                       ↓
+              Thank you / ENDING
 ```
+
+The final 2050 recording reaches `ENDING` when automatic continuation is enabled. With continuation off it stops for review, and a manual “Thank you” button reaches the same screen. Ending navigation deactivates and unloads the audio; the globe stays mounted. The twelve-star entrance runs once, skips motion when reduced or hidden, and uses no timer or repeating animation.
 
 The four narrated chapters are ambition, electricity, decision-making and the 2050 vision. A click starts playback; ending an excerpt advances within its chapter when enabled, stopping at the last point. Manual point/chapter changes pause and reset playback. Opening sources pauses playback. Voice-off mutes the same media element so subtitles continue against its currentTime. Turning off the last enabled channel enables the other. Playback preferences are session-only.
 

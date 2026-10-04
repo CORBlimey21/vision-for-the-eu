@@ -1,7 +1,7 @@
 import { narratedTopics } from '../content/narration';
 import recordings from '../data/narration.json';
 import { useNarration } from './useNarration';
-import { NarrationGraphic } from '../components/NarrationGraphic';
+import { ClosingScene } from '../components/ClosingScene';
 import { TopicScene } from '../components/TopicScene';
 import { Statistics } from '../components/Statistics';
 import { useEffect, useReducer, useRef, useState } from 'react';
@@ -29,6 +29,7 @@ export default function App() {
   const [pointIndex, setPointIndex] = useState(0);
   const [autoAdvance, setAutoAdvance] = useState(true);
   const team = state.stage === 'TEAM_VISION';
+  const closing = state.stage === 'ENDING';
   const future = team || state.stage === 'BUILD_FUTURE' || state.stage === 'RESULTS';
   const topic =
     narratedTopics.find((item) => item.id === (team ? 'vision-2050' : state.activeTopicId)) ??
@@ -37,8 +38,11 @@ export default function App() {
   const point = topic.points[currentIndex];
   const recording = recordings.find((item) => item.id === point.recordingId)!;
   const player = useNarration(recording, future, () => {
-    if (!autoAdvance || document.hidden || sourcesOpen || currentIndex >= topic.points.length - 1)
+    if (!autoAdvance || document.hidden || sourcesOpen) return false;
+    if (currentIndex >= topic.points.length - 1) {
+      if (team) dispatch({ type: 'END' });
       return false;
+    }
     setPointIndex(currentIndex + 1);
     return true;
   });
@@ -53,6 +57,11 @@ export default function App() {
     player.pause();
     player.seek(0);
     setPointIndex(index);
+  };
+  const finish = () => {
+    player.pause();
+    setCountryList(false);
+    dispatch({ type: 'END' });
   };
   const sceneKey = `${state.stage}:${topic.id}:${future ? point.id : ''}:${state.selectedCountry ?? ''}`;
   const previousScene = useRef(sceneKey);
@@ -102,7 +111,7 @@ export default function App() {
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
   }, [sourcesOpen, state.selectedCountry]);
-  const chapter = team ? 3 : intro || historical ? 0 : future ? 2 : 1;
+  const chapter = team || closing ? 3 : intro || historical ? 0 : future ? 2 : 1;
   return (
     <MotionConfig reducedMotion={reduced ? 'always' : 'never'}>
       <main
@@ -180,7 +189,14 @@ export default function App() {
               exit={{ opacity: 0, y: reduced ? 0 : -8 }}
               transition={{ duration: reduced ? 0 : 0.45 }}
             >
-              {intro ? (
+              {closing ? (
+                <ClosingScene
+                  headingRef={heading}
+                  reduced={reduced || !visible}
+                  onReplay={() => openTopic('ambition')}
+                  onExplore={() => dispatch({ type: 'PRESENT' })}
+                />
+              ) : intro ? (
                 <>
                   <p className="eyebrow">
                     <span className="tiny-star">✳</span> The EU, from 1957 to today
@@ -331,7 +347,7 @@ export default function App() {
                     lastTopic={topic === narratedTopics.at(-1)}
                     onNextTopic={() =>
                       topic === narratedTopics.at(-1)
-                        ? dispatch({ type: 'PRESENT' })
+                        ? finish()
                         : openTopic(narratedTopics[narratedTopics.indexOf(topic) + 1].id)
                     }
                   />
@@ -378,8 +394,7 @@ export default function App() {
             label="English"
           />
         </audio>
-        {future && <NarrationGraphic point={point} />}
-        {!future && (
+        {!future && !closing && (
           <aside className="globe-caption" aria-label="Globe key">
             <span className="eyebrow">
               {intro
@@ -398,7 +413,7 @@ export default function App() {
             <small>Illumination marks membership</small>
           </aside>
         )}
-        {!intro && !historical && !future && !team && (
+        {!intro && !historical && !future && !closing && !team && (
           <div className="map-tools">
             <button
               className="icon-button"
@@ -419,7 +434,7 @@ export default function App() {
             </button>
           </div>
         )}
-        {countryList && !intro && !historical && !future && !team && (
+        {countryList && !intro && !historical && !future && !closing && !team && (
           <div className="country-picker" id="country-picker">
             <div className="dialog-heading">
               <span className="eyebrow">27 member countries</span>

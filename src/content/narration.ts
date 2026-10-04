@@ -126,7 +126,7 @@ export const narratedTopics: NarratedTopic[] = [
         graphicLabels: [],
         votingRule: 'qualified-majority',
         qualification:
-          'This demonstrates the proposed rule in a fictional 26-to-1 vote. It does not guarantee faster or better policy outcomes.',
+          'Wider majority voting is our proposed reform. It does not guarantee faster or better policy outcomes.',
       },
       {
         id: 'national-consent',

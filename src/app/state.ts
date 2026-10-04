@@ -31,6 +31,7 @@ export type Action =
   | { type: 'BUILD' }
   | { type: 'TOPIC'; id: string }
   | { type: 'TEAM_VISION' }
+  | { type: 'END' }
   | { type: 'CHOOSE'; topicId: string; choiceId: string }
   | { type: 'RESULTS' }
   | { type: 'REPLAY' }
@@ -94,6 +95,8 @@ export function reducer(state: ExperienceState, action: Action): ExperienceState
       };
     case 'TEAM_VISION':
       return { ...state, stage: 'TEAM_VISION', selectedCountry: null, playing: false };
+    case 'END':
+      return { ...state, stage: 'ENDING', selectedCountry: null, playing: false };
     case 'BUILD':
       return { ...state, stage: 'BUILD_FUTURE', selectedCountry: null, playing: false };
     case 'CHOOSE':

@@ -141,7 +141,7 @@ export function TopicScene({
         {pointIndex < topic.points.length - 1 ? (
           <button onClick={() => onPoint(pointIndex + 1)}>Next point →</button>
         ) : (
-          <button onClick={onNextTopic}>{lastTopic ? 'Explore Europe →' : 'Next chapter →'}</button>
+          <button onClick={onNextTopic}>{lastTopic ? 'Thank you →' : 'Next chapter →'}</button>
         )}
       </nav>
       {point.qualification && <p className="narration-context">{point.qualification}</p>}

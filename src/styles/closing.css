@@ -1,0 +1,108 @@
+.stage-ending .story {
+  top: 21%;
+  bottom: 105px;
+  width: 530px;
+  max-width: 44%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.closing-stars {
+  width: 108px;
+  height: 108px;
+  display: block;
+  margin: 0 0 20px;
+  overflow: visible;
+}
+.closing-stars circle {
+  fill: #b8e5d009;
+  stroke: #b8e5d025;
+}
+.closing-stars path {
+  fill: var(--gold);
+}
+.closing-stars .closing-thread {
+  fill: none;
+  stroke: #b8e5d025;
+}
+.closing-stars text {
+  fill: var(--mint);
+  font:
+    20px Georgia,
+    serif;
+  stroke: #080e13;
+  stroke-width: 8;
+  paint-order: stroke;
+}
+.closing-scene h1 {
+  font-size: clamp(48px, 4.7vw, 72px);
+}
+.closing-scene .story-copy {
+  max-width: 390px;
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.closing-names {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 13px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #e0e9df;
+}
+.closing-school {
+  margin: 16px 0 25px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+}
+.closing-actions .text-button {
+  margin: 0;
+  min-height: 44px;
+}
+@media (min-width: 761px) and (max-height: 800px) {
+  .stage-ending .story {
+    top: 155px;
+    bottom: 95px;
+  }
+  .closing-stars {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 12px;
+  }
+  .closing-scene h1 {
+    font-size: 52px;
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 760px) {
+  .stage-ending .story {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: none;
+    margin: 310px 24px 30px;
+    padding: 0;
+    overflow: visible;
+  }
+  .closing-stars {
+    width: 84px;
+    height: 84px;
+  }
+  .closing-scene h1 {
+    font-size: 48px;
+  }
+  .closing-scene h1 br {
+    display: block;
+  }
+  .closing-names {
+    grid-template-columns: 1fr;
+  }
+}

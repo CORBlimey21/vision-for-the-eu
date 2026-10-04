@@ -6,7 +6,8 @@ export type Stage =
   | 'BUILD_FUTURE'
   | 'RESULTS'
   | 'COMPARE'
-  | 'TEAM_VISION';
+  | 'TEAM_VISION'
+  | 'ENDING';
 export type Dimension = 'integration' | 'climate' | 'energySecurity' | 'investment';
 export interface Source {
   id: string;
