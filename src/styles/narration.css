@@ -395,3 +395,8 @@
     line-height: 1.5;
   }
 }
+
+.narration-play:hover:not(:disabled) {
+  color: #0b201b;
+  background: #d3e7d8;
+}
