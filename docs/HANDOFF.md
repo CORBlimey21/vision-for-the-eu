@@ -10,6 +10,8 @@ Exports live in `public/audio/`, with VTT captions and source-range/hash provena
 
 Validation: `npm run check` passes 15 tests, static data validation, strict TypeScript and production build. Every exported MP3 was decoded and checked against its duration; original-recording hashes still match. Browser inspection covered 1440×900, 1280×720 and 390×844: native playback/caption progression, channel switching, automatic advancement, manual reset/pause, seeking, chapter-end stop, source-dialog pause, correct 2050 media mapping and fixed abstention/QMV illustrations. The globe rendered; no policy-choice/readout controls remained; mobile document width equalled 390px. The production build played audio and used VTT URLs under `/vision-for-the-eu/`, with no captured browser console errors.
 
+A final desktop spacing adjustment keeps longer headings and subtitles in the visible panel. The production 2050 scene’s subtitle block ended at 779px within the 795px story boundary at 1440×900; the compact energy scene also fit at 1280×720. Mobile remained 390px wide.
+
 The previous choice-based release was published as `bb7223c`. Publishing still uses the manually triggered GitHub Pages workflow. No physical-device audio quality, exhaustive browser compatibility, performance or word-level caption accuracy claim is made. A listening review of edits/captions and a rehearsal on the exhibition laptop remain useful.
 
 Earlier increments below are historical and superseded where they describe policy choices or raw audio exclusion.

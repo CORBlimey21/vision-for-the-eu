@@ -6,12 +6,13 @@
   bottom: 105px;
 }
 .is-narrated .future-title {
-  font-size: clamp(36px, 3.6vw, 53px);
-  margin-bottom: 16px;
+  font-size: clamp(32px, 3vw, 42px);
+  margin-bottom: 12px;
 }
 .is-narrated .policy-explanation {
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 10px 0;
 }
 .point-counter {
   color: #a7bdb2;
@@ -369,4 +370,28 @@
   color: var(--mint);
   font-size: 12px;
   line-height: 1.6;
+}
+
+@media (min-width: 761px) {
+  .is-narrated .topic-nav {
+    gap: 6px 12px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+  .is-narrated .topic-nav button {
+    font-size: 10px;
+  }
+  .is-narrated .story .eyebrow {
+    margin-bottom: 10px;
+  }
+  .is-narrated .point-counter {
+    margin: 6px 0 8px;
+  }
+  .is-narrated .narration-player {
+    margin-top: 14px;
+  }
+  .is-narrated .narration-subtitles p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 }
