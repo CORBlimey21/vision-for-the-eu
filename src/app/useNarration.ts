@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { startMedia } from './mediaPlayback';
 import { togglePresentation, type Recording } from '../domain/narration';
 
 /** A single native media clock owns playback and caption timing, including silent playback. */
@@ -9,6 +10,11 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
   const wantsPlayback = useRef(false);
   const sources = useRef<string[]>([]);
   const sourceIndex = useRef(0);
+  const enabled = useRef(active);
+  enabled.current = active;
+  const failures = useRef<string[]>([]);
+  const pendingSeek = useRef<number | null>(null);
+  const [details, setDetails] = useState('');
   const endCallback = useRef(onEnd);
   endCallback.current = onEnd;
   const [modes, setModes] = useState({ voice: true, subtitles: true });
@@ -27,20 +33,25 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
   }, []);
   const play = useCallback(async () => {
     const audio = audioRef.current;
-    if (!audio?.getAttribute('src')) return;
+    const source = sources.current[sourceIndex.current];
+    if (!audio || !enabled.current || !source) return;
     const ticket = ++request.current;
     setError('');
     setEndedRecording(null);
     wantsPlayback.current = true;
-    // Retry a failed request inside the fresh user gesture on iOS.
-    if (audio.error) audio.load();
-    if (audio.ended) audio.currentTime = 0;
+    setLoading(true);
     try {
-      await audio.play();
+      await startMedia(audio, source);
       if (ticket === request.current) setPlaying(!audio.paused);
     } catch (reason) {
       if (ticket !== request.current) return;
       wantsPlayback.current = false;
+      setDetails(
+        [
+          ...failures.current,
+          reason instanceof Error ? `${reason.name}: ${reason.message}` : String(reason),
+        ].join(' · '),
+      );
       setPlaying(false);
       setLoading(false);
       setError(
@@ -61,16 +72,26 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     setPlaying(false);
     setEndedRecording(null);
     setTime(0);
+    pendingSeek.current = null;
     setError('');
+    setDetails('');
+    failures.current = [];
     setDuration(recording.duration);
     setLoading(false);
     sources.current = audio.canPlayType('audio/mp4; codecs="mp4a.40.2"')
       ? [recording.file, recording.fallbackFile]
       : [recording.fallbackFile];
+    sources.current = sources.current.map(
+      (file) => new URL(`${import.meta.env.BASE_URL}audio/${file}`, document.baseURI).href,
+    );
     sourceIndex.current = 0;
-    if (active) audio.src = `${import.meta.env.BASE_URL}audio/${sources.current[0]}`;
-    else audio.removeAttribute('src');
-    audio.load();
+    if (active && audio.currentSrc === sources.current[0] && Number.isFinite(audio.duration))
+      audio.currentTime = 0;
+    // Manual navigation prepares the source; the Play tap performs the first load.
+    if (!active && audio.getAttribute('src')) {
+      audio.removeAttribute('src');
+      audio.load();
+    }
     if (shouldContinue) void play();
     return () => {
       request.current++;
@@ -88,13 +109,25 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     document.addEventListener('visibilitychange', onVisibility);
     return () => document.removeEventListener('visibilitychange', onVisibility);
   }, [pause]);
-  const seek = useCallback((seconds: number) => {
-    const audio = audioRef.current;
-    if (!audio || !Number.isFinite(audio.duration)) return;
-    audio.currentTime = Math.max(0, Math.min(audio.duration, seconds));
-    setTime(audio.currentTime);
-    setEndedRecording(null);
-  }, []);
+  const seek = useCallback(
+    (seconds: number) => {
+      const audio = audioRef.current;
+      const target = Math.max(0, Math.min(recording.duration, seconds));
+      if (!audio || !enabled.current) return;
+      if (
+        audio.currentSrc !== sources.current[sourceIndex.current] ||
+        !Number.isFinite(audio.duration)
+      ) {
+        pendingSeek.current = target;
+        setTime(target);
+      } else {
+        audio.currentTime = Math.min(audio.duration, target);
+        setTime(audio.currentTime);
+      }
+      setEndedRecording(null);
+    },
+    [recording.duration],
+  );
   return {
     audioRef,
     modes,
@@ -103,6 +136,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
     playing,
     ended: endedRecording === recording.id,
     error,
+    details,
     loading,
     pause,
     play,
@@ -115,10 +149,26 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
       void play();
     },
     mediaEvents: {
-      onTimeUpdate: () => setTime(audioRef.current?.currentTime ?? 0),
+      onTimeUpdate: () => {
+        const audio = audioRef.current;
+        if (enabled.current && audio?.currentSrc === sources.current[sourceIndex.current])
+          setTime(audio.currentTime);
+      },
       onLoadedMetadata: () => {
         const value = audioRef.current?.duration;
-        if (value && Number.isFinite(value)) setDuration(value);
+        if (
+          audioRef.current?.currentSrc === sources.current[sourceIndex.current] &&
+          value &&
+          Number.isFinite(value)
+        ) {
+          setDuration(value);
+          const audio = audioRef.current;
+          if (audio && pendingSeek.current !== null) {
+            audio.currentTime = Math.min(value, pendingSeek.current);
+            pendingSeek.current = null;
+            setTime(audio.currentTime);
+          }
+        }
       },
       onPlaying: () => {
         setPlaying(!audioRef.current?.paused);
@@ -128,6 +178,7 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
       onWaiting: () => setLoading(true),
       onCanPlay: () => setLoading(false),
       onEnded: () => {
+        if (!enabled.current || !wantsPlayback.current) return;
         wantsPlayback.current = false;
         setPlaying(false);
         setEndedRecording(recording.id);
@@ -135,16 +186,28 @@ export function useNarration(recording: Recording, active: boolean, onEnd: () =>
       },
       onError: () => {
         const audio = audioRef.current;
-        if (!audio?.getAttribute('src') || !audio.error) return;
+        if (!enabled.current || !audio?.error || audio.src !== sources.current[sourceIndex.current])
+          return;
+        const format = audio.src.endsWith('.m4a') ? 'AAC' : 'MP3';
+        const labels = [
+          'unknown',
+          'interrupted',
+          'network error',
+          'decoding error',
+          'unsupported source',
+        ];
+        failures.current.push(
+          `${format}: ${labels[audio.error.code] ?? 'unknown'} (${audio.error.code})${audio.error.message ? ` — ${audio.error.message}` : ''}`,
+        );
+        setDetails(failures.current.join(' · '));
         request.current++;
         const fallback = sources.current[sourceIndex.current + 1];
         if (fallback) {
           const resume = wantsPlayback.current && !document.hidden;
           sourceIndex.current++;
-          audio.src = `${import.meta.env.BASE_URL}audio/${fallback}`;
+          // The alternate source is also loaded by the synchronous play path.
           setError('');
           setLoading(resume);
-          audio.load();
           if (resume) void play();
           return;
         }

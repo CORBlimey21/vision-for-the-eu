@@ -388,14 +388,13 @@ export default function App() {
             </motion.div>
           </AnimatePresence>
         </section>
-        <audio ref={player.audioRef} preload="metadata" {...player.mediaEvents} aria-hidden="true">
-          <track
-            kind="captions"
-            src={`${import.meta.env.BASE_URL}audio/${recording.id}.vtt`}
-            srcLang="en"
-            label="English"
-          />
-        </audio>
+        <audio
+          ref={player.audioRef}
+          preload="none"
+          playsInline
+          {...player.mediaEvents}
+          aria-hidden="true"
+        />
         {future && (
           <aside className="scene-progress" aria-label="Chapter progress">
             <span>{topic.title}</span>

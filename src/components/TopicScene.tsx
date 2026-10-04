@@ -131,9 +131,21 @@ export function TopicScene({
           </p>
         )}
         {player.error && (
-          <p className="playback-message" role="status">
-            {player.error}
-          </p>
+          <div className="playback-message">
+            <p role="status">{player.error}</p>
+            <a
+              href={`${import.meta.env.BASE_URL}audio/${recording.file}`}
+              target="_blank"
+              rel="noreferrer"
+              onClick={player.pause}
+            >
+              Open recording in your browser ↗
+            </a>
+            <details className="topic-evidence">
+              <summary>Playback details</summary>
+              <p>{player.details}</p>
+            </details>
+          </div>
         )}
         {player.ended && pointIndex === topic.points.length - 1 && (
           <p className="playback-message" role="status">
