@@ -1,3 +1,19 @@
+# Latest increment — 2026-10-04
+
+Transcribed all 21 voice recordings locally (about 13 minutes), preserving their SHA-256 hashes and saving timestamped Markdown/JSON plus a complete inventory in `EU Voice Notes/transcripts/`. These are machine transcripts; exact quotations still need audio review. Raw inputs/transcripts are Git-ignored and are not bundled in the app. See [VOICE_NOTES.md](VOICE_NOTES.md) for the per-recording integration map, probable recognition errors and factual exclusions.
+
+The user confirmed agreed team positions and the independent-EU defence direction. The ending now has eight pillars covering ambition, electricity, public transport, circularity, voting, digital independence, defence and trust. Approval is separate from factual validation; safeguards and delivery details remain explicit questions. Four approved topic references drive the visitor comparison.
+
+Two new topics reuse `TopicScene`: public transport and repair/reuse, each with two choices and qualitative consequences. `Topic.evaluation: 'qualitative'` suppresses numeric effects and baseline controls; no new score, route or forecast was invented. Decision-making adds optional sourced explanations for constructive abstention, Article 31 passerelle and the scope of budget unanimity. The existing 26-to-1 illustration remains unchanged.
+
+Validation: `npm run check` passes 11 tests, static asset validation, strict TypeScript and the production build. Transcript integrity check verified all 21 original hashes, non-empty segments and Markdown files. Browser inspection at 1440×900 and 390×844 covered the two new topics, results, approved vision, unanswered comparisons, preserved visitor choices and voting context; mobile document width was 390px with no horizontal overflow. The persistent globe rendered; no performance or physical-device claim.
+
+Local changes only; no commit, push or Pages deployment. Next useful extensions: a bounded digital-identity choice, defence safeguards and deployment authority, and a sourced differentiated-cooperation example. Public narration would need a separate voice/quality/consent decision.
+
+Earlier increments below are historical; draft-status and two-topic descriptions are superseded by this entry.
+
+---
+
 # Latest increment — 2026-09-18
 
 Decision-making now has a bounded, sourced voting illustration alongside the globe: 26 supporters and one opposing/abstaining government. The chosen policy selects unanimity or proposed wider QMV; before/after restores unanimity without replacing the saved choice. No population dataset, invented country position, forecast or general-purpose voting calculator is implied. Council QMV and unanimity guidance rechecked on 2026-09-18. The illustration explicitly explains the four-state blocking-minority condition.

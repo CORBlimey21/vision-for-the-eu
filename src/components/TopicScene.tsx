@@ -96,10 +96,21 @@ export function TopicScene({
           ) : null;
         })}
       </details>
+      {topic.backgroundNotes && (
+        <details className="topic-evidence">
+          <summary>Other ways forward & limits</summary>
+          {topic.backgroundNotes.map((note) => (
+            <div key={note.title}>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
+            </div>
+          ))}
+        </details>
+      )}
       <p className="model-note">
-        An explanatory scenario, not a forecast.
-        <br />
-        Routes and effects are illustrative.
+        {topic.evaluation === 'qualitative'
+          ? 'Qualitative trade-offs only. No score, mapped route or numerical forecast is assigned.'
+          : 'An explanatory scenario, not a forecast. Routes and effects are illustrative.'}
       </p>
     </>
   );

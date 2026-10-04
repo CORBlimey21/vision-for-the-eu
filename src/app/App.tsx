@@ -41,6 +41,7 @@ export default function App() {
   const result = evaluateChoices(topics, team ? teamSelections : state.selections),
     topic = topics.find((t) => t.id === state.activeTopicId) ?? topics[0];
   const voting = topic.illustration === 'council-vote';
+  const qualitative = topic.evaluation === 'qualitative';
   const selectedPolicy = topic.choices.find((c) => c.id === state.selections[topic.id]);
   const future = state.stage === 'BUILD_FUTURE' || state.stage === 'RESULTS';
   const canCompare = !!state.selections[topic.id];
@@ -294,7 +295,7 @@ export default function App() {
               ) : team ? (
                 <>
                   <p className="eyebrow">
-                    Our Europe / 2050 <span className="draft-tag">Team draft</span>
+                    Our Europe / 2050 <span className="draft-tag">Agreed direction</span>
                   </p>
                   <h1 ref={heading} tabIndex={-1} className="future-title">
                     {teamVision.headline}
@@ -320,7 +321,7 @@ export default function App() {
                       </details>
                     ))}
                     <details>
-                      <summary>Questions for the team</summary>
+                      <summary>Design choices still to work out</summary>
                       <ul>
                         {teamVision.questions.map((question) => (
                           <li key={question}>{question}</li>
@@ -377,9 +378,7 @@ export default function App() {
                           : dispatch({ type: 'TEAM_VISION' })
                       }
                     >
-                      {topic.id !== topics.at(-1)!.id
-                        ? 'Next question →'
-                        : 'Discover our draft vision →'}
+                      {topic.id !== topics.at(-1)!.id ? 'Next question →' : 'Discover our vision →'}
                     </button>
                   )}
                 </>
@@ -398,7 +397,7 @@ export default function App() {
                   <p className="story-copy">
                     Explore the countries in the EU today.
                     <br />
-                    Then try two ideas for what could change.
+                    Then explore four choices for what could change.
                   </p>
                   <button className="primary-button" onClick={() => dispatch({ type: 'BUILD' })}>
                     Change one thing
@@ -434,7 +433,7 @@ export default function App() {
               <p>
                 Proposals from
                 <br />
-                our team’s writing.
+                our team’s voice notes.
               </p>
               <small>Team proposals · not a forecast</small>
             </>
@@ -452,7 +451,11 @@ export default function App() {
                   ? 'This choice removed. Your other choices remain.'
                   : network
                     ? 'More ways to share electricity.'
-                    : 'See how the voting rule changes the result.'}
+                    : voting
+                      ? 'See how the voting rule changes the result.'
+                      : qualitative
+                        ? 'Explore the everyday trade-offs.'
+                        : 'Explore how countries could cooperate.'}
               </p>
               <span className="caption-rule" />
               <small>
@@ -481,12 +484,12 @@ export default function App() {
             </>
           )}
         </aside>
-        {future && (
+        {future && !qualitative && (
           <div className="effect-readout" aria-live="polite">
             <span className="eyebrow">
               {baseline
                 ? 'Without this choice / other choices kept'
-                : 'All your choices / illustrative effects'}
+                : 'Scored choices / illustrative effects'}
             </span>
             {dimensions.map((d) => (
               <div className="effect-row" key={d.id}>
@@ -509,7 +512,7 @@ export default function App() {
             ))}
           </div>
         )}
-        {future && (
+        {future && !qualitative && (
           <SceneControls
             canCompare={canCompare}
             flowsAvailable={network}

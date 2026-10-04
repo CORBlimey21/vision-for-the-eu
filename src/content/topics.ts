@@ -42,7 +42,7 @@ export const topics: Topic[] = [
     sourceIds: ['celtic'],
     teamVision: {
       choiceId: 'shared-grid',
-      status: 'draft',
+      status: 'approved',
       explanation:
         'Invest in renewable power and grid connections. Agree how countries would share the benefits.',
     },
@@ -87,12 +87,123 @@ export const topics: Topic[] = [
         ],
       },
     ],
-    sourceIds: ['qmv', 'unanimity', 'sanctions'],
+    sourceIds: ['qmv', 'unanimity', 'sanctions', 'cfsp-treaty'],
+    backgroundNotes: [
+      {
+        title: 'Step aside without changing the voting rule',
+        text: 'Abstention already allows a unanimous decision to pass. In foreign policy, a formal constructive abstention can also excuse a state from applying it, subject to treaty conditions. This is voluntary; it cannot force a government to stop opposing a decision.',
+      },
+      {
+        title: 'A bridge to majority voting',
+        text: 'Article 31(3) TEU lets the European Council unanimously authorise wider QMV in foreign policy. This passerelle excludes decisions with military or defence implications. It is a possible legal route, not an automatic reform.',
+      },
+      {
+        title: 'What this proposal leaves alone',
+        text: 'Our proposal keeps taxation and treaty changes outside its scope. EU budget rules differ by instrument: own resources and the multiannual financial framework require unanimity. We do not claim that every budget vote does.',
+      },
+    ],
     teamVision: {
       choiceId: 'targeted-qmv',
-      status: 'draft',
+      status: 'approved',
       explanation:
         'Seek faster joint action on foreign policy and sanctions, while keeping taxation outside this proposal.',
+    },
+  },
+  {
+    id: 'public-transport',
+    title: 'Public transport',
+    eyebrow: 'A useful alternative to the car',
+    status: 'illustrative',
+    evaluation: 'qualitative',
+    present: {
+      headline: 'What would make you leave the car at home?',
+      explanation:
+        'The EU already supports sustainable urban mobility. Our 2050 proposal puts reliable buses, trains and trams at the centre of everyday travel, with services suited to each place. What should investment prioritise?',
+      statistics: [],
+    },
+    choices: [
+      {
+        id: 'transport-local-path',
+        title: 'Continue with local plans',
+        description: 'Keep improvements within existing local and national priorities.',
+        effects: scenarioEffects['transport-local-path'],
+        visual: {},
+        resultHeadline: 'Improve at the local pace.',
+        consequences: [
+          'Local authorities can tailor services to their communities and existing budgets.',
+          'This choice adds no shared investment commitment. It does not imply that existing plans or services stand still.',
+          'We would still need to ask whether current plans deliver reliable and accessible alternatives to driving.',
+        ],
+      },
+      {
+        id: 'reliable-public-transport',
+        title: 'Prioritise reliable public transport',
+        description:
+          'Support frequent, accessible services and useful connections, rather than infrastructure alone.',
+        effects: scenarioEffects['reliable-public-transport'],
+        visual: {},
+        resultHeadline: 'Make public transport worth choosing.',
+        consequences: [
+          'Our proposal aims to make everyday journeys possible without a car. That depends on frequency, affordability, accessibility and connections.',
+          'Building a line is only part of the task: services also need long-term funding, staff and maintenance.',
+          'Different places need different solutions. We cannot promise every city a tram or forecast how many drivers would switch.',
+        ],
+      },
+    ],
+    sourceIds: ['urban-mobility'],
+    teamVision: {
+      choiceId: 'reliable-public-transport',
+      status: 'approved',
+      explanation:
+        'Invest in reliable public transport so that fewer everyday journeys need a car.',
+    },
+  },
+  {
+    id: 'repair-reuse',
+    title: 'Repair & reuse',
+    eyebrow: 'Keep useful things in use',
+    status: 'illustrative',
+    evaluation: 'qualitative',
+    present: {
+      headline: 'Repair it, or replace it?',
+      explanation:
+        'EU repair rules already cover certain products. Our 2050 vision goes further: make durability, repair and reuse everyday practice. How far should the EU push that change?',
+      statistics: [],
+    },
+    choices: [
+      {
+        id: 'existing-repair-rules',
+        title: 'Focus on existing repair rules',
+        description: 'Prioritise implementing current protections before proposing wider measures.',
+        effects: scenarioEffects['existing-repair-rules'],
+        visual: {},
+        resultHeadline: 'Make existing rights work.',
+        consequences: [
+          'Implementation can help people use the repair protections that already exist for covered products.',
+          'Current rules have a defined scope; this option does not create a universal right to repair every product.',
+          'Affordability, spare parts and access to repairers still matter even where a legal right exists.',
+        ],
+      },
+      {
+        id: 'repair-first',
+        title: 'Make repair and reuse the default',
+        description:
+          'Support durable design, spare parts and accessible repairs, alongside changes in how we buy.',
+        effects: scenarioEffects['repair-first'],
+        visual: {},
+        resultHeadline: 'Keep products in the loop.',
+        consequences: [
+          'Our aim is to keep useful products working longer and reduce avoidable disposal.',
+          'Manufacturers would need to design for durability and repair; people would need affordable, convenient services.',
+          'Price, safety and access need attention. A circular economy is an ambition, not a promise that waste disappears by 2050.',
+        ],
+      },
+    ],
+    sourceIds: ['right-to-repair'],
+    teamVision: {
+      choiceId: 'repair-first',
+      status: 'approved',
+      explanation: 'Make repair, reuse and longer-lasting products ordinary practice.',
     },
   },
 ];

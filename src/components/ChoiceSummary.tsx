@@ -10,8 +10,8 @@ export function ChoiceSummary({
 }) {
   return (
     <details className="choice-summary">
-      <summary>Your choices beside our draft</summary>
-      <p className="policy-explanation">See where your choices differ from our draft.</p>
+      <summary>Your choices beside our vision</summary>
+      <p className="policy-explanation">Compare your choices with our agreed direction.</p>
       {topics.map((topic) => {
         const visitor = topic.choices.find((c) => c.id === selections[topic.id]);
         const team = topic.choices.find((c) => c.id === topic.teamVision?.choiceId);
@@ -24,7 +24,7 @@ export function ChoiceSummary({
                 <dd>{visitor?.title ?? 'Not chosen yet'}</dd>
               </div>
               <div>
-                <dt>Our draft</dt>
+                <dt>{topic.teamVision?.status === 'approved' ? 'Our vision' : 'Our draft'}</dt>
                 <dd>{team?.title ?? 'Still open'}</dd>
               </div>
             </dl>

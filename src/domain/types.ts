@@ -55,6 +55,8 @@ export interface Topic {
   title: string;
   eyebrow: string;
   illustration?: 'council-vote';
+  evaluation?: 'qualitative';
+  backgroundNotes?: { title: string; text: string }[];
   present: { headline: string; explanation: string; statistics: Statistic[] };
   choices: Choice[];
   sourceIds: string[];

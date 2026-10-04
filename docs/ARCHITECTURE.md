@@ -31,7 +31,7 @@
 | `src/services/participation.ts` | Future anonymous aggregation interface; no implementation       |
 | `public/data/`                  | Static runtime geography/elevation and provenance               |
 
-`App.tsx` intentionally contains the few authored scenes in this slice. The generic `TopicScene` already accepts a `Topic`, selections and callbacks. `activeTopicId` and the topic selector now support energy and decision-making, preserving independent selections. Do not create an EnergyPage or one component per policy. The existing loop, statistics renderer and evaluator accept content objects. Results explain the active topic; the readout sums all choices. Before/after removes only the active topic contribution.
+`App.tsx` intentionally contains the few authored scenes in this slice. The generic `TopicScene` already accepts a `Topic`, selections and callbacks. `activeTopicId` and the topic selector now support four topics, preserving independent selections. Do not create an EnergyPage or one component per policy. The existing loop, statistics renderer and evaluator accept content objects. Results explain the active topic; the readout sums all choices. Before/after removes only the active topic contribution.
 
 ## Narrative
 
@@ -44,7 +44,7 @@ INTRO → HISTORY → PRESENT ↔ EXPLORE
                          COMPARE (reserved)
 ```
 
-`COMPARE` remains reserved. `TEAM_VISION` renders a visibly labelled draft from `content/teamVision.ts`, evaluating the topics’ draft choice references separately from visitor selections. `Topic.teamVision` provides a choice reference and approval state, so the eventual reveal can run through the same evaluator and network effects.
+`COMPARE` remains reserved. `TEAM_VISION` renders the agreed policy direction confirmed on 4 October 2026 from `content/teamVision.ts`, evaluating the topics’ approved choice references separately from visitor selections. `Topic.teamVision` provides a choice reference and approval state, so the eventual reveal can run through the same evaluator and network effects.
 
 ## Visual grammar
 
@@ -79,4 +79,8 @@ The map engine remains a large separate chunk (~274 kB gzip). Do not add more re
 
 `Topic.illustration` and `Choice.visual.votingRule` configure the Council example independently of topic rendering. Its scope is deliberately fixed: all 27 participate, 26 support, and one opposes or abstains. It does not accept arbitrary coalitions or infer population weights. Source links and qualifications stay beside the diagram. The before/after switch changes its rule, not its fictional votes.
 
-`ChoiceSummary` compares visitor choices with the team's draft references, without a score, persistence or submission. Unanswered topics remain explicit. It lives in the existing team ending and reuses the topic navigation action.
+`ChoiceSummary` compares visitor choices with the team's approved references, without a score, persistence or submission. Unanswered topics remain explicit. It lives in the existing team ending and reuses the topic navigation action.
+
+## Voice-note expansion
+
+`Topic.evaluation` can select qualitative trade-offs: transport and repair use the shared choices/consequences renderer, with no numerical readout, baseline-effect switch or network. `backgroundNotes` supports optional contextual explanations without policy-specific components. Energy and voting keep their original illustration bounds. Full machine transcripts remain in the ignored input folder; `docs/VOICE_NOTES.md` maps every recording to the integration and records open research/design issues. Team approval is separate from factual evidence and future-outcome certainty.

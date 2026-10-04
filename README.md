@@ -1,6 +1,6 @@
 # Vision for the EU
 
-A local-data-first exploration of the European project by Darragh Ó Súilleabháin, Cillian Ó Ríordáin, Jake Varley and Thomas Myers at CBC Cork. Built for an Irish Transition Year competition. This repository contains the **first vertical slice, visual refinement and initial team-content integration**, not the whole planned experience.
+A local-data-first exploration of the European project by Darragh Ó Súilleabháin, Cillian Ó Ríordáin, Jake Varley and Thomas Myers at CBC Cork. Built for an Irish Transition Year competition. This repository contains the **first vertical slice, visual refinement and voice-note integration**, not the whole planned experience.
 
 ## Run
 
@@ -22,7 +22,8 @@ npm run check
 - One end-to-end illustrative energy decision: choose → curved globe connections and travelling exchange points → qualitative effects → trade-offs → revise.
 - Geographic explanation pins, a before/after comparison that preserves the policy choice, flow pause/resume, and accession/departure pulses.
 - Decision-making chapter with an interactive, fictional 26-to-1 voting explanation and source links.
-- Draft team-vision ending with a comparison to the visitor’s own choices.
+- Public-transport and repair/reuse topics with qualitative choices and trade-offs.
+- Agreed 2050 team-vision ending, adapted from 21 recordings, with a comparison to the visitor’s own choices.
 - Responsive layouts, reduced motion, no-WebGL content fallback, a source/method dialog, and a transparent statement that no responses are collected.
 - Static GISCO geometry and 92 bounded elevation tiles, preprocessing scripts, provenance, domain tests, asset validation, CI and a manually triggered GitHub Pages workflow.
 
@@ -31,12 +32,13 @@ npm run check
 - [Architecture and decisions](docs/ARCHITECTURE.md)
 - [Content guide](docs/CONTENT.md)
 - [Handoff and verification](docs/HANDOFF.md)
+- [Voice-note transcripts, integration and limitations](docs/VOICE_NOTES.md)
 
 ## Boundaries
 
 Energy deltas and links are **authored illustrations**, not forecasts, infrastructure routes or verified policy findings. No economic/population figures have been invented. Historical views use modern country boundaries and explicitly say so. Terrain is visual hillshade, not an analytical elevation product.
 
-Two topics (energy and decision-making) and an editable draft team-vision ending are implemented. Aggregate comparison, an approved team vision and real topic statistics are not built. Their schema/service boundaries are established. The original planning documents under `output/` and the existing Python script remain untouched.
+Four topics (energy, decision-making, public transport and repair/reuse) and an agreed team-vision ending are implemented. Transport and repair have no numerical effect model. Aggregate comparison and real topic statistics are not built. Their schema/service boundaries are established. The original planning documents under `output/` and the existing Python script remain untouched.
 
 ## GitHub Pages
 

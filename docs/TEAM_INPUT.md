@@ -1,3 +1,9 @@
+# Update — 4 October 2026
+
+The user confirmed that all 21 voice notes represent agreed team positions and confirmed the independent-EU defence direction. Current integration and fact-check boundaries are in [VOICE_NOTES.md](VOICE_NOTES.md). The team ending and four topic references now use approved status. Earlier draft-status records below are historical.
+
+---
+
 # Team content integration — 2026-09-15
 
 The expanded user-supplied draft is now adapted into energy, decision-making and a draft 2050 ending. It is not presented as approved team consensus. Original positions are condensed rather than copied verbatim.

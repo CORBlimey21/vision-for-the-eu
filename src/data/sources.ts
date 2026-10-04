@@ -4,19 +4,19 @@ export const sources: Source[] = [
     id: 'celtic',
     title: 'EirGrid · Celtic Interconnector',
     url: 'https://www.eirgrid.ie/celticinterconnector',
-    retrievedAt: '2026-09-15',
+    retrievedAt: '2026-10-04',
   },
   {
     id: 'qmv',
     title: 'Council · qualified majority voting',
     url: 'https://www.consilium.europa.eu/en/council-eu/how-does-the-council-vote/qualified-majority/',
-    retrievedAt: '2026-09-15',
+    retrievedAt: '2026-10-04',
   },
   {
     id: 'unanimity',
     title: 'Council · unanimity',
     url: 'https://www.consilium.europa.eu/en/council-eu/how-does-the-council-vote/unanimity/',
-    retrievedAt: '2026-09-15',
+    retrievedAt: '2026-10-04',
   },
   {
     id: 'sanctions',
@@ -28,7 +28,7 @@ export const sources: Source[] = [
     id: 'climate-law',
     title: 'Council · European climate law',
     url: 'https://www.consilium.europa.eu/en/press/press-releases/2021/06/28/council-adopts-european-climate-law/',
-    retrievedAt: '2026-09-15',
+    retrievedAt: '2026-10-04',
   },
   {
     id: 'accession',
@@ -65,5 +65,29 @@ export const sources: Source[] = [
     title: 'Mapzen · open elevation tiles',
     url: 'https://registry.opendata.aws/terrain-tiles/',
     retrievedAt: '2026-09-11',
+  },
+  {
+    id: 'cfsp-treaty',
+    title: 'EUR-Lex · Treaty on European Union, Article 31',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016M031',
+    retrievedAt: '2026-10-04',
+  },
+  {
+    id: 'urban-mobility',
+    title: 'European Commission · sustainable urban mobility',
+    url: 'https://transport.ec.europa.eu/transport-themes/urban-transport/sustainable-urban-mobility_en',
+    retrievedAt: '2026-10-04',
+  },
+  {
+    id: 'right-to-repair',
+    title: 'Council · right to repair products',
+    url: 'https://www.consilium.europa.eu/en/policies/right-to-repair-products/',
+    retrievedAt: '2026-10-04',
+  },
+  {
+    id: 'sdgs',
+    title: 'European Commission · Sustainable Development Goals',
+    url: 'https://commission.europa.eu/strategy-and-policy/sustainable-development-goals_en',
+    retrievedAt: '2026-10-04',
   },
 ];

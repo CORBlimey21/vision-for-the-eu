@@ -10,7 +10,7 @@
 6. Only add `teamVision` after the four-person team agrees its position. Mark working content `draft`; do not silently promote it to approved.
 7. Run `npm run check` and view the changed scene.
 
-The first energy topic is a design/content example (`status: illustrative`), not completed team research. It has no factual statistics or policy-source claims. Replace its copy with reviewed material before competition use. The choice schema is reusable; adding a second topic also needs the small topic-navigation step described in `ARCHITECTURE.md`.
+The energy topic keeps an illustrative effect model while linking factual background to sources. No topic statistics have been added. Four topics share the same choice schema and navigation; transport and repair explain trade-offs without numeric effects. Check factual copy and source scope before competition use.
 
 ## Historical data
 
@@ -45,3 +45,7 @@ Geography: © EuroGeographics for the administrative boundaries, distributed by 
 Set `illustration: 'council-vote'` on a topic and supply `visual.votingRule` (`unanimity` or `qualified-majority`) for its choices. This selects a bounded visual explanation, not a topic-specific page. Never reuse it for arbitrary coalitions: its logic only covers 26 supporters and one other participating government. Edit its copy in `content/voting.ts`; source and scope must remain visible.
 
 The team ending automatically compares each visitor choice with `teamVision.choiceId`. Missing choices display as unanswered, not as agreement or disagreement.
+
+## Qualitative topics
+
+Set `evaluation: 'qualitative'` for a choice supported by narrative trade-offs without a numerical model. Keep effect entries empty in `data/scenarios.ts`; the app omits numerical controls/readouts for that topic. Add optional `backgroundNotes` for context, with the supporting source IDs registered on the topic. Team approval does not verify statistics or convert aspirations into forecasts. See `VOICE_NOTES.md` for the October 2026 integration.

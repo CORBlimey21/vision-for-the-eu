@@ -87,3 +87,30 @@ test('every published topic has valid sources, unique choices and a usable team 
       assert.ok(topic.choices.every((c) => c.visual.votingRule));
   }
 });
+
+test('qualitative choices survive the team reveal without adding invented numeric effects', () => {
+  let state = reducer(initialState, { type: 'BUILD' });
+  state = reducer(state, { type: 'CHOOSE', topicId: 'energy', choiceId: 'shared-grid' });
+  const energy = evaluateChoices(topics, state.selections);
+  for (const topic of topics.filter((t) => t.evaluation === 'qualitative')) {
+    state = reducer(state, { type: 'TOPIC', id: topic.id });
+    state = reducer(state, {
+      type: 'CHOOSE',
+      topicId: topic.id,
+      choiceId: topic.teamVision!.choiceId,
+    });
+    const result = evaluateChoices([topic], state.selections);
+    assert.ok(result.consequences.length > 0);
+    assert.ok(Object.values(result.effects).every((value) => value === 0));
+    assert.deepEqual(result.networkIds, []);
+  }
+  const saved = { ...state.selections };
+  state = reducer(state, { type: 'TEAM_VISION' });
+  state = reducer(state, { type: 'TOPIC', id: 'repair-reuse' });
+  assert.deepEqual(state.selections, saved);
+  assert.equal(state.selections['repair-reuse'], 'repair-first');
+  assert.deepEqual(evaluateChoices(topics, state.selections).effects, energy.effects);
+  assert.ok(
+    evaluateChoices(topics, state.selections).consequences.length > energy.consequences.length,
+  );
+});

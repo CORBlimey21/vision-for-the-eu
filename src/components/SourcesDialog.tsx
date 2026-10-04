@@ -32,7 +32,7 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
         The dates and membership history have sources. The map uses current country boundaries.
         Policy scenarios explain ideas; they are not forecasts.
       </p>
-      <h3>Geography & history</h3>
+      <h3>Geography, history & policy sources</h3>
       <p>
         Contemporary GISCO 2024 borders are used throughout. The historical sequence is schematic:
         Germany is shown in its present shape, and historical territorial changes are not
@@ -50,15 +50,17 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       </ul>
       <h3>About the policy scenarios</h3>
       <p>
-        The scores and routes are authored examples awaiting team research review. Lines express
-        potential cooperation, not actual or proposed electricity infrastructure. Existing grid
-        connections are not represented. No numerical forecast is made.
+        The scores and routes are authored illustrations. Transport and repair choices use
+        qualitative trade-offs without scores. Lines express potential cooperation, not actual or
+        proposed electricity infrastructure. Existing grid connections are not represented. No
+        numerical forecast is made.
       </p>
       <h3>Your choices stay here</h3>
       <p>
         This version sends no responses, sets no tracking cookies, and stores no choices. Choices
-        reset when you reload. Anonymous comparison is not implemented. The team vision is an
-        editable draft, not an approved consensus.
+        reset when you reload. Anonymous comparison is not implemented. The team positions were
+        confirmed as agreed on 4 October 2026. They describe ambitions; the implementation details
+        and future outcomes remain open.
       </p>
     </dialog>
   );

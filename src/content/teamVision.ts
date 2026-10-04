@@ -1,31 +1,49 @@
 export const teamVision = {
-  status: 'draft',
-  headline: 'Ideas for Europe in 2050.',
+  status: 'approved',
+  headline: 'The Europe we want in 2050.',
   introduction:
-    'These ideas come from our team’s writing. We still need to decide what we agree on.',
+    'Keep the ambition. Change how we work together. These are our agreed directions for Europe, drawn from our voice notes: a vision to work towards, with choices still to make about delivery.',
   pillars: [
     {
-      title: 'Climate, transport and waste',
-      text: 'Keep the goal of a climate-neutral Europe in 2050. Invest in reliable public transport and make it easier to repair and reuse products.',
+      title: 'Keep the ambition',
+      text: 'Keep setting high goals for sustainability, equality, education and people’s lives. Support the UN Sustainable Development Goals and the EU’s climate-neutrality objective. Targets should guide action, with progress checked honestly rather than assumed.',
     },
     {
-      title: 'Electricity across borders',
-      text: 'Invest in renewable power and stronger connections between national grids. We would want countries to share the benefits fairly, but we have not worked out the costs or terms.',
+      title: 'Share clean electricity',
+      text: 'Invest in renewable power and stronger connections between national grids. Our proposed investment deal would seek fair access to surplus power at reduced prices. Funding, pricing and local benefits still need agreement; cheaper electricity is not guaranteed.',
     },
     {
-      title: 'Decisions on foreign policy',
-      text: 'Consider wider majority voting on foreign policy and sanctions, while keeping national control over taxation. We need to think through safeguards for countries that could be outvoted.',
+      title: 'Make public transport useful',
+      text: 'Invest in reliable buses, trains and trams suited to each place, so that fewer everyday journeys need a car. Services need to be affordable and accessible as well as frequent. We want useful journeys, not simply new lines on a map.',
     },
     {
-      title: 'Technology and defence',
-      text: 'Invest in European chips, cloud infrastructure and AI research. Some contributions also call for a shared digital identity and a European force alongside national armies. We still need to discuss privacy, democratic oversight, Irish neutrality and NATO.',
+      title: 'Repair, reuse, keep things longer',
+      text: 'Make circular use of resources ordinary practice. Encourage products that last and can be repaired, with affordable services and spare parts. Companies, governments and consumers all have a part to play. We aim to reduce waste, without promising it will disappear.',
+    },
+    {
+      title: 'Act together on foreign policy',
+      text: 'Seek wider majority voting for foreign policy and sanctions, while keeping taxation and treaty changes outside this proposal. Smaller states need safeguards. Military and defence decisions require separate treatment; our voting illustration does not model an army’s command system.',
+    },
+    {
+      title: 'Build digital independence',
+      text: 'Invest in European chips, cloud infrastructure and AI research, reducing dependence on outside suppliers for essential services. Support a digital identity that works across member states. Privacy, voluntary use and access for people without digital tools need explicit safeguards; identity alone cannot make healthcare systems identical.',
+    },
+    {
+      title: 'Take more responsibility for defence',
+      text: 'Work towards a coordinated European force with unified command alongside national armies, and independence from NATO and the United States. This is our proposed direction, not an existing EU army. Irish neutrality, deployment authority and parliamentary oversight still need to be worked through.',
+    },
+    {
+      title: 'Earn the trust to share power',
+      text: 'Technology and institutions cannot replace trust. Large and small countries must be able to shape shared decisions and understand what control they are sharing. Faster action needs accountability, and cooperation needs public consent.',
     },
   ],
   questions: [
-    'How should EU investment be funded, and who should benefit?',
-    'What should happen when a member state breaches shared EU rules, and how should enforcement remain fair and independent?',
-    'How could Ireland make better use of EU research, education and energy programmes?',
+    'Who funds the shared electricity investment, and how would the proposed price deal work?',
+    'Which safeguards protect smaller states when foreign-policy decisions use majority voting?',
+    'Who authorises a European force to deploy, and how would Irish neutrality and parliamentary oversight be protected?',
+    'How would digital identity protect privacy, voluntary use and access without a smartphone?',
+    'How would we judge whether public transport and repair policies actually improve everyday life?',
   ],
   qualification:
-    'This is a draft, not an agreed team position or a forecast. The EU already has a legal goal of climate neutrality by 2050; that does not mean eliminating every use of fuel.',
+    'An agreed team vision, not a forecast. Climate neutrality by 2050 is already an EU legal objective; it means balancing net greenhouse gas emissions, not a guarantee that every fuel or source of waste disappears.',
 };

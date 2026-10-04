@@ -411,7 +411,8 @@
 /* Content chapters retain the globe while longer research stays within the story. */
 .topic-nav {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   margin-bottom: 18px;
   border-bottom: 1px solid #accfc52b;
   padding-bottom: 12px;

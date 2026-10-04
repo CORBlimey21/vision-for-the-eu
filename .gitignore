@@ -8,3 +8,6 @@ dist/
 .venv/
 __pycache__/
 *.pyc
+
+# Working recordings and full transcripts stay outside the public app/repository.
+EU Voice Notes/
