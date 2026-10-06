@@ -1,3 +1,11 @@
+# Presentation wording and AI disclosure, 2026-10-06
+
+Removed obsolete scenario, voting-widget and response-collection wording from the live About/Sources dialog. The current presentation offers narrated agreed team positions rather than visitor policy selections. Legacy choice modules remain isolated reference code and are not rendered. Digital-identity consent wording remains appropriate to the policy itself.
+
+Added an AI-assistance disclosure near the top of the shared About/Sources dialog, with a footer link labelled “Sources & AI disclosure”. Copy is in `src/content/project.ts`: it identifies Codex assistance with development, editing, organisation and source checks; Whisper transcription and approximate timings; team-owned positions; original recorded voices; and source-based factual verification. It makes no claim that the team listening-certified every subtitle. Updated current README wording and recording count.
+
+Validation: `npm run check` passed all 18 tests, data validation, TypeScript and production build. Inspected the disclosure at 1440×900 and 390×844; mobile document width remains 390px and the dialog fits at 358px. Footer entry and close controls work.
+
 # Additional voice notes, 2026-10-06
 
 Integrated all eleven new recordings: three funding points, a source-qualified enforcement point and seven Ireland proposals. The six-chapter order keeps the 2050 vision last, preserving the closing thank-you. There are 31 public excerpts from 32 preserved recordings. No player lifecycle or globe controls were changed.

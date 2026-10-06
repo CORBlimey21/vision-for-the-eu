@@ -2,7 +2,7 @@ export const teamVision = {
   status: 'approved',
   headline: 'The Europe we want in 2050.',
   introduction:
-    'Keep the ambition. Change how we work together. These are our agreed directions for Europe, drawn from our voice notes: a vision to work towards, with choices still to make about delivery.',
+    'Keep the ambition. Change how we work together. These are our agreed directions for Europe, drawn from our voice notes: a vision to work towards, with delivery details still to resolve.',
   pillars: [
     {
       title: 'Keep the ambition',

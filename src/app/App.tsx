@@ -516,7 +516,7 @@ export default function App() {
             >
               {reduced ? 'Reduced motion' : 'Reduce motion'}
             </button>
-            <button onClick={() => setSourcesOpen(true)}>Sources & method ↗</button>
+            <button onClick={() => setSourcesOpen(true)}>Sources & AI disclosure ↗</button>
           </div>
         </footer>
         <div className="map-credit">

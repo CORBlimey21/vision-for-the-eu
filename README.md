@@ -26,7 +26,7 @@ npm run check
 - Desktop narration gives the globe more space on the right, with a closer western-Europe framing for electricity and a quiet chapter/point progress marker. Mobile retains its existing framing.
 - A closing thank-you from the four named team members, with a brief twelve-star entrance, replay and exploration controls. Automatic continuation reaches it after the final 2050 recording; manual readers can use “Thank you”.
 - Flagged passages are physically omitted from the exported audio. Original M4A recordings and full transcripts remain preserved in the ignored input folder.
-- Responsive layouts, reduced motion, no-WebGL content fallback, a source/method dialog, and a transparent statement that no responses are collected.
+- Responsive layouts, reduced motion, no-WebGL content fallback, an about/sources dialog with an AI-assistance disclosure and privacy information.
 - Static GISCO geometry and 92 bounded elevation tiles, preprocessing scripts, provenance, domain tests, asset validation, CI and a manually triggered GitHub Pages workflow.
 
 ## Read next
@@ -40,7 +40,7 @@ npm run check
 
 Graphics and energy links are **authored illustrations**, not forecasts, infrastructure routes or verified policy findings. No economic/population figures have been invented. Historical views use modern country boundaries and explicitly say so. Terrain is visual hillshade, not an analytical elevation product.
 
-Subtitles are machine transcriptions with approximate segment timing, not listening-certified quotations. The twenty AAC/MP3 recordings and VTT captions and their source ranges/hashes are under `public/audio/`; see `docs/VOICE_NOTES.md` for exclusions. Raw recordings are not shipped. Aggregate comparison and real topic statistics remain unimplemented. Original planning documents under `output/` and the existing Python blueprint remain untouched.
+Subtitles are machine transcriptions with approximate segment timing, not listening-certified quotations. The thirty-one AAC/MP3 recordings and VTT captions and their source ranges/hashes are under `public/audio/`; see `docs/VOICE_NOTES.md` for exclusions. Raw recordings are not shipped. Real topic statistics remain unimplemented. Original planning documents under `output/` and the existing Python blueprint remain untouched.
 
 ## GitHub Pages
 

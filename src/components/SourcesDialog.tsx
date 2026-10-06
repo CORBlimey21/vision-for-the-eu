@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { sources } from '../data/sources';
-import { school, teamMembers } from '../content/project';
+import { aiDisclosure, school, teamMembers } from '../content/project';
 import { Icon } from './Icon';
 export function SourcesDialog({ onClose }: { onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -18,7 +18,7 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       }}
     >
       <div className="dialog-heading">
-        <span className="eyebrow">Sources and method</span>
+        <span className="eyebrow">About, sources and AI assistance</span>
         <button className="icon-button" onClick={onClose} aria-label="Close sources">
           <Icon name="close" />
         </button>
@@ -27,10 +27,14 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       <p className="project-credit">
         {school} · {teamMembers.join(' · ')}
       </p>
+      <h3>{aiDisclosure.title}</h3>
+      {aiDisclosure.paragraphs.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
       <h3>What the map shows</h3>
       <p>
-        The dates and membership history have sources. The map uses current country boundaries.
-        Policy scenarios explain ideas; they are not forecasts.
+        The dates and membership history have sources. The map uses current country boundaries. The
+        narrated proposals express the team’s views; they are not forecasts.
       </p>
       <h3>Geography, history & policy sources</h3>
       <p>
@@ -56,14 +60,14 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       </p>
       <p>
         Graphics illustrate our proposals, not measured outcomes. Globe lines express potential
-        cooperation, not infrastructure routes. Voting uses a fictional 26-to-1 example and assigns
-        no positions to actual countries. Implementation details and future outcomes remain open.
+        cooperation, not infrastructure routes. Implementation details and future outcomes remain
+        open.
       </p>
       <h3>Playback stays in this session</h3>
       <p>
-        This version collects no responses, sets no tracking cookies and saves no playback
-        preferences. Voice and subtitles start on. At least one stays enabled, and narration pauses
-        when the page is hidden.
+        This website uses no analytics or tracking cookies and saves no playback preferences. Voice
+        and subtitles start on. At least one stays enabled, and narration pauses when the page is
+        hidden.
       </p>
     </dialog>
   );
