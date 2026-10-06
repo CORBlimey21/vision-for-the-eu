@@ -1219,3 +1219,19 @@ h3 {
   margin-top: 8px;
   color: var(--muted);
 }
+
+.map-credit .credit-disclosure {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.map-credit .credit-disclosure:hover,
+.map-credit .credit-disclosure:focus-visible {
+  color: var(--ink);
+}

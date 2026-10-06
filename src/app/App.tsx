@@ -522,6 +522,13 @@ export default function App() {
         <div className="map-credit">
           © EuroGeographics · Terrain © Mapzen{' '}
           <span>Contemporary borders; historical views schematic</span>
+          <span>
+            For the full statement on AI use, please see{' '}
+            <button className="credit-disclosure" onClick={() => setSourcesOpen(true)}>
+              our AI disclosure
+            </button>
+            .
+          </span>
         </div>
         {sourcesOpen && <SourcesDialog onClose={() => setSourcesOpen(false)} />}
       </main>

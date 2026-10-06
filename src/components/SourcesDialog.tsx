@@ -34,7 +34,7 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       <h3>What the map shows</h3>
       <p>
         The dates and membership history have sources. The map uses current country boundaries. The
-        narrated proposals express the team’s views; they are not forecasts.
+        narrated proposals express our views; they are not forecasts.
       </p>
       <h3>Geography, history & policy sources</h3>
       <p>
@@ -54,7 +54,7 @@ export function SourcesDialog({ onClose }: { onClose: () => void }) {
       </ul>
       <h3>About the recordings and graphics</h3>
       <p>
-        The team positions were confirmed as agreed on 4 October 2026. Recordings are edited
+        Our team positions were confirmed as agreed on 4 October 2026. Recordings are edited
         excerpts; flagged wording and unsupported passages are omitted. Subtitles use machine
         transcription with approximate timing. The original recordings remain preserved.
       </p>
