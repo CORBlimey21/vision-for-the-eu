@@ -1,10 +1,18 @@
+# Additional voice notes, 2026-10-06
+
+Integrated all eleven new recordings: three funding points, a source-qualified enforcement point and seven Ireland proposals. The six-chapter order keeps the 2050 vision last, preserving the closing thank-you. There are 31 public excerpts from 32 preserved recordings. No player lifecycle or globe controls were changed.
+
+Official-source review restored the verified approximately €3.6 billion Irish contribution sentence. The inconsistent Ireland–Portugal comparison and unsupported Portugal GDP/causal-proof passage remain physically excluded. See `VOICE_NOTES.md` and `FUNDING_REVIEW.json` for evidence and ranges. Source links and qualifications accompany the new points.
+
+Validation: all 18 tests, geographic-data validation, strict TypeScript and production build passed. All 62 audio exports decode with matching hashes and durations; AAC-LC/fast-start metadata and 44.1 kHz rates were checked. The original twenty cue/provenance records are unchanged. Browser checks covered funding playback, automatic advance and the restored contribution subtitle, Ireland’s seven-point list and chapter ending, navigation into the final vision, and layouts at 1440×900 and 390×844 with no mobile horizontal overflow. No new physical-device test is claimed.
+
 # iOS player startup follow-up, 2026-10-04
 
 The new AAC/MP3 exports still failed immediately inside the app on the user’s iPhone. The user confirmed the exact same AAC recording plays directly in Safari. This narrows the issue to the embedded playback path; the precise iOS failure mechanism remains unconfirmed.
 
 Manual selection now prepares absolute audio URLs without loading them. The Play handler assigns the source, loads and invokes play synchronously before yielding. A persistent audio element uses preload=none and playsInline; the unused native caption track is removed, while cue-driven subtitles/VTT assets are preserved. Automatic continuation reuses that element, and seeks before loading are applied on metadata. Pending playback is invalidated on pause/navigation/visibility loss. Failure UI includes the native format/error code/message and a standalone recording link; diagnostics stay on the page, with no telemetry or storage.
 
-Validation: all 18 tests, data validation, TypeScript and the production build passed. Unit tests verify synchronous load-before-play, failed-load retry, replay and source changes. Production-browser checks confirmed no audio source/request before the first Play, playback, automatic continuation, manual reset, seek before load, forced AAC/MP3 failure details and recovery. Mobile 390×844 and desktop layouts were inspected. Physical-iPhone confirmation of this startup change remains outstanding.
+Validation: all 18 tests, data validation, TypeScript and the production build passed. Unit tests verify synchronous load-before-play, failed-load retry, replay and source changes. Production-browser checks confirmed no audio source/request before the first Play, playback, automatic continuation, manual reset, seek before load, forced AAC/MP3 failure details and recovery. Mobile 390×844 and desktop layouts were inspected. The user subsequently confirmed successful playback on the iPhone.
 
 # iOS audio compatibility, 2026-10-04
 

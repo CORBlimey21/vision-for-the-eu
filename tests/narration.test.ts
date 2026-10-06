@@ -86,7 +86,7 @@ test('every narrated point has sources, bounded cues and a matching exported aud
       );
     }
   }
-  assert.equal(used.size, 20);
+  assert.equal(used.size, 31);
   assert.equal(media.length, used.size);
   const files = readdirSync(new URL('../public/audio/', import.meta.url));
   assert.equal(files.filter((name) => name.endsWith('.mp3')).length, used.size);
@@ -110,6 +110,15 @@ test('flagged passages are outside the exported source ranges and captions', () 
     ],
     'our-eu-20503': [[8.9, 19.04]],
     'our-eu-20504': [[8.85, 17.85]],
+    funding2: [
+      [6.05, 7.28],
+      [12.1, 36],
+    ],
+    funding3: [[38.6, 70]],
+    'rogue-member-states': [
+      [54.75, 58.61],
+      [68.19, 75],
+    ],
   };
   for (const [id, ranges] of Object.entries(exclusions)) {
     const record = provenance.recordings.find((item: { id: string }) => item.id === id);
@@ -125,5 +134,9 @@ test('flagged passages are outside the exported source ranges and captions', () 
   const text = media
     .flatMap((item: { cues: { text: string }[] }) => item.cues.map((cue) => cue.text))
     .join(' ');
-  assert.ok(!/87\.5|Greedlock|Passerel|internet connector|multi-seed|force true/.test(text));
+  assert.ok(
+    !/87\.5|38\.4|2\.4 billion|5\.25|Proof that this system|compromised|Greedlock|Passerel|internet connector|multi-seed|force true/.test(
+      text,
+    ),
+  );
 });

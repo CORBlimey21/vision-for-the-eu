@@ -301,6 +301,172 @@
       "output_sha256": "8ee1f9f525d8f165ec59281a5758f2ee179e58f0e700aa103cabdb0d866f8b6a",
       "fallback_sha256": "2a229eafab4d86a62cf5aaf9011e88dc689168d47f7a216bf7f98b957f4e68ff",
       "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "funding1",
+      "source_file": "Funding1.m4a",
+      "source_sha256": "8fca7d6e7f14c848a366ff30b398901f79a69be02c07083f1604985df2c831b1",
+      "source_ranges_seconds": [
+        [
+          0,
+          41.9186875
+        ]
+      ],
+      "output_sha256": "bede765276abc7c2c4b18596a58b745350d3fcf6ecfec09f15d1bd7f0c2853b8",
+      "fallback_sha256": "d647ab1938adb77aed29993933bd65b291e95c4979b6a43dc78fdddbb032c9f8",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "funding2",
+      "source_file": "Funding2.m4a",
+      "source_sha256": "240db09a7722f68fb721440d4e4d40c661c992be390b40f5c8309d39c97913b8",
+      "source_ranges_seconds": [
+        [
+          0,
+          6.05
+        ],
+        [
+          7.28,
+          12.1
+        ]
+      ],
+      "output_sha256": "8cb309778e0164d04594afcb587ec0fa3d1b170708b1d35329738f9ddbcfb31d",
+      "fallback_sha256": "5a024a6557ea86b0b30c78464515b87f46ecb100566857f7e4d922fce7a7f467",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "funding3",
+      "source_file": "Funding3.m4a",
+      "source_sha256": "098ca4ec076b3d6b1f59ae1114021588f24617894d1c1dc4036ab6a54760774d",
+      "source_ranges_seconds": [
+        [
+          0,
+          38.6
+        ]
+      ],
+      "output_sha256": "044c269c8e9f9fd0df1152889ea46ace774962c95fd9eda524b423828e966112",
+      "fallback_sha256": "4c42a88dd9576ef15d7292cb8c2a0b158b60ef2c266baf0dc4c3c300443e0b06",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "rogue-member-states",
+      "source_file": "Rogue member states.m4a",
+      "source_sha256": "984b85c9c2fb09abaa44de7b1016040c4af85c1bef8b7de5d11ce5c4e5822151",
+      "source_ranges_seconds": [
+        [
+          7.43,
+          13.51
+        ],
+        [
+          38.31,
+          54.75
+        ],
+        [
+          58.61,
+          68.19
+        ]
+      ],
+      "output_sha256": "cbdbab1597badb463c44cc2c21ca0ff9dc452c060883fd5967c1e455aac28267",
+      "fallback_sha256": "b3881d4727495411e85fbe7829727c57a0b1b36276b51a45dd706f93c312f89b",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do1",
+      "source_file": "What Ireland should do1.m4a",
+      "source_sha256": "506dd1ce2fc9e41c9555a88d926f602c42043f6fb6514fbeb3628089a1036f98",
+      "source_ranges_seconds": [
+        [
+          0,
+          22.7186875
+        ]
+      ],
+      "output_sha256": "2d9b3e78a745ab75e3ebb4d35ffdc4ea9c8def6ce3967ff7c22fdaf2215f6232",
+      "fallback_sha256": "4bb2825645c9a3c0b0b2b0ca958607ff89420ede9536ce84c56b5767be40390b",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do2",
+      "source_file": "What Ireland should do2.m4a",
+      "source_sha256": "47fffcd9d35b6c723324437da0078a4550854248a4c32775ced50ef1ae9d2216",
+      "source_ranges_seconds": [
+        [
+          0,
+          23.828
+        ]
+      ],
+      "output_sha256": "4b3ba857ef1641cc9d2d08faa049c5ffd84d81829a941f19eb84300646acdcb0",
+      "fallback_sha256": "a179ad1c02ef65caaea385b1dfd2224ccc2486670aab879aadb680d8a8dceacb",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do3",
+      "source_file": "What Ireland should do3.m4a",
+      "source_sha256": "af9ac2083f2e0ba44cc43b31df25b8edac095bca1b3eb36f3ca70c9bca64058e",
+      "source_ranges_seconds": [
+        [
+          0,
+          23.7426875
+        ]
+      ],
+      "output_sha256": "cd5be94822aa77d5b8a204b33872dc22885b36711de851dbcd7a0385695a6381",
+      "fallback_sha256": "fd0135a95b2b41797250a885760ccb88d28903559d6258cadb8c987b43c3219f",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do4",
+      "source_file": "What Ireland should do4.m4a",
+      "source_sha256": "6b19c3bc836e232f367e68c2dbc55b71090bd05726f0628402c1f9d3517cde77",
+      "source_ranges_seconds": [
+        [
+          0,
+          22.804
+        ]
+      ],
+      "output_sha256": "0b9b044b4f02cde16ec16a8a972560b59274660017d52b17162df84bc6eced80",
+      "fallback_sha256": "367cd6b3591eb2d750b22135233a9c28de8c83e3f97f0d54a1e4d2599d94d99d",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do5",
+      "source_file": "What Ireland should do5.m4a",
+      "source_sha256": "e50c77a08ca6102cf97b23b03f552a6114390fb49ba1435f0a60596ca59f386f",
+      "source_ranges_seconds": [
+        [
+          0,
+          20.756
+        ]
+      ],
+      "output_sha256": "286276fec4babbb3d378cf179ced08a011f1a0223077a295e78730efec4f7b54",
+      "fallback_sha256": "67872eec6da9458d4ceb6f5b0923e34474c403c1b4d8c13716ce57c994687652",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do6",
+      "source_file": "What Ireland should do6.m4a",
+      "source_sha256": "c23f32e18ba57191e3005e411d82de59ed5a964d0fdf1ddce207867f40b95967",
+      "source_ranges_seconds": [
+        [
+          0,
+          21.524
+        ]
+      ],
+      "output_sha256": "e435e6d5dc5e9eb6b18a622929c36dda867773df1c698288d1a65c27067e26b4",
+      "fallback_sha256": "bc1146b278323fb5531297e71c068955bcbb668d1a742c271ff9532d595e3fdc",
+      "caption_status": "edited machine transcript; approximate segment timing"
+    },
+    {
+      "id": "what-ireland-should-do7",
+      "source_file": "What Ireland should do7.m4a",
+      "source_sha256": "a0544de6b26ef076673c8051433d092fd66386023e0009a7e916967b1723e1f4",
+      "source_ranges_seconds": [
+        [
+          0,
+          19.9026875
+        ]
+      ],
+      "output_sha256": "2ef77f096fb01996c9e8af8f395936568d43818bf5184f01850b4c191caed14b",
+      "fallback_sha256": "3abbade55e8482bcd08b2407ce93bd8e2dab44f5efbe6e333c526a7cf872cab3",
+      "caption_status": "edited machine transcript; approximate segment timing"
     }
   ],
   "held_recordings": [

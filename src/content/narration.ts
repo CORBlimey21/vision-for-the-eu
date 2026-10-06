@@ -89,10 +89,51 @@ export const narratedTopics: NarratedTopic[] = [
     ],
   },
   {
+    id: 'funding',
+    title: 'Fund shared progress',
+    introduction: 'How should contributions and shared investment work together?',
+    sourceIds: ['eu-budget', 'irish-transactions-2022', 'eu-budget-data'],
+    points: [
+      {
+        id: 'funding-sources',
+        recordingId: 'funding1',
+        title: 'Contribute to shared goals.',
+        position:
+          'The point: national contributions help finance the EU budget. Our decision is to judge that shared funding by what it can achieve together.',
+        graphic: 'ambition',
+        graphicLabels: ['Contribute', 'Invest', 'Review'],
+        qualification:
+          'GNI-based contributions are one source of revenue, alongside customs duties, VAT-based contributions and non-recycled plastic packaging contributions. Corrections also apply; this is a simplified explanation.',
+      },
+      {
+        id: 'funding-fairness',
+        recordingId: 'funding2',
+        title: 'What makes funding fair?',
+        position:
+          'The point: countries can contribute and receive different amounts. Our decision is to consider the wider purpose of cooperation alongside direct budget flows.',
+        graphic: 'trust',
+        graphicLabels: ['Contributions', 'Shared benefits', 'Fairness'],
+        qualification:
+          'Ireland’s approximately €3.6 billion contribution in 2022 is supported by the Department of Finance’s cash-based report. The rest of the numerical comparison is omitted: national cash reports and Commission accounting data differ, and direct budget flows do not measure all membership benefits.',
+      },
+      {
+        id: 'funding-purpose',
+        recordingId: 'funding3',
+        title: 'Invest in future opportunity.',
+        position:
+          'Our decision: support investment that helps economies build capacity, opportunities and connections. Assess the results rather than assuming every project succeeds.',
+        graphic: 'ambition',
+        graphicLabels: ['Build capacity', 'Create opportunity', 'Evaluate'],
+        qualification:
+          'The recording describes a rationale for investment, not a measured causal effect. Its Portugal GDP figure and claim of proof are omitted.',
+      },
+    ],
+  },
+  {
     id: 'decision-making',
     title: 'Decide together',
     introduction: 'How can the EU act together while protecting national consent?',
-    sourceIds: ['qmv', 'unanimity', 'sanctions', 'cfsp-treaty'],
+    sourceIds: ['qmv', 'unanimity', 'sanctions', 'cfsp-treaty', 'eu-courts', 'article-7'],
     points: [
       {
         id: 'sovereignty',
@@ -164,6 +205,98 @@ export const narratedTopics: NarratedTopic[] = [
         votingRule: 'qualified-majority',
         qualification:
           'An agreed team proposal, not the current rule for every foreign-policy decision. Military and defence decisions need separate treatment.',
+      },
+      {
+        id: 'shared-rules',
+        recordingId: 'rogue-member-states',
+        title: 'Shared rules need accountability.',
+        position:
+          'Our decision: make cooperation accountable through lawful enforcement of shared EU obligations, with independent courts and clear procedures.',
+        graphic: 'trust',
+        graphicLabels: ['Shared rules', 'Independent courts', 'Accountability'],
+        qualification:
+          'EU-law infringement proceedings and Article 7 protection of EU values are different procedures. Penalties are subject to legal conditions; disagreement with a policy is not itself a breach. The judicial institution includes both the Court of Justice and the General Court.',
+      },
+    ],
+  },
+  {
+    id: 'ireland',
+    title: 'Ireland’s next steps',
+    introduction: 'How can Ireland make more of its EU membership?',
+    sourceIds: ['ireland-eu', 'horizon-europe', 'erasmus', 'irish-offshore'],
+    points: [
+      {
+        id: 'ireland-opportunities',
+        recordingId: 'what-ireland-should-do1',
+        title: 'Make membership work for Ireland.',
+        position:
+          'Our decision: turn EU membership into practical opportunities through funding, education, trade and cooperation.',
+        graphic: 'ambition',
+        graphicLabels: ['Funding', 'Education', 'Cooperation'],
+      },
+      {
+        id: 'ireland-funding',
+        recordingId: 'what-ireland-should-do2',
+        title: 'Help people access funding.',
+        position:
+          'Our decision: give businesses, community groups and local organisations clearer guidance and support to apply for suitable EU funding.',
+        graphic: 'ambition',
+        graphicLabels: ['Find programmes', 'Get support', 'Apply'],
+        qualification:
+          'Funding depends on programme eligibility, selection and delivery requirements; support does not guarantee an award.',
+      },
+      {
+        id: 'ireland-research',
+        recordingId: 'what-ireland-should-do3',
+        title: 'Research together.',
+        position:
+          'Our decision: connect Irish universities and businesses with European research partners in healthcare, AI and renewable energy.',
+        graphic: 'digital',
+        graphicLabels: ['Research partners', 'Shared knowledge', 'Innovation'],
+        qualification:
+          'Horizon Europe supports research and innovation. The possible jobs and improvements described in the recording are ambitions, not forecasts.',
+      },
+      {
+        id: 'ireland-business',
+        recordingId: 'what-ireland-should-do4',
+        title: 'Help smaller businesses reach Europe.',
+        position:
+          'Our decision: help smaller Irish companies understand EU requirements and expand into the single market.',
+        graphic: 'trust',
+        graphicLabels: ['Understand rules', 'Support businesses', 'Reach customers'],
+        qualification:
+          'The single market reduces many barriers; it does not remove every regulatory requirement or business cost.',
+      },
+      {
+        id: 'ireland-wind',
+        recordingId: 'what-ireland-should-do5',
+        title: 'Develop offshore wind responsibly.',
+        position:
+          'Our decision: invest in Ireland’s offshore wind potential as part of a cleaner, more connected energy system.',
+        graphic: 'energy',
+        graphicLabels: ['Wind potential', 'Investment', 'Grid connections'],
+        qualification:
+          'Ireland has an offshore renewable-energy framework. Project delivery still depends on planning, environmental assessment, infrastructure and investment; benefits are not guaranteed.',
+      },
+      {
+        id: 'ireland-education',
+        recordingId: 'what-ireland-should-do6',
+        title: 'Open more European opportunities.',
+        position:
+          'Our decision: increase participation in Erasmus+ and other European learning opportunities, helping students gain experience, languages and international connections.',
+        graphic: 'ambition',
+        graphicLabels: ['Study', 'Train', 'Connect'],
+        qualification:
+          'Erasmus+ opportunities have eligibility and application requirements, often through a school, college or other organisation.',
+      },
+      {
+        id: 'ireland-conclusion',
+        recordingId: 'what-ireland-should-do7',
+        title: 'Turn cooperation into action.',
+        position:
+          'Our decision: connect funding advice, business support, research, renewable energy and education so Ireland can make more of its EU membership.',
+        graphic: 'trust',
+        graphicLabels: ['Practical support', 'European partners', 'Shared opportunity'],
       },
     ],
   },

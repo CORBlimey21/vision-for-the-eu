@@ -90,4 +90,58 @@ export const sources: Source[] = [
     url: 'https://commission.europa.eu/strategy-and-policy/sustainable-development-goals_en',
     retrievedAt: '2026-10-04',
   },
+  {
+    id: 'eu-budget',
+    title: 'Council · financing the EU budget',
+    url: 'https://www.consilium.europa.eu/en/policies/financing-the-eu-budget/',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'eu-courts',
+    title: 'CURIA · Court of Justice of the EU',
+    url: 'https://curia.europa.eu/site/jcms/d2_5390/en/about-the-court-of-justice-of-the-eu',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'article-7',
+    title: 'Council · Article 7 procedures',
+    url: 'https://www.consilium.europa.eu/en/policies/article-7-procedures/',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'ireland-eu',
+    title: 'European Commission · benefits of EU membership for Ireland',
+    url: 'https://ireland.representation.ec.europa.eu/about-us/benefits-eu-membership-ireland_en',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'horizon-europe',
+    title: 'European Commission · Horizon Europe',
+    url: 'https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/horizon-europe_en',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'erasmus',
+    title: 'Erasmus+ · opportunities for individuals',
+    url: 'https://erasmus-plus.ec.europa.eu/opportunities/individuals',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'irish-offshore',
+    title: 'Government of Ireland · offshore renewable energy framework',
+    url: 'https://www.gov.ie/en/department-of-climate-energy-and-the-environment/publications/future-framework-for-offshore-renewable-energy/',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'irish-transactions-2022',
+    title: 'Department of Finance · Ireland’s EU transactions in 2022',
+    url: 'https://www.gov.ie/en/department-of-finance/publications/annual-report-on-irelands-transactions-with-the-eu-in-2022/',
+    retrievedAt: '2026-10-06',
+  },
+  {
+    id: 'eu-budget-data',
+    title: 'European Commission · EU spending and revenue',
+    url: 'https://commission.europa.eu/strategy-and-policy/eu-budget/long-term-eu-budget/2021-2027/spending-and-revenue_en',
+    retrievedAt: '2026-10-06',
+  },
 ];

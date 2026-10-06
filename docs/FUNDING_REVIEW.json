@@ -1,0 +1,18 @@
+{
+  "retrieved_at": "2026-10-06",
+  "source_url": "https://commission.europa.eu/document/download/9f334bee-d097-4b68-8f93-2225eabeb631_en?filename=eu_budget_spending_and_revenue_2000-2025.xlsx",
+  "source_sha256": "c885ac6d2ab968dd0ecdbbd354cf5b43cda1139898e7bbda8b3c9e431c6d9852",
+  "worksheet": "2022",
+  "unit": "EUR million",
+  "cells": {
+    "O127": 2340.6160942824586,
+    "AD127": 5274.392029489189,
+    "O144": 87.59918315,
+    "AD144": 1184.34482615,
+    "O156": 3496.12698419,
+    "AD156": 2463.42952847,
+    "O163": -22.52269338,
+    "AD163": 1.08242865
+  },
+  "interpretation": "O=Ireland; AD=Portugal. Row 127 total expenditure; row 144 NGEU is separate; row 156 own resources; row 163 balances and adjustments. Do not mix these with national cash-based accounts."
+}

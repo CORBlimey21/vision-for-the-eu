@@ -34,6 +34,17 @@ EXCERPTS = {
     'Our EU 20505': None,
     'Our EU 20506': None,
     'Our EU 20507': None,
+    'Funding1': None,
+    'Funding2': [(0, 6.05), (7.28, 12.1)],
+    'Funding3': [(0, 38.6)],
+    'Rogue member states': [(7.43, 13.51), (38.31, 54.75), (58.61, 68.19)],
+    'What Ireland should do1': None,
+    'What Ireland should do2': None,
+    'What Ireland should do3': None,
+    'What Ireland should do4': None,
+    'What Ireland should do5': None,
+    'What Ireland should do6': None,
+    'What Ireland should do7': None,
 }
 # Flagged wording is excluded from the audio, rather than silently corrected.
 EDITS = {}
@@ -83,9 +94,23 @@ def main():
                 for output in resampler.resample(None):
                     for packet in stream.encode(output): container.mux(packet)
                 for packet in stream.encode(None): container.mux(packet)
+        # Supplementary word timing allows precise cuts without retaining words
+        # from a segment that straddles an excluded numerical claim.
+        words_path = INPUT / 'transcripts' / f'{stem}.words.json'
+        words = json.loads(words_path.read_text()) if stem in ['Funding2', 'Funding3'] else None
         cues, offset = [], 0
         for start, end in ranges:
-            for cue in transcript['segments']:
+            cue_source = transcript['segments']
+            if words is not None:
+                cue_source, group = [], []
+                for word in words:
+                    if word['start'] < start or word['end'] > end: continue
+                    if group and (word['start'] - group[-1]['end'] > .8 or sum(len(w['text']) for w in group) > 110):
+                        cue_source.append({'start': group[0]['start'], 'end': group[-1]['end'], 'text': ''.join(w['text'] for w in group).strip()})
+                        group = []
+                    group.append(word)
+                if group: cue_source.append({'start': group[0]['start'], 'end': group[-1]['end'], 'text': ''.join(w['text'] for w in group).strip()})
+            for cue in cue_source:
                 a, b = max(start, cue['start']), min(end, cue['end'])
                 if a >= b: continue
                 text = cue['text']

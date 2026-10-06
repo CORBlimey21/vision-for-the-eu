@@ -653,5 +653,348 @@
         "text": "The European Union will realise that trusting each other enough to use them is not easy."
       }
     ]
+  },
+  {
+    "id": "funding1",
+    "file": "funding1-v2.m4a",
+    "fallbackFile": "funding1-v2.mp3",
+    "duration": 41.9186875,
+    "cues": [
+      {
+        "start": 1.01,
+        "end": 6.93,
+        "text": "How the EU funds its member states The EU is funded through several streams,"
+      },
+      {
+        "start": 6.93,
+        "end": 11.59,
+        "text": "one being contributions from member countries based on their wealth."
+      },
+      {
+        "start": 11.59,
+        "end": 15.81,
+        "text": "Contribution from member countries has been a controversial topic over the years."
+      },
+      {
+        "start": 15.81,
+        "end": 19.89,
+        "text": "There are many questions that have arisen over how much member states contribute to"
+      },
+      {
+        "start": 19.89,
+        "end": 25.09,
+        "text": "the EU compared to how much funding they receive from the EU in forms such as grants."
+      },
+      {
+        "start": 25.09,
+        "end": 30.45,
+        "text": "The contributions are primarily calculated based off each member state's gross national"
+      },
+      {
+        "start": 30.45,
+        "end": 36.61,
+        "text": "income, GNI, and applying a uniform rate meaning each country pays a different"
+      },
+      {
+        "start": 36.61,
+        "end": 41.919,
+        "text": "amount, richer countries pay more and poorer countries pay less."
+      }
+    ]
+  },
+  {
+    "id": "funding2",
+    "file": "funding2-v2.m4a",
+    "fallbackFile": "funding2-v2.mp3",
+    "duration": 10.87,
+    "cues": [
+      {
+        "start": 0.18,
+        "end": 5.82,
+        "text": "Where there is some controversy is how much countries take from the EU compared to how much they gave."
+      },
+      {
+        "start": 6.05,
+        "end": 10.77,
+        "text": "in 2022 Ireland contributed approximately 3.6 billion"
+      }
+    ]
+  },
+  {
+    "id": "funding3",
+    "file": "funding3-v2.m4a",
+    "fallbackFile": "funding3-v2.mp3",
+    "duration": 38.6,
+    "cues": [
+      {
+        "start": 1.42,
+        "end": 7.84,
+        "text": "People have asked throughout the years how this is fair, but there is one main reason for this. The EU is set up"
+      },
+      {
+        "start": 7.84,
+        "end": 15.06,
+        "text": "not only to allow for freedom of trade, prevent conflicts and political cooperation, but also to rebuild economies."
+      },
+      {
+        "start": 15.76,
+        "end": 22.28,
+        "text": "The theory for this practice is that if economies can rebuild structures which allow for future revenue, the economy"
+      },
+      {
+        "start": 22.28,
+        "end": 29.8,
+        "text": "will become more active which can have several effects, such as increasing employment rates, increased taxation,"
+      },
+      {
+        "start": 30.54,
+        "end": 37.88,
+        "text": "therefore increased government revenue, increased selection of goods for consumers, increased trading among EU"
+      },
+      {
+        "start": 37.88,
+        "end": 38.4,
+        "text": "states."
+      }
+    ]
+  },
+  {
+    "id": "rogue-member-states",
+    "file": "rogue-member-states-v2.m4a",
+    "fallbackFile": "rogue-member-states-v2.mp3",
+    "duration": 32.1,
+    "cues": [
+      {
+        "start": 0.0,
+        "end": 6.08,
+        "text": "The EU should be a body which thrives when countries work together when making key decisions."
+      },
+      {
+        "start": 6.08,
+        "end": 11.64,
+        "text": "For one key question which must be asked is who should enforce these decisions made"
+      },
+      {
+        "start": 11.64,
+        "end": 17.56,
+        "text": "by the EU and how should those who breach the agreements reach to be brought to justice."
+      },
+      {
+        "start": 17.56,
+        "end": 22.52,
+        "text": "The court of justice of the EU which operates out of Luxembourg."
+      },
+      {
+        "start": 22.52,
+        "end": 27.74,
+        "text": "This court works to ensure that each country applies EU law in the intended manner, and"
+      },
+      {
+        "start": 27.74,
+        "end": 32.1,
+        "text": "it settles legal disputes among the countries within the EU."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do1",
+    "file": "what-ireland-should-do1-v2.m4a",
+    "fallbackFile": "what-ireland-should-do1-v2.mp3",
+    "duration": 22.7186875,
+    "cues": [
+      {
+        "start": 0.21,
+        "end": 3.21,
+        "text": "what Ireland should do to benefit more from the EU."
+      },
+      {
+        "start": 3.21,
+        "end": 7.21,
+        "text": "Ireland has gained benefits from being a member of the European Union."
+      },
+      {
+        "start": 7.21,
+        "end": 11.21,
+        "text": "These include access to the single market, EU funding,"
+      },
+      {
+        "start": 11.21,
+        "end": 16.21,
+        "text": "education opportunities and closer cooperation with European countries."
+      },
+      {
+        "start": 16.21,
+        "end": 20.21,
+        "text": "Ireland could still do more to make the most of its EU membership."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do2",
+    "file": "what-ireland-should-do2-v2.m4a",
+    "fallbackFile": "what-ireland-should-do2-v2.mp3",
+    "duration": 23.828,
+    "cues": [
+      {
+        "start": 1.04,
+        "end": 11.04,
+        "text": "One key area is EU funding. Ireland gets support from agriculture, infrastructure, education and regional development."
+      },
+      {
+        "start": 11.04,
+        "end": 20.04,
+        "text": "The government could do more to help businesses, community groups and local organisations understand how to apply for this funding."
+      },
+      {
+        "start": 20.04,
+        "end": 23.04,
+        "text": "With support, more of these groups could benefit and grow."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do3",
+    "file": "what-ireland-should-do3-v2.m4a",
+    "fallbackFile": "what-ireland-should-do3-v2.mp3",
+    "duration": 23.7426875,
+    "cues": [
+      {
+        "start": 1.1,
+        "end": 6.1,
+        "text": "Ireland could also take advantage of European research and innovation programmes."
+      },
+      {
+        "start": 6.1,
+        "end": 10.1,
+        "text": "By working with universities and businesses across Europe,"
+      },
+      {
+        "start": 10.1,
+        "end": 14.1,
+        "text": "Ireland could develop technologies, create high-skilled jobs"
+      },
+      {
+        "start": 14.1,
+        "end": 19.1,
+        "text": "and improve areas like healthcare, artificial intelligence and renewable energy."
+      },
+      {
+        "start": 19.1,
+        "end": 23.1,
+        "text": "Collaborating with countries opens up more possibilities for innovation."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do4",
+    "file": "what-ireland-should-do4-v2.m4a",
+    "fallbackFile": "what-ireland-should-do4-v2.mp3",
+    "duration": 22.804,
+    "cues": [
+      {
+        "start": 1.46,
+        "end": 4.48,
+        "text": "The single market is another opportunity."
+      },
+      {
+        "start": 4.48,
+        "end": 9.8,
+        "text": "Irish businesses can sell their products and services to customers in all EU countries"
+      },
+      {
+        "start": 9.8,
+        "end": 15.12,
+        "text": "without facing many of the trade barriers that exist with non-EU countries."
+      },
+      {
+        "start": 15.12,
+        "end": 20.0,
+        "text": "The government could help smaller Irish companies understand the EU regulations and support"
+      },
+      {
+        "start": 20.0,
+        "end": 22.48,
+        "text": "them into expanding into European markets."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do5",
+    "file": "what-ireland-should-do5-v2.m4a",
+    "fallbackFile": "what-ireland-should-do5-v2.mp3",
+    "duration": 20.756,
+    "cues": [
+      {
+        "start": 1.26,
+        "end": 5.26,
+        "text": "Ireland should also focus on energy, especially offshore wind."
+      },
+      {
+        "start": 5.26,
+        "end": 16.26,
+        "text": "The country has strong wind resources and investing in this area could create jobs, reduce reliance on fossil fuels and help meet Europe's clean energy goals."
+      },
+      {
+        "start": 16.26,
+        "end": 20.26,
+        "text": "Offshore wind has potential and Ireland is well placed to benefit."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do6",
+    "file": "what-ireland-should-do6-v2.m4a",
+    "fallbackFile": "what-ireland-should-do6-v2.mp3",
+    "duration": 21.524,
+    "cues": [
+      {
+        "start": 1.14,
+        "end": 4.98,
+        "text": "Education is another way Ireland can gain more from the EU."
+      },
+      {
+        "start": 4.98,
+        "end": 11.78,
+        "text": "Programs such as Erasmus allow students and young people to study, train and work in European countries."
+      },
+      {
+        "start": 11.78,
+        "end": 18.1,
+        "text": "Increasing participation in these programs could help Irish students gain real-world experience,"
+      },
+      {
+        "start": 18.1,
+        "end": 21.524,
+        "text": "learn languages and build international connections."
+      }
+    ]
+  },
+  {
+    "id": "what-ireland-should-do7",
+    "file": "what-ireland-should-do7-v2.m4a",
+    "fallbackFile": "what-ireland-should-do7-v2.mp3",
+    "duration": 19.9026875,
+    "cues": [
+      {
+        "start": 0.75,
+        "end": 6.91,
+        "text": "Overall, Ireland could benefit more from the EU by making use of available funding, supporting"
+      },
+      {
+        "start": 6.91,
+        "end": 13.73,
+        "text": "businesses and investing in research and renewable energy, and increasing educational opportunities."
+      },
+      {
+        "start": 13.73,
+        "end": 18.19,
+        "text": "By working with other EU countries, Ireland could make the most of opportunities that"
+      },
+      {
+        "start": 18.19,
+        "end": 19.87,
+        "text": "the EU membership provides."
+      }
+    ]
   }
 ]

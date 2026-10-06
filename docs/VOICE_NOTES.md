@@ -1,3 +1,27 @@
+# Additional recordings — 6 October 2026
+
+All eleven new recordings were transcribed with the existing small.en workflow, bringing the preserved input inventory to 32. Eleven additional public excerpts bring the presentation to 31 points across six chapters. These remain agreed team positions; factual qualifications and primary sources are separate from the decisions.
+
+| Recording                 | Integration                                                                                                                   | Selected original seconds            |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Funding1                  | Funding: contribute to shared goals                                                                                           | Full                                 |
+| Funding2                  | Funding: what makes funding fair?                                                                                             | 0–6.05; 7.28–12.10                   |
+| Funding3                  | Funding: invest in future opportunity                                                                                         | 0–38.60                              |
+| Rogue member states       | Decision-making: shared rules need accountability                                                                             | 7.43–13.51; 38.31–54.75; 58.61–68.19 |
+| What Ireland should do1–7 | Seven-point Ireland chapter: membership, funding access, research, smaller businesses, offshore wind, Erasmus and cooperation | Full                                 |
+
+The [Department of Finance’s 2022 report](https://www.gov.ie/en/department-of-finance/publications/annual-report-on-irelands-transactions-with-the-eu-in-2022/) supports the recorded approximately €3.6 billion Irish contribution. That sentence is included. The rest of Funding2’s Ireland–Portugal comparison is omitted: the Irish cash report gives receipts of €2.009 billion, while Commission accounting uses a different basis. The [Commission spending and revenue dataset](https://commission.europa.eu/strategy-and-policy/eu-budget/long-term-eu-budget/2021-2027/spending-and-revenue_en) does not support the complete recorded comparison on a consistent basis. A source hash, worksheet cells and units are preserved in `FUNDING_REVIEW.json`. Budget flows alone do not measure the benefits of membership.
+
+Funding3’s 38.4% Portugal GDP claim and assertion of causal proof are omitted. The [Banco de Portugal December 2023 bulletin](https://www.bportugal.pt/sites/default/files/documents/2024-01/be_dez23_e_0.pdf) reported 2022 real GDP growth of 6.8%; aggregate GDP growth cannot establish the effect of EU funding. The retained passage presents an investment rationale, with no promised economic outcome.
+
+The enforcement excerpt omits the institution-composition wording and unconditional fines claim. Source notes distinguish infringement proceedings from Article 7, identify the CJEU’s two courts, and explain that political disagreement alone is not a breach. Ireland’s proposals retain programme eligibility, environmental/planning constraints and uncertain outcomes. Funding notes explain that GNI is only one revenue stream.
+
+Raw transcripts remain unchanged in the ignored input folder. Funding2 and Funding3 also have supplementary `*.words.json` files generated with the same model and word timestamps; the exporter uses only words fully inside the selected intervals. Captions remain machine-generated and approximate, rather than certified verbatim transcripts. Existing twenty audio exports and cues are preserved, including the user-confirmed iPhone playback startup path.
+
+The following sections document earlier increments and decisions.
+
+---
+
 # Narrated presentation — 4 October 2026
 
 The user requested point → team decision as recorded audio → graphic, replacing visitor policy choices. They chose click Play to start and automatic continuation within the current chapter, and asked to **skip flagged wording/unsupported passages for now**.
