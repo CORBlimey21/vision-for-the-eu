@@ -8,6 +8,7 @@ from fractions import Fraction
 from pathlib import Path
 import av
 import numpy as np
+from caption_corrections import CORRECTIONS, apply_caption_corrections, caption_status, vtt_text
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / 'EU Voice Notes'
@@ -46,8 +47,7 @@ EXCERPTS = {
     'What Ireland should do6': None,
     'What Ireland should do7': None,
 }
-# Flagged wording is excluded from the audio, rather than silently corrected.
-EDITS = {}
+# Flagged passages stay excluded; reviewed wording corrections are applied only to retained cues.
 
 def vtt_time(seconds):
     ms = round(seconds * 1000)
@@ -114,17 +114,17 @@ def main():
                 a, b = max(start, cue['start']), min(end, cue['end'])
                 if a >= b: continue
                 text = cue['text']
-                for original, corrected in EDITS.items(): text = text.replace(original, corrected)
                 cues.append({'start': round(offset+a-start, 3), 'end': round(offset+b-start, 3), 'text': text})
             offset += end-start
         duration = selected.shape[1] / 16000
+        cues = apply_caption_corrections(identity, cues)
         assert all(0 <= c['start'] < c['end'] <= duration + .001 for c in cues)
         records.append({'id': identity, 'file': targets[0].name, 'fallbackFile': targets[1].name, 'duration': duration, 'cues': cues})
-        vtt = 'WEBVTT\n\n' + '\n\n'.join(f"{vtt_time(c['start'])} --> {vtt_time(c['end'])}\n{c['text']}" for c in cues) + '\n'
+        vtt = vtt_text(cues)
         (OUTPUT / f'{identity}.vtt').write_text(vtt)
-        provenance.append({'id': identity, 'source_file': source.name, 'source_sha256': transcript['sha256'], 'source_ranges_seconds': ranges, 'output_sha256': hashlib.sha256(targets[0].read_bytes()).hexdigest(), 'fallback_sha256': hashlib.sha256(targets[1].read_bytes()).hexdigest(), 'caption_status': 'edited machine transcript; approximate segment timing'})
+        provenance.append({'id': identity, 'source_file': source.name, 'source_sha256': transcript['sha256'], 'source_ranges_seconds': ranges, 'output_sha256': hashlib.sha256(targets[0].read_bytes()).hexdigest(), 'fallback_sha256': hashlib.sha256(targets[1].read_bytes()).hexdigest(), 'caption_status': caption_status(identity)})
         print(f'{targets[0].name}: {duration:.2f}s', flush=True)
     (ROOT / 'src/data/narration.json').write_text(json.dumps(records, indent=2, ensure_ascii=False) + '\n')
-    (OUTPUT / 'provenance.json').write_text(json.dumps({'sample_rate': 44100, 'codec': 'AAC-LC mono 64 kbps; MPEG-1 Layer III mono 64 kbps fallback', 'recordings': provenance, 'held_recordings': ['Decision making3.m4a'], 'caption_edits': EDITS}, indent=2, ensure_ascii=False) + '\n')
+    (OUTPUT / 'provenance.json').write_text(json.dumps({'sample_rate': 44100, 'codec': 'AAC-LC mono 64 kbps; MPEG-1 Layer III mono 64 kbps fallback', 'recordings': provenance, 'held_recordings': ['Decision making3.m4a'], 'caption_edits': CORRECTIONS['recordings'], 'caption_reference': CORRECTIONS['reference']}, indent=2, ensure_ascii=False) + '\n')
 
 if __name__ == '__main__': main()

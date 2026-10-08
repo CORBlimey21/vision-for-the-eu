@@ -130,7 +130,22 @@ test('flagged passages are outside the exported source ranges and captions', () 
     }
   }
   assert.ok(provenance.held_recordings.includes('Decision making3.m4a'));
-  assert.deepEqual(provenance.caption_edits, {});
+  const corrections = JSON.parse(
+    readFileSync(new URL('../scripts/caption-corrections.json', import.meta.url), 'utf8'),
+  );
+  assert.deepEqual(provenance.caption_edits, corrections.recordings);
+  assert.equal(provenance.caption_reference, corrections.reference);
+  for (const [id, edits] of Object.entries(corrections.recordings)) {
+    const record = media.find((item: { id: string }) => item.id === id);
+    for (const edit of edits as { original: string; corrected: string }[]) {
+      assert.equal(
+        record.cues.filter((cue: { text: string }) => cue.text === edit.corrected).length,
+        1,
+        `${id}: reviewed correction missing or duplicated`,
+      );
+      assert.ok(!record.cues.some((cue: { text: string }) => cue.text === edit.original));
+    }
+  }
   const text = media
     .flatMap((item: { cues: { text: string }[] }) => item.cues.map((cue) => cue.text))
     .join(' ');

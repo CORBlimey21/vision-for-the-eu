@@ -1,3 +1,9 @@
+# Subtitle wording correction, 2026-10-08
+
+Reviewed subtitle text against the supplied team draft and applied the user’s answers for the meaningful discrepancies. Matching VTT captions and in-app cues share a persistent exact-text correction map used by the exporter. Original/raw inputs, audio hashes, source cuts, duration and cue timings are preserved. Team first-person phrasing is retained. This is a draft-based wording review with approximate existing timing, not an audio-listening certification.
+
+Validation: all 18 tests, data validation, TypeScript and the production build passed. All 31 JSON/VTT caption pairs agree; all 150 cue boundaries, media metadata and 162 protected audio/raw-input file hashes are unchanged. Fifty-six cues across 25 excerpts were corrected. The correction layer was checked on original cues and for idempotent replay on corrected cues.
+
 # Presentation wording and AI disclosure, 2026-10-06
 
 Removed obsolete scenario, voting-widget and response-collection wording from the live About/Sources dialog. The current presentation offers narrated agreed team positions rather than visitor policy selections. Legacy choice modules remain isolated reference code and are not rendered. Digital-identity consent wording remains appropriate to the policy itself.

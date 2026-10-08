@@ -14,7 +14,7 @@
       ],
       "output_sha256": "bb272e2061e734d7530694fd41678743f3a42b96fc68512fbec5e6790b6e84d5",
       "fallback_sha256": "6c5bed910aebe4948dfe627fc868ee963b3367fd997c91ac109ee9bc4b12ce89",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-needs-to-stay-the-same2",
@@ -42,7 +42,7 @@
       ],
       "output_sha256": "c930c84921c5f137c1c93604db788deceb5d76195a2f7d5719ea3ecaa808b6ba",
       "fallback_sha256": "234d590f4be353586f10e71ad8e9bc2e1234d625b261d04cc8df65cd7a8bbc22",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-needs-to-stay-the-same4",
@@ -70,7 +70,7 @@
       ],
       "output_sha256": "57fd77f11565fd916e878c74d3533629923decf18260207cafef85a583bdde31",
       "fallback_sha256": "339993666f0a29ec9eecf493ae1e064bdaf87bb897c118b09818caaae3ead0db",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-needs-to-change2",
@@ -88,7 +88,7 @@
       ],
       "output_sha256": "048fbb6ebc95b208aaeb38befc1c0af1e23bb58b8bc755e1063b49a45a9590aa",
       "fallback_sha256": "f09cc035c0442658828bcd86ff71f0d3eb41738eb885c10a0ec531098f328cba",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-needs-to-change3",
@@ -102,7 +102,7 @@
       ],
       "output_sha256": "739a814b5d6cafd45b31859c6d33f4aff9c6100cad9caadcf7cdb5ab45282ecf",
       "fallback_sha256": "55a6f25c9868e6bf4cb2d228ee983e52681acaa0e534471fc347a61623a39047",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making1",
@@ -116,7 +116,7 @@
       ],
       "output_sha256": "0636a178b70e0cf6bf94ba8a8505048ff73c5b642631c6ba641fbaa815837f4e",
       "fallback_sha256": "4a7b0a583d4f77d635725544b02715bac75179f4a32c912f2e2047de8effebe4",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making2",
@@ -130,7 +130,7 @@
       ],
       "output_sha256": "8eb7f5943e87eba81373e6c7a6e2bad0f07480d40edb996df7408d746e262085",
       "fallback_sha256": "34ceb2e5c02c710b22cf77af673b7bb32639126b5d53b754eb1e82f71810cee9",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making4",
@@ -144,7 +144,7 @@
       ],
       "output_sha256": "bf3e5301088f11575df96fe5145ab5624ed9ca54e6720d4d8751012bdf54f231",
       "fallback_sha256": "c4b1046044efd8557ad0d6bc0efa2ec699bb41a1209efd06d0e00c2b47b10c00",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making5",
@@ -158,7 +158,7 @@
       ],
       "output_sha256": "8de56c22ef60f3f339612c9937632e8d1b6c7351c931905fc5a67b2318b406b8",
       "fallback_sha256": "69955455c0c70c9ae9534087eb11efd9bf6e6f763065f89be42467414a23daa4",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making6",
@@ -172,7 +172,7 @@
       ],
       "output_sha256": "ebe23384c9010fae1bb7f0e10d2d62261e3b83b56d804a6bfa8e8c1d5d20bd41",
       "fallback_sha256": "6b983d936d848ee473ede28132e82df9665f55ca9dfd6beb3494ab941caa186f",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "decision-making7",
@@ -190,7 +190,7 @@
       ],
       "output_sha256": "ec85463ac1b22fd971ef84b9c274fbdac6cd76b96851fa010d0dccf2c3acbda1",
       "fallback_sha256": "80c929846f5bac8dbdaf6acf860767332a64b7cde2f3a7d50a6a9eabbfea731b",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20501",
@@ -208,7 +208,7 @@
       ],
       "output_sha256": "66b0f8757e8978bffc0611d90db9f63d79bf05de32863e4546b072351a099000",
       "fallback_sha256": "44d463d12ba3f4882587cbecb57e258697e60ff16f67b0dc3f3739d36a43f740",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20502",
@@ -222,7 +222,7 @@
       ],
       "output_sha256": "adeea81b5c475cc0c97818bb057a371e1ff6cc85eb3e775a1758481cd85c375b",
       "fallback_sha256": "6af73971400690925e80ef0a4723443472b3502715ba41e0afd25850a80ee6f3",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20503",
@@ -240,7 +240,7 @@
       ],
       "output_sha256": "c33cc7c88d788fff374adb56c64b3d50142ddcab73d4b091527bab737d8d4268",
       "fallback_sha256": "6a05dc7be7b82cbf479dc61177ef95e2113a0d61862adba2fbb521f250888b0a",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20504",
@@ -258,7 +258,7 @@
       ],
       "output_sha256": "53475b803605460410e017a049e3a34534aee808099a122536678d4cdc523ce2",
       "fallback_sha256": "f7c4ae8e3e993a6dabc1ce4ab414f34d670eb8b30ea58fa7fd081f7139980893",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20505",
@@ -272,7 +272,7 @@
       ],
       "output_sha256": "5e352884924dc8e175cd76a21638bfe58c74fbd25abcdeeda8ce087034e9b6dc",
       "fallback_sha256": "0a49e9610b5888b67e4ab11aa33fe4247e3d65c90d5913e8ad4a175ce9e6c57a",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "our-eu-20506",
@@ -314,7 +314,7 @@
       ],
       "output_sha256": "bede765276abc7c2c4b18596a58b745350d3fcf6ecfec09f15d1bd7f0c2853b8",
       "fallback_sha256": "d647ab1938adb77aed29993933bd65b291e95c4979b6a43dc78fdddbb032c9f8",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "funding2",
@@ -332,7 +332,7 @@
       ],
       "output_sha256": "8cb309778e0164d04594afcb587ec0fa3d1b170708b1d35329738f9ddbcfb31d",
       "fallback_sha256": "5a024a6557ea86b0b30c78464515b87f46ecb100566857f7e4d922fce7a7f467",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "funding3",
@@ -346,7 +346,7 @@
       ],
       "output_sha256": "044c269c8e9f9fd0df1152889ea46ace774962c95fd9eda524b423828e966112",
       "fallback_sha256": "4c42a88dd9576ef15d7292cb8c2a0b158b60ef2c266baf0dc4c3c300443e0b06",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "rogue-member-states",
@@ -368,7 +368,7 @@
       ],
       "output_sha256": "cbdbab1597badb463c44cc2c21ca0ff9dc452c060883fd5967c1e455aac28267",
       "fallback_sha256": "b3881d4727495411e85fbe7829727c57a0b1b36276b51a45dd706f93c312f89b",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-ireland-should-do1",
@@ -382,7 +382,7 @@
       ],
       "output_sha256": "2d9b3e78a745ab75e3ebb4d35ffdc4ea9c8def6ce3967ff7c22fdaf2215f6232",
       "fallback_sha256": "4bb2825645c9a3c0b0b2b0ca958607ff89420ede9536ce84c56b5767be40390b",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-ireland-should-do2",
@@ -396,7 +396,7 @@
       ],
       "output_sha256": "4b3ba857ef1641cc9d2d08faa049c5ffd84d81829a941f19eb84300646acdcb0",
       "fallback_sha256": "a179ad1c02ef65caaea385b1dfd2224ccc2486670aab879aadb680d8a8dceacb",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-ireland-should-do3",
@@ -424,7 +424,7 @@
       ],
       "output_sha256": "0b9b044b4f02cde16ec16a8a972560b59274660017d52b17162df84bc6eced80",
       "fallback_sha256": "367cd6b3591eb2d750b22135233a9c28de8c83e3f97f0d54a1e4d2599d94d99d",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-ireland-should-do5",
@@ -452,7 +452,7 @@
       ],
       "output_sha256": "e435e6d5dc5e9eb6b18a622929c36dda867773df1c698288d1a65c27067e26b4",
       "fallback_sha256": "bc1146b278323fb5531297e71c068955bcbb668d1a742c271ff9532d595e3fdc",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     },
     {
       "id": "what-ireland-should-do7",
@@ -466,11 +466,287 @@
       ],
       "output_sha256": "2ef77f096fb01996c9e8af8f395936568d43818bf5184f01850b4c191caed14b",
       "fallback_sha256": "3abbade55e8482bcd08b2407ce93bd8e2dab44f5efbe6e333c526a7cf872cab3",
-      "caption_status": "edited machine transcript; approximate segment timing"
+      "caption_status": "Draft-corrected subtitles; existing approximate timings; not listening-certified"
     }
   ],
   "held_recordings": [
     "Decision making3.m4a"
   ],
-  "caption_edits": {}
+  "caption_edits": {
+    "what-needs-to-stay-the-same1": [
+      {
+        "original": "What needs to stay the same? One key thing that the European Union must keep is its ability to set high goals and targets",
+        "corrected": "What needs to stay the same? One key thing that the European Union must keep is its ability to set high goals and targets."
+      },
+      {
+        "original": "Goals are essential for success without clear goals. It becomes much harder to achieve meaningful change or improvement",
+        "corrected": "Goals are essential for success. Without clear goals, it becomes much harder to achieve meaningful change or improvement."
+      },
+      {
+        "original": "They give people communities and countries something to work towards",
+        "corrected": "They give people, communities and countries something to work towards."
+      },
+      {
+        "original": "The EU has many different goals, but some of the most important ones focus on sustainability and improving people's lives",
+        "corrected": "The EU has many different goals, but some of the most important ones focus on sustainability and improving people's lives."
+      }
+    ],
+    "what-needs-to-stay-the-same3": [
+      {
+        "original": "Climate change is a major challenge and taking action now will help protect future generations. The EU cannot afford to become satisfied with the progress it has already made.",
+        "corrected": "Climate change is a major challenge, and taking action now will help protect future generations. The EU cannot afford to become satisfied with the progress it has already made."
+      }
+    ],
+    "what-needs-to-change1": [
+      {
+        "original": "energy could be used nationally to replace fossil fuel burning and the surplus could",
+        "corrected": "Energy could be used nationally to replace fossil fuel burning, and the surplus could"
+      },
+      {
+        "original": "energy which would help promote renewable energy and replace fossil fuels.",
+        "corrected": "energy, which would help promote renewable energy and replace fossil fuels."
+      }
+    ],
+    "what-needs-to-change2": [
+      {
+        "original": "These countries would have to sell their surplus energy to other member states and reduce prices as part of the investment deal.",
+        "corrected": "These countries would have to sell their surplus energy to other member states at reduced prices as part of the investment deal."
+      }
+    ],
+    "what-needs-to-change3": [
+      {
+        "original": "Secondly, they would receive other countries surplus energy at a reduced cost which would",
+        "corrected": "Secondly, they would receive other countries’ surplus energy at a reduced cost, which would"
+      }
+    ],
+    "decision-making1": [
+      {
+        "original": "No country wants to be forced into a tax policy or a military alliance.",
+        "corrected": "No country wants to be forced into a tax policy or a military alliance"
+      },
+      {
+        "original": "It never actually agreed to.",
+        "corrected": "it never actually agreed to."
+      }
+    ],
+    "decision-making2": [
+      {
+        "original": "why this is becoming a bigger problem. The problem is that if there's unanimity",
+        "corrected": "Why this is becoming a bigger problem. The problem is that if there's unanimity,"
+      },
+      {
+        "original": "majority of countries in the EU may agree on something but if one does not",
+        "corrected": "majority of countries in the EU may agree on something, but if just one does not,"
+      }
+    ],
+    "decision-making4": [
+      {
+        "original": "the case for dropping unanimity. So why not just get rid of it? Supporters of reform make a few",
+        "corrected": "The case for dropping unanimity. So why not just get rid of it? Supporters of reform make a few"
+      },
+      {
+        "original": "key arguments. Faster decision-making for one. The EU could act decisively on foreign policy",
+        "corrected": "key arguments. Faster decision-making, for one — the EU could act decisively on foreign policy"
+      }
+    ],
+    "decision-making5": [
+      {
+        "original": "Unanimity exists for a reason.",
+        "corrected": "Unanimity exists for a reason —"
+      },
+      {
+        "original": "It stops smaller countries from being steamrolled by heavyweights like France or Germany on",
+        "corrected": "it stops smaller countries from being steamrolled by heavyweights like France or Germany on"
+      },
+      {
+        "original": "And here's the paradox.",
+        "corrected": "And here's the paradox:"
+      },
+      {
+        "original": "Changing the rules requires unanimity too.",
+        "corrected": "changing the rules requires unanimity too,"
+      },
+      {
+        "original": "So the very system that needs reforming is what blocks its own reform.",
+        "corrected": "so the very system that needs reforming is what blocks its own reform."
+      },
+      {
+        "original": "There's also a real risk of a two-tier EU emerging where some countries push ahead with",
+        "corrected": "There’s also a real risk of a “two-tier EU” emerging, where some countries push ahead with"
+      },
+      {
+        "original": "deeper integration and others get left behind, deepening the divide rather than fixing it.",
+        "corrected": "deeper integration, and others get left behind — deepening the divide rather than fixing it."
+      }
+    ],
+    "decision-making6": [
+      {
+        "original": "1. Possible middle ground solutions. Fortunately, abolishing unanimity isn't the only option",
+        "corrected": "Possible middle-ground solutions. Fortunately, abolishing unanimity isn't the only option"
+      },
+      {
+        "original": "on the table. One existing tool is constructive abstention, where a country can simply step",
+        "corrected": "on the table. One existing tool is “constructive abstention”, where a country can simply step"
+      }
+    ],
+    "our-eu-20501": [
+      {
+        "original": "our view of the EU in 2050.",
+        "corrected": "Our view of the EU in 2050."
+      },
+      {
+        "original": "Climate and environment. In 2050 the European Union will use energy that",
+        "corrected": "Climate and environment. In 2050, the European Union will use energy that"
+      },
+      {
+        "original": "in each country to create clean energy. For example the European Union will let",
+        "corrected": "in each country to create clean energy. For example, the European Union will let"
+      }
+    ],
+    "our-eu-20502": [
+      {
+        "original": "It will invest money to make these services more reliable and functional.",
+        "corrected": "It will invest money to make these services more reliable and punctual."
+      }
+    ],
+    "our-eu-20503": [
+      {
+        "original": "European Union will also need people to change. It will ask whether people will choose quality",
+        "corrected": "The European Union will also need people to change. It will ask whether people will choose quality"
+      },
+      {
+        "original": "by companies or governments. If it succeeds, all parts will work together.",
+        "corrected": "by companies or governments. The European Union will succeed if all parts work together."
+      }
+    ],
+    "our-eu-20504": [
+      {
+        "original": "It will change that. The European Union will invest in chip manufacturing, data centres and the European AI research.",
+        "corrected": "It will change that. The European Union will invest in chip manufacturing, data centres and European AI research."
+      }
+    ],
+    "our-eu-20505": [
+      {
+        "original": "The European Union will make accessing healthcare in Poland as simple as accessing it in Portugal.",
+        "corrected": "The European Union will make accessing healthcare in Portugal as simple as accessing it in Poland."
+      },
+      {
+        "original": "The European Union will use one identity and one system.",
+        "corrected": "The European Union will use one identity, one system."
+      }
+    ],
+    "funding1": [
+      {
+        "original": "How the EU funds its member states The EU is funded through several streams,",
+        "corrected": "How the EU funds its member states. The EU is funded through several streams,"
+      },
+      {
+        "original": "The contributions are primarily calculated based off each member state's gross national",
+        "corrected": "The contributions are primarily calculated based off each member state’s Gross National"
+      },
+      {
+        "original": "income, GNI, and applying a uniform rate meaning each country pays a different",
+        "corrected": "Income (GNI), and applying a uniform rate, meaning each country pays a different"
+      },
+      {
+        "original": "amount, richer countries pay more and poorer countries pay less.",
+        "corrected": "amount; richer countries pay more and poorer countries pay less."
+      }
+    ],
+    "funding2": [
+      {
+        "original": "Where there is some controversy is how much countries take from the EU compared to how much they gave.",
+        "corrected": "Where there is some controversy is how much countries take from the EU compared to how much they give."
+      },
+      {
+        "original": "in 2022 Ireland contributed approximately 3.6 billion",
+        "corrected": "In 2022, Ireland contributed approximately €3.6 billion."
+      }
+    ],
+    "funding3": [
+      {
+        "original": "People have asked throughout the years how this is fair, but there is one main reason for this. The EU is set up",
+        "corrected": "People have asked throughout the years how this is fair, but there is one main reason for this. The EU was set up"
+      },
+      {
+        "original": "will become more active which can have several effects, such as increasing employment rates, increased taxation,",
+        "corrected": "will become more active, which can have several effects, such as increasing employment rates, increased taxation,"
+      },
+      {
+        "original": "therefore increased government revenue, increased selection of goods for consumers, increased trading among EU",
+        "corrected": "therefore increased government revenue, increased selection of goods for consumers, increase trading among EU"
+      }
+    ],
+    "rogue-member-states": [
+      {
+        "original": "For one key question which must be asked is who should enforce these decisions made",
+        "corrected": "But one key question which must be asked is who should enforce these decisions made"
+      },
+      {
+        "original": "by the EU and how should those who breach the agreements reach to be brought to justice.",
+        "corrected": "by the EU and how should those who breach the agreements reached be brought to justice?"
+      },
+      {
+        "original": "The court of justice of the EU which operates out of Luxembourg.",
+        "corrected": "The Court of Justice of the EU, which operates out of Luxembourg."
+      }
+    ],
+    "what-ireland-should-do1": [
+      {
+        "original": "what Ireland should do to benefit more from the EU.",
+        "corrected": "What Ireland should do to benefit more from the EU."
+      },
+      {
+        "original": "These include access to the single market, EU funding,",
+        "corrected": "These include access to the Single Market, EU funding,"
+      }
+    ],
+    "what-ireland-should-do2": [
+      {
+        "original": "One key area is EU funding. Ireland gets support from agriculture, infrastructure, education and regional development.",
+        "corrected": "One key area is EU funding. Ireland gets support for agriculture, infrastructure, education and regional development."
+      }
+    ],
+    "what-ireland-should-do4": [
+      {
+        "original": "The single market is another opportunity.",
+        "corrected": "The Single Market is another opportunity."
+      },
+      {
+        "original": "The government could help smaller Irish companies understand the EU regulations and support",
+        "corrected": "The Government could help smaller Irish companies understand EU regulations and support"
+      },
+      {
+        "original": "them into expanding into European markets.",
+        "corrected": "them in expanding into European markets."
+      }
+    ],
+    "what-ireland-should-do6": [
+      {
+        "original": "Programs such as Erasmus allow students and young people to study, train and work in European countries.",
+        "corrected": "Programmes such as Erasmus+ allow students and young people to study, train and work in European countries."
+      },
+      {
+        "original": "Increasing participation in these programs could help Irish students gain real-world experience,",
+        "corrected": "Increasing participation in these programmes could help Irish students gain real-world experience,"
+      }
+    ],
+    "what-ireland-should-do7": [
+      {
+        "original": "By working with other EU countries, Ireland could make the most of opportunities that",
+        "corrected": "By working with other EU countries, Ireland can make the most of the opportunities that"
+      },
+      {
+        "original": "the EU membership provides.",
+        "corrected": "EU membership provides."
+      }
+    ],
+    "decision-making7": [
+      {
+        "original": "Conclusion In our view, the EU should extend QMV to foreign",
+        "corrected": "Conclusion. In our view, the EU should extend QMV to foreign"
+      }
+    ]
+  },
+  "caption_reference": "User-supplied Vision of the EU draft, 8 October 2026"
 }

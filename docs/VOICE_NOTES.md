@@ -1,3 +1,13 @@
+# Subtitle wording corrections — 8 October 2026
+
+Corrected retained subtitle cues against the user-supplied draft, including punctuation, recognition errors and programme names. The user explicitly selected “punctual”, the Portugal–Poland comparison and “The European Union will succeed if all parts work together”, and retained the team wording “In our view” and “Overall, it is essential that…”. Spoken EU/European Union/It variations are retained where they remain clear.
+
+Both `src/data/narration.json` and the matching public VTT captions use the corrections. `scripts/caption-corrections.json` records each exact before/after cue; `scripts/caption_corrections.py` applies it without re-encoding audio, and the audio exporter reuses the same correction layer. Regeneration fails if an edited cue no longer matches its reviewed text. Caption provenance names the supplied draft and distinguishes these corrections from listening certification.
+
+Audio files, source ranges, cue boundaries, original recordings and raw machine transcripts are unchanged. Held passages remain excluded; the missing “Should the EU always act as one?” section is not added to audio or subtitles. No listening-based certification is claimed.
+
+---
+
 # Additional recordings — 6 October 2026
 
 All eleven new recordings were transcribed with the existing small.en workflow, bringing the preserved input inventory to 32. Eleven additional public excerpts bring the presentation to 31 points across six chapters. These remain agreed team positions; factual qualifications and primary sources are separate from the decisions.
