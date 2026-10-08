@@ -22,7 +22,8 @@ npm run check
 - Six narrated chapters: ambition, electricity, funding, decision-making, Ireland’s next steps and our 2050 vision. Thirty-one edited recording excerpts share one point → team decision renderer alongside the globe.
 - Playback, pause, restart and seeking, with subtitles following the audio clock. Voice and subtitles default on; at least one remains enabled. Click Play to continue automatically through the current chapter, with a toggle for manual advancement.
 - Large Next point/chapter controls directly beneath subtitles, with a brief completion lift and scroll into view when necessary. Reduced motion shows the completed control immediately.
-- Conceptual electricity links on the globe. The floating graphic panels, policy choices, numerical readouts and visitor comparisons are removed from the current experience.
+- Media-timed illustrative wind turbines for Ireland and solar panels for Spain, with entrance/exit transitions, playback-linked motion and static reduced-motion views. These are schematic symbols, not actual installation locations or counts.
+- Conceptual electricity links on the globe. The older policy-choice graphics, numerical readouts and visitor comparisons remain outside the current experience.
 - Desktop narration gives the globe more space on the right, with a closer western-Europe framing for electricity and a quiet chapter/point progress marker. Mobile retains its existing framing.
 - A closing thank-you from the four named team members, with a brief twelve-star entrance, replay and exploration controls. Automatic continuation reaches it after the final 2050 recording; manual readers can use “Thank you”.
 - Flagged passages are physically omitted from the exported audio. Original M4A recordings and full transcripts remain preserved in the ignored input folder.

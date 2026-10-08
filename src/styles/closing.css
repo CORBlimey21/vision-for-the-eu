@@ -29,7 +29,7 @@
   font:
     20px Georgia,
     serif;
-  stroke: #080e13;
+  stroke: var(--surface);
   stroke-width: 8;
   paint-order: stroke;
 }

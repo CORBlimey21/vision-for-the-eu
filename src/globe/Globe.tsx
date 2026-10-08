@@ -9,11 +9,13 @@ import {
   type Map as MapInstance,
 } from 'maplibre-gl';
 import type { ExperienceState } from '../app/state';
-import { camera, constrainEuropeCamera } from './config';
+import { camera, constrainEuropeCamera, palette } from './config';
 import { animateWhileVisible } from './animation';
 import { flowParticles } from './flow';
 import { grid } from './networks';
 import { spatialNotes } from '../content/spatialNotes';
+import { RenewableIllustrations } from './RenewableIllustrations';
+import type { RenewableCue } from '../domain/renewables';
 import { globeStyle } from './style';
 import { currentMembers, history, membersAt } from '../data/history';
 import { countryById } from '../data/countries';
@@ -28,6 +30,9 @@ interface Props {
   flowPaused: boolean;
   activeNote: string;
   showNotes?: boolean;
+  renewableCues?: RenewableCue[];
+  mediaTime?: number;
+  visible?: boolean;
   onNote: (id: string) => void;
   onSelect: (id: string) => void;
   onReady: () => void;
@@ -39,12 +44,16 @@ export function Globe({
   flowPaused,
   activeNote,
   showNotes = true,
+  renewableCues = [],
+  mediaTime = 0,
+  visible = true,
   onNote,
   onSelect,
   onReady,
 }: Props) {
   const container = useRef<HTMLDivElement>(null),
     map = useRef<MapInstance | null>(null);
+  const planningZoom = useRef<number | null>(null);
   const lightLevels = useRef<Record<string, number>>({});
   const flowElapsed = useRef(0);
   const latest = useRef({ state, onSelect, onReady, onNote, reduced });
@@ -73,7 +82,12 @@ export function Globe({
         maxZoom: camera.maxZoom,
         transformConstrain: (center, zoom) => {
           const constrained = constrainEuropeCamera(center, zoom);
-          return { center: new LngLat(...constrained.center), zoom: constrained.zoom };
+          // Globe flight planning checks its destination at the starting zoom.
+          const destination =
+            planningZoom.current === null
+              ? constrained
+              : constrainEuropeCamera(center, planningZoom.current);
+          return { center: new LngLat(...destination.center), zoom: constrained.zoom };
         },
         maxPitch: 0,
         attributionControl: false,
@@ -183,7 +197,7 @@ export function Globe({
     m.setPaintProperty('members', 'fill-opacity', [
       '*',
       ['coalesce', ['feature-state', 'illumination'], 0],
-      state.selectedCountry ? 0.16 : 0.55,
+      state.selectedCountry ? 0.16 : palette.memberOpacity,
     ]);
     const free = ['PRESENT', 'EXPLORE', 'BUILD_FUTURE', 'RESULTS', 'TEAM_VISION'].includes(
       state.stage,
@@ -246,11 +260,17 @@ export function Globe({
               : camera.narration.union
             : camera.energy
           : camera.overview;
-    m.flyTo({
-      ...target,
-      duration: reduced || document.hidden ? 0 : camera.duration,
-      essential: false,
-    });
+    planningZoom.current = target.zoom;
+    try {
+      m.flyTo({
+        ...target,
+        duration: reduced || document.hidden ? 0 : camera.duration,
+        essential: false,
+      });
+    } finally {
+      // Only synchronous destination planning uses the target scale.
+      planningZoom.current = null;
+    }
   }, [
     ready,
     state.selectedCountry,
@@ -352,6 +372,15 @@ export function Globe({
   return (
     <div className="globe-stage">
       <div className="globe-canvas" ref={container} />
+      {ready && !failure && map.current && (
+        <RenewableIllustrations
+          map={map.current}
+          cues={renewableCues}
+          time={mediaTime}
+          running={!flowPaused && visible}
+          reduced={reduced || !visible}
+        />
+      )}
       {hover && (
         <div className="map-tooltip" style={{ left: hover.x + 16, top: hover.y - 20 }}>
           {hover.name}

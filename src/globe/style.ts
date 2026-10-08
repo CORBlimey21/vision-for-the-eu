@@ -8,13 +8,13 @@ export function globeStyle(): StyleSpecification {
     projection: { type: 'globe' },
     transition: { duration: 800, delay: 0 },
     sky: {
-      'sky-color': '#080e13',
-      'horizon-color': '#29404c',
-      'fog-color': '#101d28',
-      'sky-horizon-blend': 0.8,
-      'horizon-fog-blend': 0.3,
-      'fog-ground-blend': 0.15,
-      'atmosphere-blend': 0.6,
+      'sky-color': palette.sky,
+      'horizon-color': palette.horizon,
+      'fog-color': palette.ocean,
+      'sky-horizon-blend': 0.6,
+      'horizon-fog-blend': 0.04,
+      'fog-ground-blend': 0,
+      'atmosphere-blend': 0.32,
     },
     sources: {
       countries: {
@@ -53,7 +53,11 @@ export function globeStyle(): StyleSpecification {
         source: 'countries',
         paint: {
           'fill-color': palette.member,
-          'fill-opacity': ['*', ['coalesce', ['feature-state', 'illumination'], 0], 0.55],
+          'fill-opacity': [
+            '*',
+            ['coalesce', ['feature-state', 'illumination'], 0],
+            palette.memberOpacity,
+          ],
         },
       },
       {
@@ -61,9 +65,9 @@ export function globeStyle(): StyleSpecification {
         type: 'hillshade',
         source: 'relief',
         paint: {
-          'hillshade-shadow-color': '#071017',
-          'hillshade-highlight-color': '#95a69d',
-          'hillshade-accent-color': '#1d3035',
+          'hillshade-shadow-color': palette.reliefShadow,
+          'hillshade-highlight-color': palette.reliefHighlight,
+          'hillshade-accent-color': palette.reliefAccent,
           'hillshade-exaggeration': 0.48,
           'hillshade-illumination-direction': 315,
         },
@@ -90,7 +94,7 @@ export function globeStyle(): StyleSpecification {
         type: 'line',
         source: 'countries',
         paint: {
-          'line-color': '#a5ceba',
+          'line-color': palette.memberBorder,
           'line-width': 0.8,
           'line-opacity': ['*', ['coalesce', ['feature-state', 'illumination'], 0], 0.65],
         },

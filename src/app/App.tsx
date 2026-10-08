@@ -126,6 +126,9 @@ export default function App() {
           network={network}
           flowPaused={!player.playing}
           showNotes={false}
+          renewableCues={future ? point.renewableCues : undefined}
+          mediaTime={player.time}
+          visible={visible}
           activeNote={activeNote}
           onNote={setActiveNote}
           onSelect={(id) => {

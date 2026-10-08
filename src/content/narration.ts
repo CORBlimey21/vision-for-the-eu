@@ -269,6 +269,7 @@ export const narratedTopics: NarratedTopic[] = [
       },
       {
         id: 'ireland-wind',
+        renewableCues: [{ kind: 'wind', start: 1.26, end: 20.26 }],
         recordingId: 'what-ireland-should-do5',
         title: 'Develop offshore wind responsibly.',
         position:
@@ -308,6 +309,10 @@ export const narratedTopics: NarratedTopic[] = [
     points: [
       {
         id: 'clean-power',
+        renewableCues: [
+          { kind: 'wind', start: 18.49, end: 22.07 },
+          { kind: 'solar', start: 22.07, end: 25.99 },
+        ],
         recordingId: 'our-eu-20501',
         title: 'A cleaner, connected Europe.',
         position:

@@ -32,3 +32,18 @@ test('camera prevents world travel and excessive zoom without moving EU anchors'
     });
   }
 });
+
+test('zooming out from an outlying member returns to the Europe overview limits', () => {
+  const result = constrainEuropeCamera({ lng: 33.2, lat: 35 }, -2);
+  assert.equal(result.zoom, camera.minZoom);
+  assert.deepEqual(result.center, [camera.overviewBounds.east, camera.overviewBounds.south]);
+  assert.deepEqual(constrainEuropeCamera({ lng: -120, lat: 85 }, camera.minZoom).center, [
+    camera.overviewBounds.west,
+    camera.overviewBounds.north,
+  ]);
+});
+
+test('panning within Europe remains available at overview and country scale', () => {
+  assert.deepEqual(constrainEuropeCamera({ lng: 8, lat: 50 }, camera.minZoom).center, [8, 50]);
+  assert.deepEqual(constrainEuropeCamera({ lng: -8, lat: 53.3 }, 4.4).center, [-8, 53.3]);
+});

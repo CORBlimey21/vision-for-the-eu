@@ -1,3 +1,4 @@
+import type { RenewableCue } from './renewables';
 export interface CaptionCue {
   start: number;
   end: number;
@@ -19,6 +20,7 @@ export interface NarratedPoint {
   position: string;
   graphic: Graphic;
   graphicLabels: string[];
+  renewableCues?: RenewableCue[];
   qualification?: string;
   votingRule?: 'unanimity' | 'qualified-majority';
   remainingVote?: 'oppose' | 'abstain';

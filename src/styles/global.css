@@ -1,13 +1,16 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  color: #eef0e9;
-  background: #080e13;
+  color: var(--ink);
+  background: var(--surface);
   font-synthesis: none;
   font-weight: 400;
-  --ink: #eef0e9;
-  --muted: #a3b1b4;
+  --surface: #08151f;
+  --surface-rgb: 8, 21, 31;
+  --panel: #0b1b28ed;
+  --ink: #f3f3e9;
+  --muted: #c2d0d2;
   --mint: #b8e5d0;
-  --line: #ffffff24;
+  --line: #dbe9e83b;
   --gold: #eac98a;
 }
 * {
@@ -63,7 +66,7 @@ button:hover:not(:disabled) {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: #080e13;
+  background: var(--surface);
 }
 .globe-stage {
   position: absolute;
@@ -73,7 +76,7 @@ button:hover:not(:disabled) {
 .globe-canvas {
   width: 100%;
   height: 100%;
-  background: #080e13;
+  background: var(--surface);
 }
 .edge-shade {
   position: absolute;
@@ -81,8 +84,20 @@ button:hover:not(:disabled) {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, #080e13 0%, #080e13f0 21%, #080e1380 35%, transparent 54%),
-    linear-gradient(0deg, #080e13 1%, transparent 20%, transparent 83%, #080e13a6);
+    linear-gradient(
+      90deg,
+      var(--surface) 0%,
+      rgba(var(--surface-rgb), 0.94) 21%,
+      rgba(var(--surface-rgb), 0.5) 35%,
+      transparent 54%
+    ),
+    linear-gradient(
+      0deg,
+      var(--surface) 1%,
+      transparent 20%,
+      transparent 83%,
+      rgba(var(--surface-rgb), 0.65)
+    );
 }
 .masthead {
   position: absolute;
@@ -125,7 +140,7 @@ button:hover:not(:disabled) {
 .edition span {
   display: block;
   font-size: 8px;
-  color: #819294;
+  color: var(--muted);
   letter-spacing: 0.16em;
 }
 .about-button {
@@ -136,7 +151,7 @@ button:hover:not(:disabled) {
 }
 .about-button span {
   font-size: 18px;
-  color: #9ca8a8;
+  color: var(--muted);
 }
 .chapter-nav {
   position: absolute;
@@ -150,14 +165,14 @@ button:hover:not(:disabled) {
   gap: 10px;
   align-items: center;
   padding: 0 0 14px;
-  color: #859294;
+  color: var(--muted);
   position: relative;
   font-size: 10px;
   letter-spacing: 0.015em;
 }
 .chapter-number {
   font-size: 9px;
-  color: #657b7d;
+  color: var(--muted);
 }
 .chapter-nav .active {
   color: var(--ink);
@@ -336,7 +351,7 @@ h3 {
   font-family: Georgia, serif;
   font-size: 14px;
   font-style: italic;
-  color: #7f928e;
+  color: var(--muted);
 }
 .footer {
   position: absolute;
@@ -347,14 +362,14 @@ h3 {
   justify-content: space-between;
   border-top: 1px solid #ffffff18;
   padding-top: 20px;
-  color: #859695;
+  color: var(--muted);
   font-size: 8px;
   letter-spacing: 0.1em;
   align-items: center;
 }
 .footer-divider {
   padding: 0 12px;
-  color: #506661;
+  color: var(--muted);
 }
 .footer-credits {
   max-width: min(74%, 880px);
@@ -375,14 +390,14 @@ h3 {
   right: 44px;
   bottom: 71px;
   font-size: 8px;
-  color: #778988;
+  color: var(--muted);
   text-align: right;
   line-height: 1.7;
 }
 .map-credit span {
   display: block;
   font-size: 7px;
-  color: #72827e;
+  color: var(--muted);
 }
 .history-year {
   font-family: Georgia, serif;
@@ -398,7 +413,7 @@ h3 {
   vertical-align: top;
   display: inline-block;
   margin: 14px 0 0 20px;
-  color: #8aa79b;
+  color: var(--muted);
 }
 .history-title {
   font-size: 38px;
@@ -432,7 +447,7 @@ h3 {
   padding: 0;
   position: relative;
   font-size: 10px;
-  color: #7c938c;
+  color: var(--muted);
   text-align: left;
 }
 .timeline-track {
@@ -543,7 +558,7 @@ h3 {
   bottom: 166px;
   max-width: 550px;
   width: 48%;
-  background: #101b20f5;
+  background: var(--panel);
   border: 1px solid #455c52;
   padding: 20px 24px;
   z-index: 4;
@@ -572,7 +587,7 @@ h3 {
   border-bottom: 1px solid #ffffff12;
 }
 .country-grid button span {
-  color: #7b9b87;
+  color: var(--muted);
 }
 .country-grid .selected {
   color: var(--mint);
@@ -580,7 +595,7 @@ h3 {
 .map-tooltip {
   position: absolute;
   pointer-events: none;
-  background: #101b22e8;
+  background: var(--panel);
   padding: 10px 14px;
   border-left: 1px solid var(--mint);
   font-size: 12px;
@@ -675,7 +690,7 @@ h3 {
 }
 .model-note {
   font-size: 9px;
-  color: #8d9b92;
+  color: var(--muted);
   line-height: 1.7;
   margin-top: 18px;
 }
@@ -745,7 +760,7 @@ h3 {
   padding-top: 4px;
 }
 .sources-dialog {
-  background: #101a20;
+  background: var(--panel);
   color: var(--ink);
   border: 1px solid #52695b;
   max-width: 600px;
@@ -789,7 +804,7 @@ h3 {
   left: 36%;
   max-width: 300px;
   padding: 24px;
-  background: #101a20;
+  background: var(--panel);
   border: 1px solid #30453c;
 }
 .map-fallback p {
@@ -985,8 +1000,8 @@ h3 {
   }
   .edge-shade {
     background:
-      linear-gradient(0deg, #080e13 0%, #080e13 34%, transparent 66%),
-      linear-gradient(180deg, #080e13, transparent 20%);
+      linear-gradient(0deg, var(--surface) 0%, var(--surface) 34%, transparent 66%),
+      linear-gradient(180deg, var(--surface), transparent 20%);
   }
   .story,
   .stage-build_future .story,

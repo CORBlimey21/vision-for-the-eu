@@ -24,7 +24,7 @@
 .narration-player {
   border: 1px solid #a9cbbd45;
   border-radius: 12px;
-  background: #0a171de6;
+  background: var(--panel);
   padding: 16px;
   margin-top: 22px;
 }
@@ -196,7 +196,7 @@
   padding: 20px;
   border: 1px solid #9fb8ae30;
   border-radius: 14px;
-  background: #09131ae3;
+  background: var(--panel);
   color: #d4e3d8;
   max-height: calc(77% - 110px);
   overflow-y: auto;
@@ -286,6 +286,9 @@
     font-size: 41px;
   }
   .is-narrated .topic-nav {
+    background: var(--panel);
+    box-shadow: 0 0 0 8px var(--panel);
+    border-radius: 4px;
     gap: 5px 16px;
   }
   .is-narrated .topic-nav button {

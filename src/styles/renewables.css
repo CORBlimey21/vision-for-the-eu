@@ -1,0 +1,136 @@
+/* Authored symbols, not actual installation locations, counts or outputs. */
+.renewable-marker {
+  pointer-events: none;
+  z-index: 1;
+}
+.renewable-farm {
+  width: 110px;
+  opacity: 0;
+  transform: translateY(14px) scale(0.82);
+  transform-origin: bottom center;
+  transition:
+    opacity 0.55s ease,
+    transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 3px 5px #07293b80);
+}
+.renewable-farm[data-active='true'] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.renewable-farm svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.renewable-ground {
+  fill: #153e5270;
+  stroke: #d0e4bb60;
+  stroke-width: 0.8;
+}
+.turbine-mast,
+.turbine-blade {
+  fill: #f3f3e9;
+  stroke: #658a83;
+  stroke-width: 0.65;
+}
+.turbine-hub {
+  fill: #eac98a;
+  stroke: #f3f3e9;
+  stroke-width: 1;
+}
+.turbine-rotor {
+  animation: wind-turn 7s linear infinite;
+  transform-origin: 0 0;
+}
+.solar-support {
+  stroke: #c6d8c3;
+  stroke-width: 2;
+}
+.solar-panel {
+  fill: #17486e;
+  stroke: #eac98a;
+  stroke-width: 1.3;
+}
+.solar-cells {
+  fill: none;
+  stroke: #a6c9cc;
+  stroke-width: 0.75;
+}
+.solar-glint {
+  fill: #fff4c7;
+  opacity: 0.3;
+  animation: solar-light 3.8s ease-in-out infinite;
+}
+.solar-sun {
+  fill: #eac98a;
+  stroke: #eac98a;
+  stroke-width: 1.3;
+}
+.renewable-farm[data-running='false'] .turbine-rotor,
+.renewable-farm[data-running='false'] .solar-glint {
+  animation-play-state: paused;
+}
+.renewable-farm[data-reduced='true'] {
+  transition: none;
+}
+.renewable-label {
+  display: block;
+  text-align: center;
+  width: max-content;
+  margin: 2px auto 0;
+  padding: 4px 7px;
+  border: 1px solid #c5dfc74a;
+  border-radius: 4px;
+  background: #19374ee8;
+  color: #f3f3e9;
+  font:
+    9px Arial,
+    sans-serif;
+  letter-spacing: 0.025em;
+}
+@keyframes wind-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes solar-light {
+  50% {
+    opacity: 0.85;
+    transform: translateY(9px);
+  }
+}
+@media (max-width: 760px) {
+  .renewable-farm {
+    width: 82px;
+  }
+  .renewable-wind {
+    position: relative;
+    top: -24px;
+  }
+  .renewable-solar {
+    position: relative;
+    top: -170px;
+  }
+  .renewable-solar::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    height: 170px;
+    width: 1px;
+    background: linear-gradient(#eac98ab0, #eac98a45);
+  }
+  .renewable-label {
+    font-size: 8px;
+    padding: 3px 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .renewable-farm {
+    transition: none;
+  }
+  .turbine-rotor,
+  .solar-glint {
+    animation: none;
+  }
+}

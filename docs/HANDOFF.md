@@ -1,3 +1,43 @@
+# Publication — 2026-10-08: palette, camera and renewables
+
+The approved release includes the near-black blue background, slightly brighter globe and richer green membership; closer Europe framing and continuous pan/zoom limits; and the media-timed Ireland wind/Spain solar illustrations. The additional transport, circular-economy, technology, voting and education graphics were removed following feedback and are absent from this release. Planning artifacts and raw recordings remain outside the release changes.
+
+Local validation: all 22 tests, data validation, TypeScript and production build pass. Desktop/mobile colour and framing checks completed. Deployment is through the manually dispatched GitHub Pages workflow; confirm its exact commit and live bundle before calling this release published.
+
+---
+
+# Latest increment — 2026-10-08: blue-black background and richer members
+
+Shifted the page/sky to near-black blue (`#08151f`) with matching dark panels. Lifted ocean and ordinary land brightness slightly to separate the globe from the background. Membership now uses a richer green (`#79c875`) at 90% opacity, with less pale borders; mint controls and gold connections remain.
+
+Validation: `npm run check` passes 22 tests, asset validation, TypeScript and production build. Inspected the electricity scene at 1440×900 and 390×844: near-black blue surrounds, subtly brighter globe and richer green membership are visible. This increment is local, not published.
+
+---
+
+# Latest increment — 2026-10-08: deeper blue palette
+
+Reduced the washed-out appearance with a deeper blue page/sky (`#102e46`), darker ocean (`#093858`), deeper natural land and narration panels. Lowered atmospheric and horizon haze and softened the pale relief highlights. Green membership, mint controls, gold routes and camera framing remain as selected.
+
+Validation: `npm run check` passes all 22 tests, data validation, TypeScript and production build. Inspected the electricity scene at 1440×900 and 390×844. This colour increment is local, not published.
+
+---
+
+# Latest increment — 2026-10-08: closer Europe camera
+
+Raised the overview/minimum zoom from 1.85 to 2.2, with narrated Europe/electricity views at 2.4/2.5. Overview panning stays within 0…24 longitude and 43…57 latitude; the limits expand gradually at country scale so Ireland, Finland, Cyprus and the other member anchors remain accessible. Zooming out restores the tighter Europe limits. MapLibre globe destination planning uses the target scale synchronously; manual movement continues to use current-scale limits.
+
+Validation: `npm run check` passes 22 tests, data validation, TypeScript and production build. Browser inspection covered 1440×900 and 390×844, outward drags and zoom-out gestures, the electricity scene and corrected Cyprus selection. This increment is local, not published.
+
+---
+
+# Latest increment — 2026-10-08: renewable illustrations
+
+Added media-timed illustrative turbines around Ireland and solar panels over Spain. Authored windows follow the existing audio clock, including seeking and replay; turbines rotate and panels glint during playback, pause with media, and stay static with reduced motion or hidden documents. Symbols enter/exit around their passages and clear on navigation. Native markers preserve geographic attachment through map movement and resize. Mobile placement includes a Spain leader to keep the symbol above the chapter menu. These are schematic illustrations, not measured installations or generation.
+
+Validation: `npm run check` passes 20 tests, asset validation and production build. New tests check boundaries, backward seeking, clearing on navigation and timing against relevant captions. Browser checked at 1440×900 and 390×844: Ireland/Spain seeks, dedicated offshore-wind playback, running rotor transforms and paused/reduced states, visible mobile symbols, and no captured console errors. Physical-device performance and a full browser matrix remain untested. This increment is local, not published.
+
+---
+
 # Subtitle wording correction, 2026-10-08
 
 Reviewed subtitle text against the supplied team draft and applied the user’s answers for the meaningful discrepancies. Matching VTT captions and in-app cues share a persistent exact-text correction map used by the exporter. Original/raw inputs, audio hashes, source cuts, duration and cue timings are preserved. Team first-person phrasing is retained. This is a draft-based wording review with approximate existing timing, not an audio-listening certification.
