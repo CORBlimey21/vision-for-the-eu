@@ -139,20 +139,36 @@ export default function App() {
         />
         <div className="edge-shade" aria-hidden="true" />
         <header className="masthead">
-          <a
-            href="#"
-            className="brand"
-            onClick={(e) => {
-              e.preventDefault();
-              dispatch({ type: 'PRESENT' });
-            }}
-            aria-label="Vision for the EU, return to present"
-          >
-            <Icon name="globe" />
-            <span>
-              VISION<span className="brand-sub">FOR THE EU</span>
-            </span>
-          </a>
+          <div className="masthead-branding">
+            <img
+              className="school-crest"
+              src={`${import.meta.env.BASE_URL}images/cbc-cork-crest.png`}
+              alt="CBC Cork school crest"
+              width="52"
+              height="52"
+            />
+            <a
+              href="#"
+              className="brand"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch({ type: 'PRESENT' });
+              }}
+              aria-label="Vision for the EU, return to present"
+            >
+              <img
+                className="eu-emblem"
+                src={`${import.meta.env.BASE_URL}images/eu-emblem.svg`}
+                alt=""
+                width="42"
+                height="28"
+                aria-hidden="true"
+              />
+              <span>
+                VISION<span className="brand-sub">FOR THE EU</span>
+              </span>
+            </a>
+          </div>
           <div className="edition">
             1957–2050<span>AN INTERACTIVE EXPLORATION</span>
           </div>

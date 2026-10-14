@@ -1,3 +1,19 @@
+# Latest increment — 2026-10-14: EU emblem beside project title
+
+Replaced the globe icon in the project brand with the official blue/gold EU emblem SVG, downloaded from the EU flag page. Original colours and proportions are retained; asset provenance is recorded in `public/images/SOURCES.md`. The adjacent CBC crest remains. Header imagery uses BASE_URL paths and the project link retains its existing accessible name and return action.
+
+Validation: all 22 tests, data validation, TypeScript and production build pass. Inspected at 1440×900 and 390×844; both emblems load and mobile width stays 390px. This increment is local, not published.
+
+---
+
+# Latest increment — 2026-10-14: CBC crest in the masthead
+
+Added the supplied CBC Cork crest beside the existing project brand in the persistent top-left header. The original PNG is preserved as `public/images/cbc-cork-crest.png`; CSS renders a muted sage/cream tint at 52px desktop and 40px mobile. It has descriptive alternative text and no animation. The BASE_URL asset path supports repository-subpath hosting.
+
+Validation: `npm run check` passes all 22 tests, asset validation, TypeScript and production build. Inspected at 1440×900 and 390×844; the crest loads, header items fit, and mobile document width remains 390px. This increment is local, not published.
+
+---
+
 # Publication — 2026-10-08: palette, camera and renewables
 
 The approved release includes the near-black blue background, slightly brighter globe and richer green membership; closer Europe framing and continuous pan/zoom limits; and the media-timed Ireland wind/Spain solar illustrations. The additional transport, circular-economy, technology, voting and education graphics were removed following feedback and are absent from this release. Planning artifacts and raw recordings remain outside the release changes.

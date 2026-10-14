@@ -108,6 +108,19 @@ button:hover:not(:disabled) {
   align-items: center;
   justify-content: space-between;
 }
+.masthead-branding {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.school-crest {
+  display: block;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: grayscale(1) sepia(0.65) hue-rotate(75deg) saturate(0.65) brightness(1.15);
+  opacity: 0.9;
+}
 .brand {
   display: flex;
   gap: 13px;
@@ -117,10 +130,12 @@ button:hover:not(:disabled) {
   font-weight: 600;
   letter-spacing: 0.18em;
 }
-.brand svg {
-  width: 35px;
-  height: 35px;
-  color: var(--mint);
+.brand .eu-emblem {
+  display: block;
+  width: 42px;
+  height: 28px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 .brand-sub {
   display: block;
@@ -962,12 +977,20 @@ h3 {
     left: 23px;
     right: 23px;
   }
+  .masthead-branding {
+    gap: 12px;
+  }
+  .school-crest {
+    width: 40px;
+    height: 40px;
+  }
   .brand {
     font-size: 12px;
     gap: 10px;
   }
-  .brand svg {
-    width: 29px;
+  .brand .eu-emblem {
+    width: 33px;
+    height: 22px;
   }
   .brand-sub {
     font-size: 7px;
