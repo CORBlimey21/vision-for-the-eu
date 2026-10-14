@@ -1,3 +1,11 @@
+# Latest increment — 2026-10-14: combined CBC/EU favicon
+
+Replaced the globe favicon with a self-contained SVG containing the existing CBC crest and EU emblem on the page's blue-black background. Embedded source images avoid external SVG asset-loading dependencies. The CBC crest uses the masthead tint; the EU emblem retains blue/gold. Added a version query to the favicon link so browsers request the new icon after publication.
+
+Validation: all 22 tests, data validation, TypeScript and production build pass. Browser inspected the actual SVG at 16, 32, 64 and 128 pixels. Fine crest lettering is naturally unavailable at tab size; the two marks remain distinct. This increment is local, not published.
+
+---
+
 # Latest increment — 2026-10-14: EU emblem beside project title
 
 Replaced the globe icon in the project brand with the official blue/gold EU emblem SVG, downloaded from the EU flag page. Original colours and proportions are retained; asset provenance is recorded in `public/images/SOURCES.md`. The adjacent CBC crest remains. Header imagery uses BASE_URL paths and the project link retains its existing accessible name and return action.
